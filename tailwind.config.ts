@@ -54,7 +54,10 @@ const config: Config = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				},
-				orange: 'hsl(var(--orange))'
+				transparent: 'transparent',
+				orange: 'hsl(var(--orange))',
+				turquoise: 'hsl(var(--turquoise))',
+				violet: 'hsl(var(--violet))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

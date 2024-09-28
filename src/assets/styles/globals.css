@@ -39,10 +39,12 @@ body {
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
         --orange: 22 100% 50%;
+        --turquoise: 166 100% 50%;
+        --violet: 281 100% 50%;
         --radius: 0.5rem;
     }
     .dark {
-        --background: 0 0% 3.9%;
+        --background: 0 0% 7%;
         --foreground: 0 0% 98%;
         --card: 0 0% 3.9%;
         --card-foreground: 0 0% 98%;
