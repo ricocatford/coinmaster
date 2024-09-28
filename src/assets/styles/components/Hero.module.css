@@ -7,3 +7,18 @@
     color: transparent;
     background-clip: text;
 }
+
+.backgroundGradient {
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        theme("colors.purple"),
+        theme("colors.violet")
+    );
+    filter: blur(200px);
+    position: absolute;
+    z-index: 0;
+    top: 25%;
+}

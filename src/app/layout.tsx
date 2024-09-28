@@ -30,7 +30,7 @@ export default function RootLayout({
             <body
                 className={`${roboto.variable} ${josefinSans.variable} dark font-roboto antialiased`}
             >
-                <header>
+                <header className="bg-transparent">
                     <Navbar />
                 </header>
                 {children}

@@ -57,7 +57,8 @@ const config: Config = {
 				transparent: 'transparent',
 				orange: 'hsl(var(--orange))',
 				turquoise: 'hsl(var(--turquoise))',
-				violet: 'hsl(var(--violet))'
+				violet: 'hsl(var(--violet))',
+				purple: 'hsl(var(--purple))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
