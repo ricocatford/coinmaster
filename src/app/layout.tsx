@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Roboto, Josefin_Sans } from "next/font/google";
 import "@/assets/styles/globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import Navbar from "@/components/layout/Navbar";
+
+config.autoAddCss = false;
 
 const roboto = Roboto({
     weight: ["400", "700"],
@@ -30,7 +34,7 @@ export default function RootLayout({
             <body
                 className={`${roboto.variable} ${josefinSans.variable} dark font-roboto antialiased`}
             >
-                <header className="bg-transparent">
+                <header>
                     <Navbar />
                 </header>
                 {children}
