@@ -1,0 +1,54 @@
+:root {
+    --black: hsl(0, 0%, 7%);
+    --white: hsl(0, 0%, 100%);
+    --dark-grey: hsl(0, 0%, 17%);
+    --orange: hsl(22, 100%, 50%);
+    --turquoise: hsl(166, 100%, 50%);
+    --violet: hsl(281, 100%, 50%);
+    --purple: hsl(256, 100%, 50%);
+    --max-width: 1360px;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    color: var(--white);
+    background: radial-gradient(
+        circle at top right,
+        var(--dark-grey),
+        var(--black) 700px
+    );
+    font-family: var(--font-roboto), sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/*------------------- COMMON CLASSES -------------------*/
+
+.container {
+    margin: auto;
+    max-width: var(--max-width);
+    padding: 2rem 1.5rem;
+    height: 4000px;
+}
+
+.container--fluid {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
