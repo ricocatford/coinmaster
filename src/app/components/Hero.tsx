@@ -5,15 +5,25 @@ export const Hero = () => {
     return (
         <>
             <section className={`container ${styles.container}`}>
-                <h1>
-                    Check & track <span>Cryptocurrencies</span>
+                <h1 className={styles.heading}>
+                    Check & track{" "}
+                    <span className={styles.headingGradient}>
+                        Cryptocurrencies
+                    </span>
                 </h1>
-                <p>
+                <p className={styles.paragraph}>
                     In an ever changing market, you have to track for winning.
                     Coinmaster provides you with the best tools for tracking
                     cryptocurrencies and assist you with analytics.
                 </p>
-                <Link href="#">Get started</Link>
+                <div className={styles.buttonsContainer}>
+                    <Link href="#" className="btn btn--primary">
+                        Get started
+                    </Link>
+                    <Link href="#" className="btn btn--secondary">
+                        Learn more
+                    </Link>
+                </div>
             </section>
         </>
     );

@@ -3,6 +3,7 @@
 :root {
     --black: hsl(0, 0%, 7%);
     --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(0, 0%, 85%);
     --grey: hsl(0, 0%, 50%);
     --dark-grey: hsl(0, 0%, 17%);
     --orange: hsl(22, 100%, 50%);
@@ -83,6 +84,18 @@ a {
     color: var(--white);
 }
 
-.btn--primary:hover {
+.btn--secondary {
+    background-image: linear-gradient(
+        to right,
+        var(--white) 0%,
+        var(--light-grey) 50%,
+        var(--white) 100%
+    );
+    background-size: 200% auto;
+    color: var(--black);
+}
+
+.btn--primary:hover,
+.btn--secondary:hover {
     background-position: right center;
 }

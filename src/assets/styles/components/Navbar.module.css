@@ -12,11 +12,6 @@
 
 /*------------------- LOGO -------------------*/
 
-.logoContainer {
-    flex-grow: 1;
-    flex-basis: 0;
-}
-
 .logo {
     display: flex;
     align-items: center;
@@ -131,6 +126,8 @@
         display: block;
     }
 }
+
+/*------------------- MEDIA QUERIES -------------------*/
 
 @media screen and (max-width: 576px) {
     .linksList {

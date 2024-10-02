@@ -11,6 +11,11 @@
     },
     {
         "id": 2,
+        "text": "FAQ",
+        "url": ""
+    },
+    {
+        "id": 3,
         "text": "About",
         "url": ""
     }

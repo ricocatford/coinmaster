@@ -4,4 +4,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--font-josefin);
+    font-weight: 400;
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: -0.1rem;
+    line-height: 5.5rem;
+}
+
+.headingGradient {
+    text-transform: capitalize;
+    letter-spacing: 0.05rem;
+    background: -webkit-linear-gradient(0deg, var(--turquoise), var(--violet));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paragraph {
+    max-width: 600px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 2rem;
 }
