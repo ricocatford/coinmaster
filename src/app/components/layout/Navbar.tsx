@@ -45,8 +45,10 @@ export const Navbar = () => {
                             ))}
                         </ul>
                     </div>
-                    <div className={styles.controlsContainer}>
-                        <button>Hello</button>
+                    <div className={styles.farEndContainer}>
+                        <Link href="#" className="btn btn--primary">
+                            Get started
+                        </Link>
                     </div>
                 </div>
             </nav>
