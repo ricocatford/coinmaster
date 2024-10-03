@@ -11,6 +11,10 @@
     --violet: hsl(281, 100%, 50%);
     --purple: hsl(256, 100%, 50%);
     --max-width: 1360px;
+    --slide-in-down: slideInDown;
+    --slide-in-right: slideInRight;
+    --slide-in-left: slideInLeft;
+    --glow-loop: glowLoop;
 }
 
 /*------------------- BASE -------------------*/
@@ -99,4 +103,56 @@ a {
 .btn--primary:hover,
 .btn--secondary:hover {
     background-position: right center;
+}
+
+/*------------------- ANIMATIONS -------------------*/
+
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes glowLoop {
+    0% {
+        box-shadow: 0 0 20px transparent;
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.75);
+    }
+
+    100% {
+        box-shadow: 0 0 20px transparent;
+    }
 }
