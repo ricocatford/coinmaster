@@ -91,7 +91,7 @@ export const Navbar = () => {
                             ))}
                         </ul>
                         <Link
-                            href="#overview"
+                            href="#market"
                             className={`btn btn--primary ${styles.ctaLink}`}
                             onClick={() => setToggle(!toggle)}
                         >

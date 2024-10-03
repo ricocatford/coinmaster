@@ -18,7 +18,7 @@ export const Hero = () => {
                 </p>
                 <div className={styles.buttonsContainer}>
                     <Link
-                        href="#overview"
+                        href="#market"
                         className={`btn btn--primary ${styles.ctaButton}`}
                     >
                         Get started
