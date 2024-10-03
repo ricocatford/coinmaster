@@ -1,3 +1,15 @@
+@keyframes slideInBottomLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-10px, 30px, 30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 .container {
     min-height: calc(100vh - 88px);
     display: flex;
@@ -27,12 +39,35 @@
 }
 
 .paragraph {
-    max-width: 600px;
+    max-width: 860px;
     font-size: 1.25rem;
     line-height: 1.625rem;
+    animation: slideInBottomLeft 0.75s;
 }
 
 .buttonsContainer {
     display: flex;
     gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 3.5rem;
+        line-height: 3.25rem;
+    }
+
+    .paragraph {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .buttonsContainer {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .headingGradient {
+        letter-spacing: -0.1rem;
+    }
 }

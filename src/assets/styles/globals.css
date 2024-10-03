@@ -3,7 +3,7 @@
 :root {
     --black: hsl(0, 0%, 7%);
     --white: hsl(0, 0%, 100%);
-    --light-grey: hsl(0, 0%, 85%);
+    --light-grey: hsl(0, 0%, 80%);
     --grey: hsl(0, 0%, 50%);
     --dark-grey: hsl(0, 0%, 17%);
     --orange: hsl(22, 100%, 50%);
@@ -66,10 +66,11 @@ a {
     text-align: center;
     text-transform: uppercase;
     padding: 0.75rem 2.5rem;
+    letter-spacing: -0.1rem;
     border: none;
     font-family: var(--font-josefin);
     font-size: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
     transition: all 0.5s ease-in-out;
 }
 

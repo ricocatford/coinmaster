@@ -6,9 +6,8 @@ import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 import navLinks from "@/assets/data/navlinks.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar = () => {
     const [toggle, setToggle] = useState(false);

@@ -54,6 +54,18 @@
     color: var(--turquoise);
 }
 
+@keyframes mobileNav {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /*------------------- MENU ICON -------------------*/
 
 .menuIconBackground {
@@ -64,8 +76,12 @@
         var(--violet) 100%
     );
     background-size: 200% auto;
-    border-radius: 0.5rem;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
     align-self: center;
+    align-items: center;
+    justify-content: center;
     transition: all 0.5s ease-in-out;
     display: none;
 }
@@ -77,11 +93,11 @@
 .menuIconContainer {
     cursor: pointer;
     border: none;
-    border-radius: 0.375rem;
+    border-radius: 50%;
     background: var(--black);
     color: var(--white);
-    margin: 0.125rem;
-    min-width: 37px;
+    width: 40px;
+    height: 40px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -109,13 +125,12 @@
         min-height: calc(100vh - 88px);
         padding: 2rem;
         gap: 3rem;
-        opacity: 1;
-        transition: all 0.5s ease-in;
+        animation: mobileNav 0.375s;
     }
 
     .linksList {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .ctaLink {
@@ -123,7 +138,7 @@
     }
 
     .menuIconBackground {
-        display: block;
+        display: flex;
     }
 }
 
