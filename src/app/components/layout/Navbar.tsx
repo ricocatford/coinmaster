@@ -7,10 +7,24 @@ import Link from "next/link";
 import navLinks from "@/assets/data/navlinks.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+
+    useEffect(() => {
+        const handleScrollNavVisibility = () => {
+            if (window.scrollY > 80) {
+                setToggle(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScrollNavVisibility);
+
+        return () => {
+            window.removeEventListener("scroll", handleScrollNavVisibility);
+        };
+    }, []);
 
     return (
         <header className={styles.header}>
@@ -63,7 +77,10 @@ export const Navbar = () => {
                     >
                         <ul className={styles.linksList}>
                             {navLinks.map((navLink) => (
-                                <Link href={navLink.url}>
+                                <Link
+                                    href={navLink.url}
+                                    onClick={() => setToggle(!toggle)}
+                                >
                                     <li
                                         key={navLink.id}
                                         className={styles.link}
@@ -76,6 +93,7 @@ export const Navbar = () => {
                         <Link
                             href="#overview"
                             className={`btn btn--primary ${styles.ctaLink}`}
+                            onClick={() => setToggle(!toggle)}
                         >
                             Get started
                         </Link>
