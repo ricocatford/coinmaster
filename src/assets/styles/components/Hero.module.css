@@ -15,7 +15,7 @@
     text-transform: uppercase;
     letter-spacing: -0.1rem;
     line-height: 5.5rem;
-    animation: var(--slide-in-right) 0.5s;
+    animation: var(--fade-in) 1s;
 }
 
 .headingGradient {
@@ -37,6 +37,10 @@
 .buttonsContainer {
     display: flex;
     gap: 2rem;
+}
+
+.ctaButton {
+    animation: var(--glow-loop) infinite 7s;
 }
 
 @media screen and (max-width: 768px) {

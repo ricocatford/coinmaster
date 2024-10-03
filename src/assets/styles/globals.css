@@ -11,6 +11,7 @@
     --violet: hsl(281, 100%, 50%);
     --purple: hsl(256, 100%, 50%);
     --max-width: 1360px;
+    --fade-in: fadeIn;
     --slide-in-down: slideInDown;
     --slide-in-right: slideInRight;
     --slide-in-left: slideInLeft;
@@ -23,6 +24,7 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -106,6 +108,16 @@ a {
 }
 
 /*------------------- ANIMATIONS -------------------*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes slideInDown {
     0% {

@@ -17,7 +17,10 @@ export const Hero = () => {
                     cryptocurrencies and assist you with analytics.
                 </p>
                 <div className={styles.buttonsContainer}>
-                    <Link href="#" className="btn btn--primary">
+                    <Link
+                        href="#overview"
+                        className={`btn btn--primary ${styles.ctaButton}`}
+                    >
                         Get started
                     </Link>
                     <Link href="#" className="btn btn--secondary">

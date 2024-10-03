@@ -74,7 +74,7 @@ export const Navbar = () => {
                             ))}
                         </ul>
                         <Link
-                            href="#"
+                            href="#overview"
                             className={`btn btn--primary ${styles.ctaLink}`}
                         >
                             Get started
