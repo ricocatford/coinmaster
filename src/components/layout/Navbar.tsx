@@ -10,7 +10,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScrollNavVisibility = () => {
@@ -79,7 +79,7 @@ export const Navbar = () => {
                             {navLinks.map((navLink) => (
                                 <Link
                                     href={navLink.url}
-                                    onClick={() => setToggle(!toggle)}
+                                    onClick={() => setToggle(false)}
                                 >
                                     <li
                                         key={navLink.id}
@@ -93,7 +93,7 @@ export const Navbar = () => {
                         <Link
                             href="#market"
                             className={`btn btn--primary ${styles.ctaLink}`}
-                            onClick={() => setToggle(!toggle)}
+                            onClick={() => setToggle(false)}
                         >
                             Get started
                         </Link>
