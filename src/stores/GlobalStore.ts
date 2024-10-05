@@ -2,21 +2,36 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import { createStore } from "zustand/vanilla";
 
 export type GlobalState = {
-    test: string;
+    assets: Asset[];
+    mode: boolean;
 };
 
+export type Asset = {
+    id: string;
+    rank: string;
+    symbol: string;
+    name: string;
+    supply: string;
+    marketCapUsd: string;
+    volumeUsd24Hr: string;
+    priceUsd: string;
+    changePercent24Hr: string;
+    vwap24Hr: string;
+}
+
 export type GlobalActions = {
-    testStore: (string: string) => void;
+    testStore: () => void;
 };
 
 export type GlobalStore = GlobalState & GlobalActions;
 
 export const initGlobalStore = (): GlobalState => {
-    return { test: "" };
+    return { assets: [], mode: true };
 };
 
 export const defaultInitState: GlobalState = {
-    test: "",
+    assets: [],
+    mode: true,
 };
 
 export const createGlobalStore = (initState: GlobalState = defaultInitState) => {
@@ -24,7 +39,10 @@ export const createGlobalStore = (initState: GlobalState = defaultInitState) => 
         persist(
             (set) => ({
                 ...initState,
-                testStore: (string: string) => console.log(string)
+                testStore: () => set((state) => {
+                    state.mode = !state.mode;
+                    return { mode: state.mode }
+                })
             }),
             {
                 name: "global-storage",

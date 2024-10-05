@@ -32,18 +32,6 @@ export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
     );
 };
 
-// export const useGlobalStore = <T,>(selector: (store: GlobalStore) => T): T => {
-//     const globalStoreContext = useContext(GlobalStoreContext);
-
-//     if (!globalStoreContext) {
-//         throw new Error(
-//             "useGlobalStore must be used within GlobalStoreProvider"
-//         );
-//     }
-
-//     return useStore(globalStoreContext, selector);
-// };
-
 export const useGlobalStore = <T,>(selector: (store: GlobalStore) => T): T => {
     const globalStoreContext = useContext(GlobalStoreContext);
 
