@@ -4,6 +4,7 @@ import "@/assets/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Navbar } from "@/components/layout/Navbar";
+import useFetchData from "@/hooks/useFetchData";
 
 config.autoAddCss = false;
 

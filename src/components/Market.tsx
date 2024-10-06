@@ -3,8 +3,8 @@
 import { GlobalStore } from "@/stores/GlobalStore";
 import { Chart } from "./Chart";
 import { Component } from "./Component";
-import MarketStatistics from "./MarketStatistics";
 import useGlobal from "@/hooks/global-store/useGlobal";
+import useFetchData from "@/hooks/useFetchData";
 
 export const Market = () => {
     const { store }: { store: GlobalStore } = useGlobal();
@@ -13,9 +13,9 @@ export const Market = () => {
         store?.testStore();
     };
 
+    useFetchData();
     return (
         <div className="container" id="market">
-            {/* <MarketStatistics /> */}
             <p>Store mode: {store?.mode ? "On" : "Off"}</p>
             <Chart />
             <Component />
