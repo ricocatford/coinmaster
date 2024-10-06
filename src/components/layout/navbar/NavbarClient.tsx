@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { MenuToggleButton } from "./MenuToggleButton";
 import { NavLink } from "./NavLink";
 
-export type NavLinkType = {
+export type NavigationLink = {
     id: number;
     text: string;
     url: string;
 };
 
-export const NavbarClient = ({ links }: { links: NavLinkType[] }) => {
+export const NavbarClient = ({ links }: { links: NavigationLink[] }) => {
     const [isToggled, setIsToggled] = useState<boolean>(false);
 
     useEffect(() => {
@@ -29,8 +29,15 @@ export const NavbarClient = ({ links }: { links: NavLinkType[] }) => {
 
     return (
         <>
-            <MenuToggleButton isToggled={isToggled} setIsToggled={setIsToggled} />
-            <NavLink isToggled={isToggled} setIsToggled={setIsToggled} links={links} />
+            <MenuToggleButton
+                isToggled={isToggled}
+                setIsToggled={setIsToggled}
+            />
+            <NavLink
+                isToggled={isToggled}
+                setIsToggled={setIsToggled}
+                links={links}
+            />
         </>
     );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/assets/styles/components/Navbar.module.css";
-import { NavLinkType } from "@/components/layout/navbar/NavbarClient";
+import { NavigationLink } from "@/components/layout/navbar/NavbarClient";
 import Link from "next/link";
 
 export const NavLink = ({
@@ -11,7 +11,7 @@ export const NavLink = ({
 }: {
     isToggled: boolean;
     setIsToggled: (toggle: boolean) => void;
-    links: NavLinkType[];
+    links: NavigationLink[];
 }) => {
     return (
         <div
@@ -21,10 +21,12 @@ export const NavLink = ({
         >
             <ul className={styles.linksList}>
                 {links.map((link) => (
-                    <Link href={link.url} onClick={() => setIsToggled(false)}>
-                        <li key={link.id} className={styles.link}>
-                            {link.text}
-                        </li>
+                    <Link
+                        href={link.url}
+                        key={link.id}
+                        onClick={() => setIsToggled(false)}
+                    >
+                        <li className={styles.link}>{link.text}</li>
                     </Link>
                 ))}
             </ul>
