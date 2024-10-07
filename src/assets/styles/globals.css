@@ -8,7 +8,7 @@
     --black: hsl(0, 0%, 7%);
     --white: hsl(0, 0%, 100%);
     --light-grey: hsl(0, 0%, 80%);
-    --grey: hsl(0, 0%, 50%);
+    --grey: hsl(0, 0%, 30%);
     --dark-grey: hsl(0, 0%, 17%);
     --orange: hsl(22, 100%, 50%);
     --turquoise: hsl(166, 100%, 50%);
@@ -174,7 +174,7 @@ a {
 }
 
 @layer base {
-  :root {
+    :root {
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
         --card: 0 0% 100%;
@@ -201,7 +201,7 @@ a {
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
     }
-  .dark {
+    .dark {
         --background: 222.2 84% 4.9%;
         --foreground: 210 40% 98%;
         --card: 222.2 84% 4.9%;
@@ -230,10 +230,10 @@ a {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+    * {
+        @apply border-border;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
 }

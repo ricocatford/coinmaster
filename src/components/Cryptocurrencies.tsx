@@ -2,6 +2,9 @@
 
 import formatAssets from "@/lib/formatAssets";
 import useSWR from "swr";
+import styles from "@/assets/styles/components/Cryptocurrencies.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -18,32 +21,44 @@ export const Cryptocurrencies = () => {
     const assets = formatAssets(data.data);
 
     return (
-        <section>
+        <section className={styles.container}>
             <h2>Cryptocurrencies</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th># Rank</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Supply</th>
-                        <th>Market Cap</th>
-                        <th>Volume (24hr)</th>
-                        <th>Change % (24hr)</th>
+            <table className={styles.table}>
+                <thead className={styles.tableHead}>
+                    <tr className={styles.tableRow}>
+                        <th></th>
+                        <th className={styles.tableHeader}>#</th>
+                        <th className={styles.tableHeader}>Name</th>
+                        <th className={styles.tableHeader}>Price</th>
+                        <th className={styles.tableHeader}>
+                            Circulating Supply
+                        </th>
+                        <th className={styles.tableHeader}>Market Cap</th>
+                        <th className={styles.tableHeader}>Volume (24h)</th>
+                        <th className={styles.tableHeader}>24h %</th>
                     </tr>
                 </thead>
                 <tbody>
                     {assets.map((asset: any) => (
-                        <tr key={asset.id}>
-                            <td>{asset.rank}</td>
-                            <td>
+                        <tr key={asset.id} className={styles.tableRow}>
+                            <td className={styles.tableData}>
+                                <FontAwesomeIcon icon={faStar} />
+                            </td>
+                            <td className={styles.tableData}>{asset.rank}</td>
+                            <td className={styles.tableData}>
                                 {asset.name} ({asset.symbol})
                             </td>
-                            <td>{asset.price}</td>
-                            <td>{asset.supply}</td>
-                            <td>{asset.marketCap}</td>
-                            <td>{asset.volume24Hr}</td>
-                            <td>{asset.changePercent24Hr}%</td>
+                            <td className={styles.tableData}>{asset.price}</td>
+                            <td className={styles.tableData}>{asset.supply}</td>
+                            <td className={styles.tableData}>
+                                {asset.marketCap}
+                            </td>
+                            <td className={styles.tableData}>
+                                {asset.volume24Hr}
+                            </td>
+                            <td className={styles.tableData}>
+                                {asset.changePercent24Hr}%
+                            </td>
                         </tr>
                     ))}
                 </tbody>
