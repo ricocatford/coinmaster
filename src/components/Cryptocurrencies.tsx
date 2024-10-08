@@ -23,10 +23,6 @@ export const Cryptocurrencies = () => {
 
     const assets = formatAssets(data.data);
 
-    const styleChangePercent = (string: string) => {
-        return string.startsWith("-") ? "text-red-600" : "text-lime-500";
-    };
-
     return (
         <section className={styles.container}>
             <h2 className={styles.heading}>Cryptocurrencies</h2>
@@ -64,11 +60,13 @@ export const Cryptocurrencies = () => {
                                 {asset.volume24Hr}
                             </td>
                             <td
-                                className={`${
-                                    styles.tableData
-                                } ${styleChangePercent(
-                                    asset.changePercent24Hr
-                                )}`}
+                                className={`${styles.tableData} ${
+                                    asset.changePercent24Hr.startsWith("-")
+                                        ? styles.colorRed
+                                        : styles.colorGreen
+                                }
+                                    
+                                `}
                             >
                                 {asset.changePercent24Hr}%
                             </td>

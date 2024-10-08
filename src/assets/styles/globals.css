@@ -14,6 +14,8 @@
     --turquoise: hsl(166, 100%, 50%);
     --violet: hsl(281, 100%, 50%);
     --purple: hsl(256, 100%, 50%);
+    --light-green: hsl(119, 100%, 50%);
+    --red: hsl(11, 100%, 50%);
     --max-width: 1360px;
     --fade-in: fadeIn;
     --slide-in-down: slideInDown;
