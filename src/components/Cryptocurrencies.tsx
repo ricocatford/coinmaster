@@ -11,7 +11,10 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export const Cryptocurrencies = () => {
     const { data, error, isLoading } = useSWR(
         "https://api.coincap.io/v2/assets",
-        fetcher
+        fetcher,
+        {
+            refreshInterval: 5000,
+        }
     );
 
     if (error) return <p>Failed to fetch assets.</p>;
@@ -20,9 +23,13 @@ export const Cryptocurrencies = () => {
 
     const assets = formatAssets(data.data);
 
+    const styleChangePercent = (string: string) => {
+        return string.startsWith("-") ? "text-red-600" : "text-lime-500";
+    };
+
     return (
         <section className={styles.container}>
-            <h2>Cryptocurrencies</h2>
+            <h2 className={styles.heading}>Cryptocurrencies</h2>
             <table className={styles.table}>
                 <thead className={styles.tableHead}>
                     <tr className={styles.tableRow}>
@@ -56,7 +63,13 @@ export const Cryptocurrencies = () => {
                             <td className={styles.tableData}>
                                 {asset.volume24Hr}
                             </td>
-                            <td className={styles.tableData}>
+                            <td
+                                className={`${
+                                    styles.tableData
+                                } ${styleChangePercent(
+                                    asset.changePercent24Hr
+                                )}`}
+                            >
                                 {asset.changePercent24Hr}%
                             </td>
                         </tr>
