@@ -1,5 +1,6 @@
 export const formatAssets = (assets: any) => {
     return assets.map((asset: any) => ({
+        id: asset.id,
         rank: asset.rank,
         name: asset.name,
         symbol: asset.symbol,

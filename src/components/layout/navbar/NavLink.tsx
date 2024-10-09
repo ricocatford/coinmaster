@@ -12,7 +12,7 @@ export const NavLink = ({
     isToggled: boolean;
     setIsToggled: (toggle: boolean) => void;
     links: NavigationLink[];
-}) => {
+}): React.ReactNode => {
     return (
         <div
             className={

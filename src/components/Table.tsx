@@ -1,10 +1,9 @@
 import styles from "@/assets/styles/components/Cryptocurrencies.module.css";
 import assetsHeadings from "@/assets/data/assetsHeadings.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import Assets from "@/types/assets";
+import Asset from "@/types/asset";
+import { AddToTrackerButton } from "./AddToTrackerButton";
 
-export const Table = ({ assets }: { assets: Assets[] }) => {
+export const Table = ({ assets }: { assets: Asset[] }): React.ReactNode => {
     return (
         <table className={styles.table}>
             <thead className={styles.tableHead}>
@@ -17,10 +16,10 @@ export const Table = ({ assets }: { assets: Assets[] }) => {
                 </tr>
             </thead>
             <tbody>
-                {assets.map((asset: Assets) => (
-                    <tr key={asset.symbol} className={styles.tableRow}>
+                {assets.map((asset: Asset) => (
+                    <tr key={asset.id} className={styles.tableRow}>
                         <td className={styles.tableData}>
-                            <FontAwesomeIcon icon={faStar} />
+                            <AddToTrackerButton id={asset.id} />
                         </td>
                         <td className={styles.tableData}>{asset.rank}</td>
                         <td className={styles.tableData}>

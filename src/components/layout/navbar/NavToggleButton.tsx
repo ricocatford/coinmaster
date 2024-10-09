@@ -4,13 +4,13 @@ import styles from "@/assets/styles/components/Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export const MenuToggleButton = ({
+export const NavToggleButton = ({
     isToggled,
     setIsToggled,
 }: {
     isToggled: boolean;
     setIsToggled: (toggle: boolean) => void;
-}) => {
+}): React.ReactNode => {
     return (
         <div className={styles.menuIconBackground}>
             <button

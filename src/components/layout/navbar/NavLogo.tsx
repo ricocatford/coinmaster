@@ -3,7 +3,7 @@ import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 
-export const Logo = () => {
+export const NavLogo = (): React.ReactNode => {
     return (
         <div className={styles.logoContainer}>
             <Link

@@ -1,14 +1,14 @@
 import styles from "@/assets/styles/components/Navbar.module.css";
 import navLinks from "@/assets/data/navLinks.json";
-import { Logo } from "./Logo";
+import { NavLogo } from "./NavLogo";
 import { NavbarClient } from "./NavbarClient";
 
-export const Navbar = () => {
+export const Navbar = (): React.ReactNode => {
     return (
         <header className={styles.header}>
             <nav>
                 <div className={styles.navContainer}>
-                    <Logo />
+                    <NavLogo />
                     <NavbarClient links={navLinks} />
                 </div>
             </nav>

@@ -4,7 +4,7 @@ import styles from "@/assets/styles/components/Cryptocurrencies.module.css";
 import { useDataFetch } from "@/hooks/useDataFetch";
 import { Table } from "./Table";
 
-export const Cryptocurrencies = () => {
+export const Cryptocurrencies = (): React.ReactNode => {
     const { assets, error, isLoading } = useDataFetch();
 
     if (error) return <p>Failed to fetch assets.</p>;

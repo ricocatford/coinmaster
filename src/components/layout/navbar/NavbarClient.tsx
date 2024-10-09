@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MenuToggleButton } from "./MenuToggleButton";
+import { NavToggleButton } from "./NavToggleButton";
 import { NavLink } from "./NavLink";
 
 export type NavigationLink = {
@@ -10,7 +10,11 @@ export type NavigationLink = {
     url: string;
 };
 
-export const NavbarClient = ({ links }: { links: NavigationLink[] }) => {
+export const NavbarClient = ({
+    links,
+}: {
+    links: NavigationLink[];
+}): React.ReactNode => {
     const [isToggled, setIsToggled] = useState<boolean>(false);
 
     useEffect(() => {
@@ -29,7 +33,7 @@ export const NavbarClient = ({ links }: { links: NavigationLink[] }) => {
 
     return (
         <>
-            <MenuToggleButton
+            <NavToggleButton
                 isToggled={isToggled}
                 setIsToggled={setIsToggled}
             />

@@ -2,7 +2,7 @@
 
 import useSWR from "swr";
 import { formatAssets } from "@/lib/formatAssets";
-import Assets from "@/types/assets";
+import Asset from "@/types/asset";
 
 export const useDataFetch = () => {
     const url: string = "https://api.coincap.io/v2/assets";
@@ -18,8 +18,7 @@ export const useDataFetch = () => {
     );
 
     if (data) {
-        const assets: Assets[] = formatAssets(data.data);
-        console.log("assetsArray", assets)
+        const assets: Asset[] = formatAssets(data.data);
         return { assets, error, isLoading };
     }
 
