@@ -1,10 +1,10 @@
 "use client";
 
 import useSWR from "swr";
-import formatAssets from "@/lib/formatAssets";
+import { formatAssets } from "@/lib/formatAssets";
 import Assets from "@/types/assets";
 
-export default function useDataFetch() {
+export const useDataFetch = () => {
     const url: string = "https://api.coincap.io/v2/assets";
     const refreshIntervalTime: number = 5000;
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -19,6 +19,7 @@ export default function useDataFetch() {
 
     if (data) {
         const assets: Assets[] = formatAssets(data.data);
+        console.log("assetsArray", assets)
         return { assets, error, isLoading };
     }
 
