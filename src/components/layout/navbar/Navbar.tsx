@@ -1,5 +1,5 @@
 import styles from "@/assets/styles/components/Navbar.module.css";
-import navLinks from "@/assets/data/navlinks.json";
+import navLinks from "@/assets/data/navLinks.json";
 import { Logo } from "./Logo";
 import { NavbarClient } from "./NavbarClient";
 

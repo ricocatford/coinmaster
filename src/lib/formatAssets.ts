@@ -1,5 +1,5 @@
 export default function formatAssets(assetsData: any) {
-    const assets = assetsData.map((asset: any) => ({
+    return assetsData.map((asset: any) => ({
         rank: asset.rank,
         name: asset.name,
         symbol: asset.symbol,
@@ -35,6 +35,4 @@ export default function formatAssets(assetsData: any) {
             compactDisplay: "short",
         }).format(asset.changePercent24Hr),
     }));
-    
-    return assets;
 }

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 0,
+        "text": null
+    },
+    {
+        "id": 1,
+        "text": "#"
+    },
+    {
+        "id": 2,
+        "text": "Name"
+    },
+    {
+        "id": 3,
+        "text": "Price"
+    },
+    {
+        "id": 4,
+        "text": "Supply"
+    },
+    {
+        "id": 5,
+        "text": "Market Cap"
+    },
+    {
+        "id": 6,
+        "text": "24h Volume"
+    },
+    {
+        "id": 7,
+        "text": "24h %"
+    }
+]

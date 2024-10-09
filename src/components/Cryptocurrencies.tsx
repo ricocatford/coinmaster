@@ -1,27 +1,17 @@
 "use client";
 
-import formatAssets from "@/lib/formatAssets";
-import useSWR from "swr";
 import styles from "@/assets/styles/components/Cryptocurrencies.module.css";
+import assetsHeadings from "@/assets/data/assetsHeadings.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import useDataFetch from "@/hooks/useDataFetch";
 
 export const Cryptocurrencies = () => {
-    const { data, error, isLoading } = useSWR(
-        "https://api.coincap.io/v2/assets",
-        fetcher,
-        {
-            refreshInterval: 5000,
-        }
-    );
+    const { assets, error, isLoading } = useDataFetch();
 
     if (error) return <p>Failed to fetch assets.</p>;
 
     if (isLoading) return <p>Loading assets...</p>;
-
-    const assets = formatAssets(data.data);
 
     return (
         <section className={styles.container}>
@@ -29,16 +19,14 @@ export const Cryptocurrencies = () => {
             <table className={styles.table}>
                 <thead className={styles.tableHead}>
                     <tr className={styles.tableRow}>
-                        <th></th>
-                        <th className={styles.tableHeader}>#</th>
-                        <th className={styles.tableHeader}>Name</th>
-                        <th className={styles.tableHeader}>Price</th>
-                        <th className={styles.tableHeader}>
-                            Circulating Supply
-                        </th>
-                        <th className={styles.tableHeader}>Market Cap</th>
-                        <th className={styles.tableHeader}>Volume (24h)</th>
-                        <th className={styles.tableHeader}>24h %</th>
+                        {assetsHeadings.map((heading) => (
+                            <th
+                                className={styles.tableHeading}
+                                key={heading.id}
+                            >
+                                {heading.text}
+                            </th>
+                        ))}
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +53,7 @@ export const Cryptocurrencies = () => {
                                         ? styles.colorRed
                                         : styles.colorGreen
                                 }
-                                    
+
                                 `}
                             >
                                 {asset.changePercent24Hr}%

@@ -7,7 +7,7 @@
 
 .heading {
     font-size: 1.5rem;
-    margin-left: 1.25rem;
+    margin-left: 1.5rem;
 }
 
 .colorGreen {
@@ -20,7 +20,7 @@
 
 .table {
     border-collapse: collapse;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     font-size: 0.9rem;
     width: 100%;
 }
@@ -30,7 +30,7 @@
     color: var(--light-grey);
 }
 
-.tableHeader {
+.tableHeading {
     padding: 0.75rem 1rem;
 }
 
