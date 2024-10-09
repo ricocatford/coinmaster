@@ -1,7 +1,7 @@
 import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
 
-export const Hero = (): React.ReactNode => {
+export const Hero = (): React.JSX.Element => {
     return (
         <>
             <section className={`container ${styles.container}`}>

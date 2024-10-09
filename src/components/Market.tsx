@@ -1,6 +1,6 @@
 import { Cryptocurrencies } from "./Cryptocurrencies";
 
-export const Market = (): React.ReactNode => {
+export const Market = (): React.JSX.Element => {
     return (
         <div className="container" id="market">
             <Cryptocurrencies />

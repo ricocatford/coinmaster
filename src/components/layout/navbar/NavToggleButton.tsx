@@ -10,7 +10,7 @@ export const NavToggleButton = ({
 }: {
     isToggled: boolean;
     setIsToggled: (toggle: boolean) => void;
-}): React.ReactNode => {
+}): React.JSX.Element => {
     return (
         <div className={styles.menuIconBackground}>
             <button

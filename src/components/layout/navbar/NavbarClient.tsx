@@ -14,7 +14,7 @@ export const NavbarClient = ({
     links,
 }: {
     links: NavigationLink[];
-}): React.ReactNode => {
+}): React.JSX.Element => {
     const [isToggled, setIsToggled] = useState<boolean>(false);
 
     useEffect(() => {

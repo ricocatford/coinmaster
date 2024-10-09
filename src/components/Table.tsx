@@ -3,7 +3,7 @@ import assetsHeadings from "@/assets/data/assetsHeadings.json";
 import Asset from "@/types/asset";
 import { AddToTrackerButton } from "./AddToTrackerButton";
 
-export const Table = ({ assets }: { assets: Asset[] }): React.ReactNode => {
+export const Table = ({ assets }: { assets: Asset[] }): React.JSX.Element => {
     return (
         <table className={styles.table}>
             <thead className={styles.tableHead}>
