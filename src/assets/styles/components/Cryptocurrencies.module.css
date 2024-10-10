@@ -18,6 +18,11 @@
     color: var(--red);
 }
 
+.trackerIcon {
+    color: var(--yellow);
+    cursor: pointer;
+}
+
 .table {
     border-collapse: collapse;
     margin: 1.5rem 0;
