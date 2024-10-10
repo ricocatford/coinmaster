@@ -1,7 +1,13 @@
+"use client";
+
 import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
+import { GlobalStore } from "@/stores/GlobalStore";
+import { useGlobal } from "@/hooks/global-store/useGlobal";
 
 export const Hero = (): React.JSX.Element => {
+    const { store }: { store: GlobalStore } = useGlobal();
+
     return (
         <>
             <section className={`container ${styles.container}`}>
@@ -23,8 +29,12 @@ export const Hero = (): React.JSX.Element => {
                     >
                         Get started
                     </Link>
-                    <Link href="#" className="btn btn--secondary">
-                        Learn more
+                    <Link
+                        href="#"
+                        className="btn btn--secondary"
+                        onClick={() => store.resetTracker()}
+                    >
+                        Reset tracker
                     </Link>
                 </div>
             </section>

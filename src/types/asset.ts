@@ -1,5 +1,7 @@
+import { AssetId } from "@/types/assetId";
+
 export default interface Asset {
-    id: string;
+    id: AssetId;
     rank: string;
     name: string;
     symbol: string;

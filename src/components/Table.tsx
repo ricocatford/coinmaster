@@ -1,7 +1,7 @@
 import styles from "@/assets/styles/components/Cryptocurrencies.module.css";
 import assetsHeadings from "@/assets/data/assetsHeadings.json";
-import Asset from "@/types/asset";
 import { AddToTrackerButton } from "./AddToTrackerButton";
+import Asset from "@/types/asset";
 
 export const Table = ({ assets }: { assets: Asset[] }): React.JSX.Element => {
     return (

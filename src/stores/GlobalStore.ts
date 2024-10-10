@@ -1,37 +1,24 @@
 import { createJSONStorage, persist } from "zustand/middleware";
 import { createStore } from "zustand/vanilla";
+import { AssetId } from "../types/assetId";
 
 export type GlobalState = {
-    assets: Asset[];
-    mode: boolean;
+    tracker: AssetId[];
 };
 
-export type Asset = {
-    id: string;
-    rank: string;
-    symbol: string;
-    name: string;
-    supply: string;
-    marketCapUsd: string;
-    volumeUsd24Hr: string;
-    priceUsd: string;
-    changePercent24Hr: string;
-    vwap24Hr: string;
-}
-
 export type GlobalActions = {
-    testStore: () => void;
+    trackAsset: (assetId: AssetId) => void;
+    resetTracker: () => void;
 };
 
 export type GlobalStore = GlobalState & GlobalActions;
 
 export const initGlobalStore = (): GlobalState => {
-    return { assets: [], mode: true };
+    return { tracker: [] };
 };
 
 export const defaultInitState: GlobalState = {
-    assets: [],
-    mode: true,
+    tracker: []
 };
 
 export const createGlobalStore = (initState: GlobalState = defaultInitState) => {
@@ -39,9 +26,12 @@ export const createGlobalStore = (initState: GlobalState = defaultInitState) => 
         persist(
             (set) => ({
                 ...initState,
-                testStore: () => set((state) => {
-                    state.mode = !state.mode;
-                    return { mode: state.mode }
+                trackAsset: (assetId: AssetId) => set((state) => {
+                    // const existingAssetId: number = state.tracker.findIndex((existingAsset) => existingAsset.id === assetId);
+                    return { tracker: [...state.tracker, assetId] }
+                }),
+                resetTracker: () => set(() => {
+                    return { tracker: [] }
                 })
             }),
             {

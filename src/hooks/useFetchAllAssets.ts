@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { formatAssets } from "@/lib/formatAssets";
 import Asset from "@/types/asset";
 
-export const useDataFetch = () => {
+export const useFetchAllAssets = () => {
     const url: string = "https://api.coincap.io/v2/assets";
     const refreshIntervalTime: number = 5000;
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
