@@ -1,0 +1,28 @@
+.containerBackground {
+    z-index: 51;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /* display: none; */
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    z-index: 52;
+    width: 400px;
+    background: var(--dark-grey);
+    min-height: 100vh;
+    top: 0;
+    right: 0;
+    position: absolute;
+    opacity: 1;
+}
+
+.card {
+    background: var(--grey);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+}
