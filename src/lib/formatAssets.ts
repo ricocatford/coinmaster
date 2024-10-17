@@ -1,4 +1,6 @@
-export const formatAssets = (assets: any) => {
+import Asset from "@/types/asset";
+
+export const formatAssets = (assets: any): Asset[] => {
     return assets.map((asset: any) => ({
         id: asset.id,
         rank: asset.rank,
