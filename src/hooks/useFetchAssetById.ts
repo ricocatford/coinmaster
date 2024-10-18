@@ -10,7 +10,7 @@ export const useFetchAssetById = (assetId: AssetId) => {
     const refreshIntervalTime: number = 5000;
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-    const { data, error, isLoading } = useSWR(
+    const { data, error, isLoading }: { data: any, error: any, isLoading: boolean } = useSWR(
         url,
         fetcher,
         {

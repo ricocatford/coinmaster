@@ -10,7 +10,7 @@ export const Cryptocurrencies = (): React.JSX.Element => {
         assets,
         error,
         isLoading,
-    }: { assets?: Asset[]; error: any; isLoading: boolean } =
+    }: { assets?: Asset[] | undefined; error: any; isLoading: boolean } =
         useFetchAllAssets();
 
     if (error) return <p>Failed to fetch assets.</p>;

@@ -1,6 +1,6 @@
 import Asset from "@/types/asset";
 
-export const formatAssets = (assets: any): Asset[] => {
+export const formatAllAssets = (assets: any): Asset[] => {
     return assets.map((asset: any) => ({
         id: asset.id,
         rank: asset.rank,

@@ -1,7 +1,7 @@
 "use client";
 
 import useSWR from "swr";
-import { formatAssets } from "@/lib/formatAssets";
+import { formatAllAssets } from "@/lib/formatAllAssets";
 import Asset from "@/types/asset";
 
 export const useFetchAllAssets = () => {
@@ -18,7 +18,7 @@ export const useFetchAllAssets = () => {
     );
 
     if (data) {
-        const assets: Asset[] = formatAssets(data.data);
+        const assets: Asset[] = formatAllAssets(data.data);
         return { assets, error, isLoading };
     }
 
