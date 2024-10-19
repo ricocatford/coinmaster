@@ -1,9 +1,11 @@
 import { AssetId } from "@/types/assetId"
+import { fetchedAssetHistory } from "@/types/fetchedAssetHistory"
+import { formatDateTime } from "./formatDateTime"
 
-export const formatAssetHistory = (assetId: AssetId, assetHistory: any) => {
-    console.log("Asset history:", assetHistory)
-    return {
+export const formatAssetHistory = (assetId: AssetId, assetHistory: fetchedAssetHistory[]) => (
+    assetHistory.map((element: fetchedAssetHistory) => ({
         id: assetId,
-        price: new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(assetHistory.priceUsd),
-    }
-}
+        price: parseFloat(parseFloat(element.priceUsd).toFixed(2)),
+        date: formatDateTime(element.date)
+    }))
+)

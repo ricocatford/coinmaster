@@ -36,6 +36,7 @@ export const useFetchAssetHistoryById = (assetId: AssetId) => {
     if (data) {
         const assetData = data.data.filter((_: any, index: number) => index % 2 === 0);
         const assetHistory = formatAssetHistory(assetId, assetData);
+        console.log("Asset history formatted:", assetHistory)
         return { assetHistory, error, isLoading };
     }
 
