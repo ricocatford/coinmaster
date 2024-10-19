@@ -34,8 +34,8 @@ export const useFetchAssetHistoryById = (assetId: AssetId) => {
     );
 
     if (data) {
-        const assetHistory = formatAssetHistory(assetId, data.data);
-        // console.log(assetHistory);
+        const assetData = data.data.filter((_: any, index: number) => index % 2 === 0);
+        const assetHistory = formatAssetHistory(assetId, assetData);
         return { assetHistory, error, isLoading };
     }
 
