@@ -7,16 +7,14 @@ import { AssetId } from "@/types/assetId";
 
 export const useFetchAssetById = (assetId: AssetId) => {
     const url: string = `https://api.coincap.io/v2/assets/${assetId}/`;
-    const refreshIntervalTime: number = 5000;
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-    const { data, error, isLoading }: { data: any, error: any, isLoading: boolean } = useSWR(
-        url,
-        fetcher,
-        {
-            refreshInterval: refreshIntervalTime,
-        }
-    );
+    const { data, error, isValidating } = useSWR(url, fetcher, {
+        refreshInterval: 5000,
+        revalidateOnFocus: false,
+    });
+
+    const isLoading = !data && isValidating;
 
     if (data) {
         const asset: Asset = formatAsset(data.data);

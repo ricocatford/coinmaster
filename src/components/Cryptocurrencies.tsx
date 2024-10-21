@@ -6,12 +6,7 @@ import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import Asset from "@/types/asset";
 
 export const Cryptocurrencies = (): React.JSX.Element => {
-    const {
-        assets,
-        error,
-        isLoading,
-    }: { assets?: Asset[] | undefined; error: any; isLoading: boolean } =
-        useFetchAllAssets();
+    const { assets, error, isLoading } = useFetchAllAssets();
 
     if (error) return <p>Failed to fetch assets.</p>;
     if (isLoading) return <p>Loading assets...</p>;

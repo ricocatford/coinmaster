@@ -8,4 +8,4 @@ export const formatAssetHistory = (assetId: AssetId, assetHistory: fetchedAssetH
         price: parseFloat(parseFloat(element.priceUsd).toFixed(2)),
         date: formatDateTime(element.date)
     }))
-)
+);
