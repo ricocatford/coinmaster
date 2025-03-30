@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Cryptocurrencies.module.css";
+import styles from "@/assets/styles/components/Table.module.css";
 import assetsHeadings from "@/assets/data/assetsHeadings.json";
 import { AddToTrackerButton } from "./AddToTrackerButton";
 import Asset from "@/types/asset";
@@ -32,8 +32,8 @@ export const Table = ({ assets }: { assets: Asset[] }): React.JSX.Element => {
                         <td
                             className={`${styles.tableData} ${
                                 asset.changePercent24Hr.startsWith("-")
-                                    ? styles.colorRed
-                                    : styles.colorGreen
+                                    ? styles.textRed
+                                    : styles.textGreen
                             }`}
                         >
                             {asset.changePercent24Hr}%

@@ -1,15 +1,6 @@
 "use client";
 
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
-
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
 import {
     ChartConfig,
     ChartContainer,
@@ -17,14 +8,13 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart";
 import { generateChartConfig } from "@/lib/generateChartConfig";
+import styles from "@/assets/styles/components/WaveChart.module.css";
 
-export function WaveChart({ chartData }: any) {
+export const WaveChart = ({ chartData }: any): React.JSX.Element => {
     const chartConfig = generateChartConfig(chartData);
-
     chartConfig satisfies ChartConfig;
 
     const dataKeys: string[] = [];
-
     for (const property in chartData[0]) {
         if (property !== "date") {
             dataKeys.push(property);
@@ -47,39 +37,32 @@ export function WaveChart({ chartData }: any) {
     };
 
     return (
-        <Card className="dark">
-            <CardHeader>
-                <CardTitle>Price history (USD)</CardTitle>
-                <CardDescription>
-                    Showing price for the last 6 months.
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <ChartContainer config={chartConfig}>
-                    <AreaChart
-                        accessibilityLayer
-                        data={chartData}
-                        margin={{
-                            left: 12,
-                            right: 12,
-                        }}
-                    >
-                        <CartesianGrid vertical={true} />
-                        <XAxis
-                            dataKey="date"
-                            tickLine={false}
-                            axisLine={false}
-                            tickMargin={8}
-                            tickFormatter={(value) => value.slice(0, 8)}
-                        />
-                        <ChartTooltip
-                            cursor={false}
-                            content={<ChartTooltipContent indicator="dot" />}
-                        />
-                        {renderAreaComponent()}
-                    </AreaChart>
-                </ChartContainer>
-            </CardContent>
-        </Card>
+        <ChartContainer
+            config={chartConfig}
+            className={`dark ${styles.container}`}
+        >
+            <AreaChart
+                accessibilityLayer
+                data={chartData}
+                margin={{
+                    left: 12,
+                    right: 12,
+                }}
+            >
+                <CartesianGrid vertical={false} />
+                <XAxis
+                    dataKey="date"
+                    tickLine={false}
+                    axisLine={false}
+                    tickMargin={8}
+                    tickFormatter={(value) => value.slice(0, 8)}
+                />
+                <ChartTooltip
+                    cursor={false}
+                    content={<ChartTooltipContent indicator="dot" />}
+                />
+                {renderAreaComponent()}
+            </AreaChart>
+        </ChartContainer>
     );
-}
+};
