@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { useState, useEffect } from "react";
 import { formatAssetHistory } from "@/lib/formatAssetHistory";
 import { AssetId } from "@/types/assetId";
+import "dotenv/config";
 
 export const useFetchAssetsHistoryById = (assetIds: AssetId[]) => {
     const [timestamps, setTimestamps] = useState<{
@@ -30,9 +31,17 @@ export const useFetchAssetsHistoryById = (assetIds: AssetId[]) => {
         if (!timestamps) return null;
 
         const { startTimestamp, endTimestamp } = timestamps;
+
+        const headers = {
+            Authorization:
+                `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+            Accept: "application/json",
+        };
+
         const promises = assetIds.map((assetId) =>
             fetch(
-                `https://api.coincap.io/v2/assets/${assetId}/history?interval=d1&start=${startTimestamp}&end=${endTimestamp}`
+                `https://rest.coincap.io/v3/assets/${assetId}/history?interval=d1&start=${startTimestamp}&end=${endTimestamp}`,
+                { headers }
             ).then((res) => res.json())
         );
 
@@ -62,10 +71,10 @@ export const useFetchAssetsHistoryById = (assetIds: AssetId[]) => {
 
         firstAssetData.forEach((entry: any, i: number) => {
             const date = entry.date;
-            const chartEntry: { date: string; [key: string]: number | string } =
-                {
-                    date,
-                };
+            const chartEntry: { date: string;[key: string]: number | string } =
+            {
+                date,
+            };
 
             assetIds.forEach((assetId, index) => {
                 chartEntry[assetId] = data[index][i]?.price ?? 0;

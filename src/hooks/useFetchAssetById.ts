@@ -4,13 +4,15 @@ import useSWR from "swr";
 import { formatAsset } from "@/lib/formatAsset";
 import Asset from "@/types/asset";
 import { AssetId } from "@/types/assetId";
+import "dotenv/config";
 
 export const useFetchAssetById = (assetId: AssetId) => {
-    const url: string = `https://api.coincap.io/v2/assets/${assetId}/`;
+    const url: string = `https://rest.coincap.io/v3/assets/${assetId}?apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
     const { data, error, isValidating } = useSWR(url, fetcher, {
-        refreshInterval: 5000,
+        refreshInterval: 3600000,
         revalidateOnFocus: false,
     });
 

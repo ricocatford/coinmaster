@@ -4,8 +4,9 @@
 
 .navContainer {
     width: 100vw;
-    margin: auto;
-    padding: 1rem 1.5rem;
+    /* margin: auto; */
+    border-bottom: 1px solid var(--dark-grey);
+    padding: 0.75rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,7 +115,7 @@
 
     .linksContainerActive {
         position: absolute;
-        top: 88px;
+        top: 81px;
         left: 0;
         justify-content: flex-start;
         display: flex;

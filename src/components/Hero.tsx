@@ -12,15 +12,16 @@ export const Hero = (): React.JSX.Element => {
         <>
             <section className={`container ${styles.container}`}>
                 <h1 className={styles.heading}>
-                    Check & track{" "}
+                    Track & Compare{" "}
                     <span className={styles.headingGradient}>
                         Cryptocurrencies
                     </span>
                 </h1>
                 <p className={styles.paragraph}>
-                    In an ever changing market, you have to track for winning.
-                    Coinmaster provides you with the best tools for tracking
-                    cryptocurrencies and assist you with analytics.
+                    Gain a comprehensive view of the crypto landscape. From
+                    detailed coin tables to insightful comparison charts,
+                    CoinMaster equips you with the tools to navigate the market
+                    with confidence.
                 </p>
                 <div className={styles.buttonsContainer}>
                     <Link

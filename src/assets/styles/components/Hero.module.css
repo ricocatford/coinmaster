@@ -20,7 +20,6 @@
 
 .headingGradient {
     text-transform: capitalize;
-    letter-spacing: 0.05rem;
     background: -webkit-linear-gradient(0deg, var(--turquoise), var(--violet));
     background-clip: text;
     -webkit-background-clip: text;
@@ -31,7 +30,9 @@
     max-width: 860px;
     font-size: 1.25rem;
     line-height: 1.625rem;
+    letter-spacing: 0.025rem;
     animation: var(--slide-in-down) 0.75s;
+    margin-bottom: 5rem;
 }
 
 .buttonsContainer {

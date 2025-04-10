@@ -12,6 +12,7 @@ import styles from "@/assets/styles/components/WaveChart.module.css";
 
 export const WaveChart = ({ chartData }: any): React.JSX.Element => {
     const chartConfig = generateChartConfig(chartData);
+    console.log(chartData);
     chartConfig satisfies ChartConfig;
 
     const dataKeys: string[] = [];
