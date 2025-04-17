@@ -5,7 +5,7 @@
 .nav {
     background: var(--black);
     border-bottom: 1px solid var(--subtle-black);
-    box-shadow: 0 0.25rem 0.5rem var(--box-shadow);
+    box-shadow: 0 0.5rem 2rem var(--dark-grey);
 }
 
 .navContainer {
@@ -30,11 +30,13 @@
 .logoTitle {
     text-transform: uppercase;
     font-family: var(--font-josefin);
-    font-size: 1.35rem;
-    letter-spacing: -0.1rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.05rem;
 }
 
 .logoTitleOrange {
+    line-height: 0.1rem;
+
     color: var(--orange);
 }
 
@@ -122,7 +124,7 @@
 
     .linksContainerActive {
         position: absolute;
-        top: 81px;
+        top: 56px;
         left: 0;
         justify-content: flex-start;
         display: flex;
@@ -131,15 +133,15 @@
         width: 100%;
         z-index: 50;
         background: var(--dark-grey);
-        min-height: calc(100vh - 88px);
-        padding: 2rem;
+        min-height: calc(100vh - 56px);
+        padding: 1rem 1.5rem;
         gap: 3rem;
         animation: mobileNav 0.375s;
     }
 
     .linksList {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .ctaLink {

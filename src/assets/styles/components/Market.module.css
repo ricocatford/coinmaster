@@ -21,7 +21,7 @@
 .card {
     color: var(--dark-grey);
     background: linear-gradient(135deg, var(--yellow), var(--orange));
-    border-radius: 1.5rem;
+    border-radius: 0.75rem;
     box-shadow: 0 0.5rem 0.85rem var(--box-shadow);
     padding: 0.75rem 1.25rem;
     display: flex;

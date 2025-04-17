@@ -11,7 +11,7 @@
     --light-grey: hsl(0, 0%, 80%);
     --grey: hsl(0, 0%, 25%);
     --dark-grey: hsl(0, 0%, 17%);
-    --background: hsl(0, 0%, 14%);
+    --background: hsl(0, 0%, 10%);
     --yellow: hsl(46, 100%, 50%);
     --orange: hsl(22, 100%, 50%);
     --turquoise: hsl(166, 100%, 50%);
@@ -20,7 +20,7 @@
     --dark-purple: hsl(266, 17%, 8%);
     --light-green: hsl(147, 100%, 50%);
     --red: hsl(354, 70%, 54%);
-    --box-shadow: hsla(0, 0%, 51%, 0.15);
+    --box-shadow: hsla(0, 0%, 50%, 0.15);
     --max-width: 1360px;
     --fade-in: fadeIn;
     --slide-in-down: slideInDown;
@@ -40,12 +40,7 @@ body {
 
 body {
     color: var(--white);
-    background: var(--subtle-black);
-    /* background: radial-gradient(
-        circle at top left,
-        var(--dark-grey),
-        var(--dark-purple) 700px
-    ); */
+    background: var(--background);
     font-family: var(--font-roboto), sans-serif;
 }
 
@@ -65,10 +60,10 @@ a {
 .container {
     margin: auto;
     max-width: var(--max-width);
-    padding: 2rem 1.5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .container--fluid {
