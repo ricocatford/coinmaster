@@ -2,7 +2,6 @@ import { AssetId } from "./assetId";
 
 export interface fetchedAsset {
     id: AssetId;
-    rank: string;
     symbol: string;
     name: string;
     supply: string;

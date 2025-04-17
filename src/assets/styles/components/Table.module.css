@@ -6,31 +6,44 @@
     color: var(--red);
 }
 
-.trackerIcon {
-    color: var(--yellow);
+.trackerBtn {
+    padding: 0.5rem;
+    border: 1px solid var(--black);
+    border-radius: 0.5rem;
+    line-height: 1rem;
+    width: fit-content;
     cursor: pointer;
 }
 
+.trackerBtn:hover {
+    border: 1px solid var(--subtle-black);
+}
+
+.trackerIcon {
+    width: 16px;
+}
+
 .table {
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     width: 100%;
+    background: var(--black);
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 0.5rem 0.5rem var(--box-shadow);
 }
 
 .tableHead {
     text-align: left;
     color: var(--light-grey);
+    border-bottom: 1px solid var(--subtle-black);
 }
 
 .tableHeading {
-    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
 }
 
 .tableData {
-    padding: 0.75rem 1rem;
-}
-
-.tableRow {
-    border-bottom: 1px solid var(--grey);
+    padding: 0.25rem 1rem;
+    border-bottom: 1px solid var(--subtle-black);
 }

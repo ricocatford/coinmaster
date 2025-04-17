@@ -1,14 +1,12 @@
-import { Market } from "@/components/Market";
+import { Market } from "@/app/market/page";
 import { Hero } from "@/components/Hero";
-import { GlobalStoreProvider } from "@/providers/GlobalStoreProvider";
 import { Features } from "@/components/Features";
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
     return (
-        <GlobalStoreProvider>
+        <>
             <Hero />
             <Features />
-            {/* <Market /> */}
-        </GlobalStoreProvider>
+        </>
     );
 }

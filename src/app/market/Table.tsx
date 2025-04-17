@@ -21,7 +21,6 @@ export const Table = ({ assets }: { assets: Asset[] }): React.JSX.Element => {
                         <td className={styles.tableData}>
                             <AddToTrackerButton id={asset.id} />
                         </td>
-                        <td className={styles.tableData}>{asset.rank}</td>
                         <td className={styles.tableData}>
                             {asset.name} ({asset.symbol})
                         </td>

@@ -6,17 +6,21 @@
 
 :root {
     --black: hsl(0, 0%, 7%);
+    --subtle-black: hsl(0, 0%, 13%);
     --white: hsl(0, 0%, 100%);
     --light-grey: hsl(0, 0%, 80%);
     --grey: hsl(0, 0%, 25%);
     --dark-grey: hsl(0, 0%, 17%);
+    --background: hsl(0, 0%, 14%);
     --yellow: hsl(46, 100%, 50%);
     --orange: hsl(22, 100%, 50%);
     --turquoise: hsl(166, 100%, 50%);
     --violet: hsl(281, 100%, 50%);
     --purple: hsl(256, 100%, 50%);
-    --light-green: hsl(119, 100%, 50%);
-    --red: hsl(11, 100%, 50%);
+    --dark-purple: hsl(266, 17%, 8%);
+    --light-green: hsl(147, 100%, 50%);
+    --red: hsl(354, 70%, 54%);
+    --box-shadow: hsla(0, 0%, 51%, 0.15);
     --max-width: 1360px;
     --fade-in: fadeIn;
     --slide-in-down: slideInDown;
@@ -36,12 +40,12 @@ body {
 
 body {
     color: var(--white);
-    background: var(--black);
-    background: radial-gradient(
+    background: var(--subtle-black);
+    /* background: radial-gradient(
         circle at top left,
         var(--dark-grey),
-        var(--black) 700px
-    );
+        var(--dark-purple) 700px
+    ); */
     font-family: var(--font-roboto), sans-serif;
 }
 
@@ -62,6 +66,9 @@ a {
     margin: auto;
     max-width: var(--max-width);
     padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .container--fluid {
@@ -78,13 +85,17 @@ a {
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
-    padding: 0.75rem 2.5rem;
+    padding: 0.4rem 1.66rem;
     letter-spacing: -0.1rem;
     border: none;
     font-family: var(--font-josefin);
-    font-size: 1rem;
+    font-size: 0.9rem;
     border-radius: 1.5rem;
     transition: all 0.5s ease-in-out;
+}
+
+.btn--big {
+    padding: 0.5rem 2rem;
 }
 
 .btn--primary {

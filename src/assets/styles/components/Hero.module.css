@@ -15,7 +15,7 @@
     text-transform: uppercase;
     letter-spacing: -0.1rem;
     line-height: 5.5rem;
-    animation: var(--fade-in) 1s;
+    animation: var(--fade-in) 0.75s;
 }
 
 .headingGradient {

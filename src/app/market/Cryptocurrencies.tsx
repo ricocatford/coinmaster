@@ -10,10 +10,5 @@ export const Cryptocurrencies = (): React.JSX.Element => {
     if (error) return <p>Failed to fetch assets.</p>;
     if (isLoading) return <p>Loading assets...</p>;
 
-    return (
-        <div className={styles.container}>
-            <h2 className={styles.heading}>Cryptocurrencies</h2>
-            {assets && <Table assets={assets} />}
-        </div>
-    );
+    return <>{assets && <Table assets={assets} />}</>;
 };

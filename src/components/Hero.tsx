@@ -25,7 +25,7 @@ export const Hero = (): React.JSX.Element => {
                 </p>
                 <div className={styles.buttonsContainer}>
                     <Link
-                        href="#market"
+                        href="/market"
                         className={`btn btn--primary ${styles.ctaButton}`}
                     >
                         Get started

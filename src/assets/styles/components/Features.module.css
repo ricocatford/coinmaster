@@ -10,10 +10,28 @@
 
 .paragraph {
     font-size: 1.1rem;
+    max-width: 80%;
 }
 
 .features {
     display: flex;
     flex-direction: row;
     align-items: space-between;
+    gap: 4rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    animation: var(--slide-in-down) 1.75s;
+}
+
+.cardImage {
+    border-radius: 2rem;
+}
+
+.cardHeading {
+    font-size: 1.5rem;
 }

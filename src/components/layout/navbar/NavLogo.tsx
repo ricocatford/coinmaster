@@ -1,6 +1,5 @@
 import styles from "@/assets/styles/components/Navbar.module.css";
 import Image from "next/image";
-import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 
 export const NavLogo = (): React.JSX.Element => {
@@ -11,7 +10,12 @@ export const NavLogo = (): React.JSX.Element => {
                 className={styles.logo}
                 aria-label="Logo, go to Home page"
             >
-                <Image src={logo} height={56} width={56} alt="Logo" />
+                <Image
+                    src="/assets/images/logo.png"
+                    height={32}
+                    width={32}
+                    alt="Logo"
+                />
                 <span className={styles.logoTitle}>
                     Coin
                     <span className={styles.logoTitleOrange}>Master</span>

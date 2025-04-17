@@ -1,20 +1,20 @@
 import styles from "@/assets/styles/components/Features.module.css";
+import features from "@/assets/data/features.json";
+import { FeatureCard } from "./feature-card/FeatureCard";
 
 export const Features = (): React.JSX.Element => {
     return (
-        <section className={`container ${styles.container}`}>
+        <section className={`container ${styles.container}`} id="features">
             <h2 className={styles.heading}>Product Features</h2>
             <p className={styles.paragraph}>
                 CoinMaster offers a suite of tools to analyze and compare
                 cryptocurrencies, helping you make informed decisions.
             </p>
+
             <div className={styles.features}>
-                <div>
-                    <h3>Feature One</h3>
-                </div>
-                <div>
-                    <h3>Feature Two</h3>
-                </div>
+                {features.map((feature) => (
+                    <FeatureCard {...feature} key={feature.id} />
+                ))}
             </div>
         </section>
     );

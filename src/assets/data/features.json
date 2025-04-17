@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "image": "analytics.jpg",
+        "heading": "Detailed coin analytics",
+        "paragraph": "Access comprehensive analytics for all major cryptocurrencies, including real-time prices, market capitalization, trading volume, and historical data."
+    },
+    {
+        "id": 1,
+        "image": "charts.jpg",
+        "heading": "Insightful charts",
+        "paragraph": "Compare the performance of different cryptocurrencies side-by-side using advanced charting tools. Analyze trends, correlations, and potential investment opportunities."
+    }
+]

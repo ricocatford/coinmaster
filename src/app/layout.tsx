@@ -4,6 +4,8 @@ import "@/assets/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Navbar } from "@/components/layout/navbar/Navbar";
+import { Footer } from "@/components/layout/footer/Footer";
+import { GlobalStoreProvider } from "@/providers/GlobalStoreProvider";
 
 config.autoAddCss = false;
 
@@ -34,8 +36,11 @@ export default function RootLayout({
             <body
                 className={`${manrope.variable} ${josefinSans.variable} font-manrope antialiased`}
             >
-                <Navbar />
-                <main>{children}</main>
+                <GlobalStoreProvider>
+                    <Navbar />
+                    <main>{children}</main>
+                    <Footer />
+                </GlobalStoreProvider>
             </body>
         </html>
     );

@@ -7,7 +7,6 @@ import { formatPercentage } from "./formatPercentage";
 export const formatAllAssets = (assets: fetchedAsset[]): Asset[] => (
     Array.isArray(assets) ? assets.map((asset: fetchedAsset) => ({
         id: asset.id,
-        rank: asset.rank,
         name: asset.name,
         symbol: asset.symbol,
         price: formatCurrency(asset.priceUsd),

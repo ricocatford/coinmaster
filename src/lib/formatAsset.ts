@@ -7,7 +7,6 @@ import { formatPercentage } from "./formatPercentage";
 export const formatAsset = (asset: fetchedAsset): Asset => {
     return {
         id: asset.id,
-        rank: asset.rank,
         name: asset.name,
         symbol: asset.symbol,
         price: formatCurrency(asset.priceUsd),
