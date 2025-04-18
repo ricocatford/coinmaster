@@ -1,18 +1,18 @@
 import styles from "@/assets/styles/components/Features.module.css";
 import Image from "next/image";
 
-export type Feature = {
+interface FeatureCardProps {
     id: number;
     image: string;
     heading: string;
     paragraph: string;
-};
+}
 
 export const FeatureCard = ({
     image,
     heading,
     paragraph,
-}: Feature): React.JSX.Element => {
+}: FeatureCardProps): React.JSX.Element => {
     console.log(heading);
     return (
         <div className={styles.card}>

@@ -14,12 +14,15 @@ export const TableBody = ({
                     <td className={styles.tableData}>
                         <AddToTrackerButton id={asset.id} />
                     </td>
-                    <td className={styles.tableData}>
+                    <td
+                        className={`${styles.tableData} ${styles.tableDataLink}`}
+                    >
                         {asset.name} ({asset.symbol})
                     </td>
                     <td className={styles.tableData}>{asset.price}</td>
                     <td className={styles.tableData}>{asset.supply}</td>
                     <td className={styles.tableData}>{asset.marketCap}</td>
+                    <td className={styles.tableData}>{asset.volume24Hr}</td>
                     <td className={styles.tableData}>{asset.volume24Hr}</td>
                     <td
                         className={`${styles.tableData} ${

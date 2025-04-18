@@ -20,7 +20,7 @@
 
 .headingGradient {
     text-transform: capitalize;
-    background: -webkit-linear-gradient(0deg, var(--turquoise), var(--violet));
+    background: -webkit-linear-gradient(0deg, var(--light-blue), var(--violet));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

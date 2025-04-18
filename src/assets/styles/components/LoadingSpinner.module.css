@@ -1,5 +1,6 @@
 .loadingSpinner {
     display: inline-block;
+    align-self: center;
     width: 80px;
     height: 80px;
 }

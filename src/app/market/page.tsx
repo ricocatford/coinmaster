@@ -1,27 +1,40 @@
 "use client";
 
 import styles from "@/assets/styles/components/Market.module.css";
-import { BannerCard } from "../../components/banner-card/BannerCard";
 import { Cryptocurrencies } from "./Cryptocurrencies";
-import { BannerHeading } from "@/components/banner-card/BannerHeading";
-import { BannerParagraph } from "@/components/banner-card/BannerParagraph";
+import { Card } from "@/components/card/Card";
 
 export default function Market(): React.JSX.Element {
     return (
-        <div className="container">
-            <div className={styles.topBanner}>
-                <BannerCard>
-                    <BannerHeading>
-                        Start tracking your favourites!
-                    </BannerHeading>
-                    <BannerParagraph>
-                        Use our tracker for spotting the best next movement on
-                        your trades.
-                    </BannerParagraph>
-                </BannerCard>
-                <div className={styles.whatever}>Whatever</div>
+        <section className="container">
+            <div className="container border-bottom">
+                <h2 className="heading">Market Statistics</h2>
+            </div>
+            <div>
+                <p className="paragraph">
+                    Sponsored: Get all product features by signing up to our
+                    Premium plan. <strong>Register now!</strong>
+                </p>
+            </div>
+            <div className={styles.statistics}>
+                <Card>
+                    <p>Hello</p>
+                    <p>Hello</p>
+                </Card>
+                <Card>
+                    <p>Hello</p>
+                    <p>Hello</p>
+                </Card>
+                <Card>
+                    <p>Hello</p>
+                    <p>Hello</p>
+                </Card>
+                <Card>
+                    <p>Hello</p>
+                    <p>Hello</p>
+                </Card>
             </div>
             <Cryptocurrencies />
-        </div>
+        </section>
     );
 }

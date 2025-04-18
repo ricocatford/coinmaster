@@ -8,11 +8,13 @@ import { AssetId } from "@/types/assetId";
 import { useGlobal } from "@/hooks/global-store/useGlobal";
 import styles from "@/assets/styles/components/Table.module.css";
 
+interface AddToTrackerButtonProps {
+    id: AssetId;
+}
+
 export const AddToTrackerButton = ({
     id,
-}: {
-    id: AssetId;
-}): React.JSX.Element => {
+}: AddToTrackerButtonProps): React.JSX.Element => {
     const { store }: { store: GlobalStore } = useGlobal();
 
     const isAssetTracked = store?.tracker.includes(id);
