@@ -1,7 +1,7 @@
 .card {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex: 1 1 calc(25% - 1rem);
     gap: 1rem;
     background: var(--black);
     box-shadow: 0 0.5rem 1.2rem var(--box-shadow);
@@ -24,7 +24,32 @@
     text-transform: uppercase;
 }
 
+.asset {
+    font-size: 1rem;
+    color: var(--white);
+}
+
 .value {
     font-size: 1.1rem;
     color: var(--white);
+}
+
+.textGreen {
+    color: var(--light-green);
+}
+
+.textRed {
+    color: var(--red);
+}
+
+@media screen and (max-width: 1280px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
 }

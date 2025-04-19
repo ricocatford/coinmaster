@@ -24,7 +24,9 @@ export const TableBody = ({
                     <td className={styles.tableData}>
                         {asset.displayMarketCap}
                     </td>
-                    <td className={styles.tableData}>{asset.volume24Hr}</td>
+                    <td className={styles.tableData}>
+                        {asset.displayVolume24Hr}
+                    </td>
                     <td
                         className={`${styles.tableData} ${
                             asset.changePercent24Hr.startsWith("-")

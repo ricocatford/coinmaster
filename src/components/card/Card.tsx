@@ -34,10 +34,14 @@ export const Card = ({
                     {label}
                     <span> ({info})</span>
                 </h3>
-                <p className={styles.value}>
+                {asset && <span className={styles.asset}>{asset}: </span>}
+                <span
+                    className={`${styles.value} ${
+                        value?.startsWith("+") && styles.textGreen
+                    } ${value?.startsWith("-") && styles.textRed}`}
+                >
                     {value}
-                    {asset && <span> ({asset})</span>}
-                </p>
+                </span>
             </div>
         </div>
     );

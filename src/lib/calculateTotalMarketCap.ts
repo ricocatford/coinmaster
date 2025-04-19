@@ -1,5 +1,5 @@
 import Asset from "@/types/asset";
-import { formatNumber } from "./formatNumber";
+import { formatCurrency } from "./formatCurrency";
 
 export const calculateTotalMarketCap = (assets: Asset[]): string | null => {
     const totalMarketCap: number = assets?.reduce((acc, asset) => {
@@ -9,7 +9,7 @@ export const calculateTotalMarketCap = (assets: Asset[]): string | null => {
         return acc;
     }, 0);
 
-    const marketCap: string = formatNumber(totalMarketCap.toString())
+    const marketCap: string = formatCurrency(totalMarketCap.toString())
 
     return marketCap || null;
 }

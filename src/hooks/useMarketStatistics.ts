@@ -28,7 +28,7 @@ export const useMarketStatistics = (assets: Asset[]): MarketStatistics | undefin
         label: "Top Gainer",
         info: "24h",
         value: "+6.7%",
-        asset: "Bitcoin",
+        asset: "Ethereum",
         icon: "arrowTrendUp"
     }
 
@@ -37,7 +37,7 @@ export const useMarketStatistics = (assets: Asset[]): MarketStatistics | undefin
         label: "Top Loser",
         info: "24h",
         value: "-1.4%",
-        asset: "Bitcoin",
+        asset: "Dogecoin",
         icon: "arrowTrendDown"
     }
 
