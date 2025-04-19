@@ -1,10 +1,44 @@
-import { ReactNode } from "react";
 import styles from "@/assets/styles/components/Card.module.css";
+import {
+    faGlobe,
+    faArrowTrendDown,
+    faArrowTrendUp,
+    IconDefinition,
+    faMoneyBillTrendUp,
+} from "@fortawesome/free-solid-svg-icons";
+import MarketStat from "@/types/marketStat";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface CardProps {
-    children: ReactNode;
-}
+const iconMap: Record<string, IconDefinition> = {
+    globe: faGlobe,
+    arrowTrendUp: faArrowTrendUp,
+    arrowTrendDown: faArrowTrendDown,
+    moneyBillTrendUp: faMoneyBillTrendUp,
+};
 
-export const Card = ({ children }: CardProps): React.JSX.Element => {
-    return <div className={styles.card}>{children}</div>;
+export const Card = ({
+    id,
+    label,
+    info,
+    value,
+    icon,
+    asset,
+}: MarketStat): React.JSX.Element => {
+    return (
+        <div className={styles.card} id={id}>
+            <div>
+                <FontAwesomeIcon icon={iconMap[icon]} className={styles.icon} />
+            </div>
+            <div>
+                <h3 className={styles.label}>
+                    {label}
+                    <span> ({info})</span>
+                </h3>
+                <p className={styles.value}>
+                    {value}
+                    {asset && <span> ({asset})</span>}
+                </p>
+            </div>
+        </div>
+    );
 };
