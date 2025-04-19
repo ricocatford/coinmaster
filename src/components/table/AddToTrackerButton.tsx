@@ -1,8 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { faEyeSlash, faEye } from "@fortawesome/free-regular-svg-icons";
 import { GlobalStore } from "@/stores/GlobalStore";
 import { AssetId } from "@/types/assetId";
 import { useGlobal } from "@/hooks/global-store/useGlobal";

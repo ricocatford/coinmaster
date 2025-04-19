@@ -7,6 +7,8 @@ export default interface Asset {
     price: string;
     supply: string;
     marketCap: string;
+    displayMarketCap: string;
     volume24Hr: string;
+    displayVolume24Hr: string;
     changePercent24Hr: string;
 }

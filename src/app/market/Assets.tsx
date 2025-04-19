@@ -1,17 +1,16 @@
-"use client";
-
 import styles from "@/assets/styles/components/Table.module.css";
 import { Table } from "@/components/table/Table";
-import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import { ContentTopPlaceholder } from "@/components/content-placeholder/ContentTopPlaceholder";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ContentBottomPlaceholder } from "@/components/content-placeholder/ContentBottomPlaceholder";
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
+import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
 
-export const Cryptocurrencies = (): React.JSX.Element => {
-    const { assets, error, isLoading } = useFetchAllAssets();
-
-    if (error) return <p>Failed to fetch assets.</p>;
+export const Assets = ({
+    assets,
+    isLoading,
+    error,
+}: FetchedAssetsResponse): React.JSX.Element => {
     return (
         <div>
             <ContentTopPlaceholder>
@@ -22,6 +21,11 @@ export const Cryptocurrencies = (): React.JSX.Element => {
                     (Showing top 100 assets)
                 </span>
             </ContentTopPlaceholder>
+            {error && (
+                <p className="paragraph">
+                    Failed to fetch assets. Please try again in a few seconds.
+                </p>
+            )}
             {isLoading && (
                 <ContentMiddlePlaceholder>
                     <LoadingSpinner />

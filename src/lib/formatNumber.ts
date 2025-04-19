@@ -1,6 +1,4 @@
 export const formatNumber = (value: string) =>
     new Intl.NumberFormat("en-US", {
-        maximumFractionDigits: 1,
-        notation: "compact",
-        compactDisplay: "short",
+        maximumFractionDigits: 2,
     }).format(parseFloat(value));

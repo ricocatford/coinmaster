@@ -21,8 +21,9 @@ export const TableBody = ({
                     </td>
                     <td className={styles.tableData}>{asset.price}</td>
                     <td className={styles.tableData}>{asset.supply}</td>
-                    <td className={styles.tableData}>{asset.marketCap}</td>
-                    <td className={styles.tableData}>{asset.volume24Hr}</td>
+                    <td className={styles.tableData}>
+                        {asset.displayMarketCap}
+                    </td>
                     <td className={styles.tableData}>{asset.volume24Hr}</td>
                     <td
                         className={`${styles.tableData} ${

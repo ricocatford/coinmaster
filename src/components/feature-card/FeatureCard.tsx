@@ -13,7 +13,6 @@ export const FeatureCard = ({
     heading,
     paragraph,
 }: FeatureCardProps): React.JSX.Element => {
-    console.log(heading);
     return (
         <div className={styles.card}>
             <Image
