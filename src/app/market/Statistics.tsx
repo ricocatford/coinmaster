@@ -1,5 +1,4 @@
 import { Card } from "@/components/card/Card";
-import { useEffect } from "react";
 import styles from "@/assets/styles/components/Market.module.css";
 import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
@@ -10,25 +9,22 @@ export const Statistics = ({
     isLoading,
     error,
 }: FetchedAssetsResponse): React.JSX.Element => {
-    const statistics = useMarketStatistics(assets);
-    useEffect(() => {
-        console.log(statistics, typeof statistics);
-    }, [statistics]);
+    const statistics: MarketStatistics | undefined =
+        useMarketStatistics(assets);
 
     return (
         <div className={styles.statistics}>
-            <Card>
-                <p>Hello world</p>
-            </Card>
-            <Card>
-                <p>Hello world</p>
-            </Card>
-            <Card>
-                <p>Hello world</p>
-            </Card>
-            <Card>
-                <p>Hello world</p>
-            </Card>
+            {statistics?.data &&
+                statistics.data.map((stat) => (
+                    <Card
+                        id={stat.id}
+                        label={stat.label}
+                        info={stat.info}
+                        value={stat.value}
+                        asset={stat.asset}
+                        icon={stat.icon}
+                    />
+                ))}
         </div>
     );
 };
