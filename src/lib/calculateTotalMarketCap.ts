@@ -9,7 +9,7 @@ export const calculateTotalMarketCap = (assets: Asset[]): string | null => {
         return acc;
     }, 0);
 
-    const marketCap: string = formatCurrency(totalMarketCap.toString())
+    const formattedMarketCap: string = formatCurrency(totalMarketCap.toString())
 
-    return marketCap || null;
+    return formattedMarketCap || null;
 }
