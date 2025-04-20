@@ -52,8 +52,12 @@ body {
 }
 
 a {
-    color: var(--white);
+    color: var(--light-blue);
     text-decoration: none;
+}
+
+a:hover {
+    color: var(--white);
 }
 
 /*------------------- COMMON -------------------*/
@@ -79,7 +83,6 @@ a {
 .border-bottom {
     border-bottom: 1px solid var(--subtle-black);
 }
-
 
 /*------------------- BUTTONS -------------------*/
 

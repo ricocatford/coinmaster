@@ -1,6 +1,7 @@
 import styles from "@/assets/styles/components/Table.module.css";
 import { AddToTrackerButton } from "@/components/table/AddToTrackerButton";
 import Asset from "@/types/asset";
+import Link from "next/link";
 
 export const TableBody = ({
     assets,
@@ -14,10 +15,10 @@ export const TableBody = ({
                     <td className={styles.tableData}>
                         <AddToTrackerButton id={asset.id} />
                     </td>
-                    <td
-                        className={`${styles.tableData} ${styles.tableDataLink}`}
-                    >
-                        {asset.name} ({asset.symbol})
+                    <td className={styles.tableData}>
+                        <Link href={`asset/${asset.id}`}>
+                            {asset.name} ({asset.symbol})
+                        </Link>
                     </td>
                     <td className={styles.tableData}>{asset.price}</td>
                     <td className={styles.tableData}>{asset.supply}</td>

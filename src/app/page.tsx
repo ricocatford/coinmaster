@@ -1,4 +1,3 @@
-import { Market } from "@/app/market/page";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 
