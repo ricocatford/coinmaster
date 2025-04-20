@@ -3,6 +3,7 @@
 import styles from "@/assets/styles/components/Navbar.module.css";
 import { NavigationLink } from "@/components/layout/navbar/NavbarClient";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const NavLink = ({
     isToggled,
@@ -13,6 +14,9 @@ export const NavLink = ({
     setIsToggled: (toggle: boolean) => void;
     links: NavigationLink[];
 }): React.JSX.Element => {
+    const pathname = usePathname();
+    const isHome = pathname === "/";
+
     return (
         <div
             className={
@@ -29,14 +33,16 @@ export const NavLink = ({
                         <li className={styles.link}>{link.text}</li>
                     </Link>
                 ))}
+                {isHome && (
+                    <Link
+                        href="/market"
+                        className={`btn btn--primary ${styles.ctaLink}`}
+                        onClick={() => setIsToggled(false)}
+                    >
+                        Get started
+                    </Link>
+                )}
             </ul>
-            <Link
-                href="/market"
-                className={`btn btn--primary ${styles.ctaLink}`}
-                onClick={() => setIsToggled(false)}
-            >
-                Get started
-            </Link>
         </div>
     );
 };

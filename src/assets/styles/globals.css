@@ -52,12 +52,8 @@ body {
 }
 
 a {
-    color: var(--light-blue);
+    color: var(--light-white);
     text-decoration: none;
-}
-
-a:hover {
-    color: var(--white);
 }
 
 /*------------------- COMMON -------------------*/

@@ -16,7 +16,10 @@ export const TableBody = ({
                         <AddToTrackerButton id={asset.id} />
                     </td>
                     <td className={styles.tableData}>
-                        <Link href={`asset/${asset.id}`}>
+                        <Link
+                            href={`asset/${asset.id}`}
+                            className={styles.tableLink}
+                        >
                             {asset.name} ({asset.symbol})
                         </Link>
                     </td>
