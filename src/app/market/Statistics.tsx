@@ -17,6 +17,7 @@ export const Statistics = ({
             {statistics?.data &&
                 statistics.data.map((stat) => (
                     <Card
+                        key={stat.id}
                         id={stat.id}
                         label={stat.label}
                         info={stat.info}
