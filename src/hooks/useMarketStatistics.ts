@@ -1,5 +1,7 @@
 import { calculateTotalMarketCap } from "@/lib/calculateTotalMarketCap";
 import { getMostTradedAsset } from "@/lib/getMostTradedAsset";
+import { getTopGainerAsset } from "@/lib/getTopGainerAsset";
+import { getTopLoserAsset } from "@/lib/getTopLoserAsset";
 import Asset from "@/types/asset";
 import MarketStat from "@/types/marketStat";
 import MarketStatistics from "@/types/marketStatistics";
@@ -9,6 +11,8 @@ export const useMarketStatistics = (assets: Asset[]): MarketStatistics | undefin
 
     const totalMarketCap = calculateTotalMarketCap(assets);
     const mostTradedAsset = getMostTradedAsset(assets);
+    const topGainerAsset = getTopGainerAsset(assets);
+    const topLoserAsset = getTopLoserAsset(assets);
 
     const marketCap: MarketStat = {
         id: "marketCap",
@@ -32,8 +36,9 @@ export const useMarketStatistics = (assets: Asset[]): MarketStatistics | undefin
         id: "topGainer",
         label: "Top Gainer",
         info: "24h",
-        value: "+6.7%",
-        asset: "Ethereum",
+        value: topGainerAsset.value,
+        asset: topGainerAsset.asset,
+        assetId: topGainerAsset.assetId,
         icon: "arrowTrendUp"
     }
 
@@ -41,8 +46,9 @@ export const useMarketStatistics = (assets: Asset[]): MarketStatistics | undefin
         id: "topLoser",
         label: "Top Loser",
         info: "24h",
-        value: "-1.4%",
-        asset: "Dogecoin",
+        value: topLoserAsset.value,
+        asset: topLoserAsset.asset,
+        assetId: topLoserAsset.assetId,
         icon: "arrowTrendDown"
     }
 
