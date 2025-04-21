@@ -5,13 +5,12 @@
 .nav {
     background: var(--black);
     border-bottom: 1px solid var(--subtle-black);
-    box-shadow: 0 0.5rem 2rem var(--dark-grey);
+    box-shadow: 0 0.5rem 2rem var(--box-shadow);
 }
 
 .navContainer {
     max-width: var(--max-width);
     margin: 0 auto;
-    /* margin: auto; */
     padding: 0.25rem 1.5rem;
     display: flex;
     justify-content: space-between;

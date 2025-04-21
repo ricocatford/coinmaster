@@ -16,12 +16,6 @@ export default function Market(): React.JSX.Element {
             <div className="container border-bottom">
                 <h2 className="heading">Market Statistics</h2>
             </div>
-            <div>
-                <p className="paragraph">
-                    Sponsored: Get all product features by signing up to our
-                    Premium plan. <strong>Register now!</strong>
-                </p>
-            </div>
             <Statistics assets={assets} isLoading={isLoading} error={error} />
             <Assets assets={assets} isLoading={isLoading} error={error} />
         </section>
