@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto as Manrope, Josefin_Sans } from "next/font/google";
+import { Roboto, Josefin_Sans } from "next/font/google";
 import "@/assets/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -9,10 +9,10 @@ import { GlobalStoreProvider } from "@/providers/GlobalStoreProvider";
 
 config.autoAddCss = false;
 
-const manrope = Manrope({
+const roboto = Roboto({
     weight: ["400", "700"],
     subsets: ["latin"],
-    variable: "--font-manrope",
+    variable: "--font-roboto",
 });
 
 const josefinSans = Josefin_Sans({
@@ -34,7 +34,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${manrope.variable} ${josefinSans.variable} font-manrope antialiased`}
+                className={`${roboto.variable} ${josefinSans.variable} font-roboto antialiased`}
             >
                 <GlobalStoreProvider>
                     <Navbar />

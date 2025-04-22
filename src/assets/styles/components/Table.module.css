@@ -48,17 +48,24 @@
 }
 
 .tableData {
-    padding: 0.25rem 0.75rem;
+    padding: 0.3725rem 0.75rem;
     border-bottom: 1px solid var(--subtle-black);
     color: var(--light-grey);
 }
 
 .tableLink {
     color: var(--light-blue);
+    width: fit-content;
 }
 
 .tableLink:hover {
     color: var(--white);
+}
+
+.tableDataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .textGreen {

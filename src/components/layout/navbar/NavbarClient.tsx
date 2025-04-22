@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { NavToggleButton } from "./NavToggleButton";
-import { NavLink } from "./NavLink";
+import { NavLinks } from "./NavLinks";
 
 export type NavigationLink = {
     id: number;
@@ -37,7 +37,7 @@ export const NavbarClient = ({
                 isToggled={isToggled}
                 setIsToggled={setIsToggled}
             />
-            <NavLink
+            <NavLinks
                 isToggled={isToggled}
                 setIsToggled={setIsToggled}
                 links={links}

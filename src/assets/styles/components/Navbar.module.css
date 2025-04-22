@@ -34,8 +34,6 @@
 }
 
 .logoTitleOrange {
-    line-height: 0.1rem;
-
     color: var(--orange);
 }
 
@@ -56,7 +54,7 @@
 .link {
     padding: 0.5rem 0;
     transition: all ease-in-out 0.5s;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
 .link:hover,

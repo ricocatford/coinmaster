@@ -5,7 +5,7 @@ import { NavigationLink } from "@/components/layout/navbar/NavbarClient";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export const NavLink = ({
+export const NavLinks = ({
     isToggled,
     setIsToggled,
     links,
@@ -33,16 +33,16 @@ export const NavLink = ({
                         <li className={styles.link}>{link.text}</li>
                     </Link>
                 ))}
-                {isHome && (
-                    <Link
-                        href="/market"
-                        className={`btn btn--primary ${styles.ctaLink}`}
-                        onClick={() => setIsToggled(false)}
-                    >
-                        Get started
-                    </Link>
-                )}
             </ul>
+            {isHome && (
+                <Link
+                    href="/market"
+                    className={`btn btn--primary ${styles.ctaLink}`}
+                    onClick={() => setIsToggled(false)}
+                >
+                    Get started
+                </Link>
+            )}
         </div>
     );
 };

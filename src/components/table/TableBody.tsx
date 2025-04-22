@@ -16,20 +16,35 @@ export const TableBody = ({
                         <AddToTrackerButton id={asset.id} />
                     </td>
                     <td className={styles.tableData}>
-                        <Link
-                            href={`asset/${asset.id}`}
-                            className={styles.tableLink}
-                        >
-                            {asset.name} ({asset.symbol})
-                        </Link>
-                    </td>
-                    <td className={styles.tableData}>{asset.price}</td>
-                    <td className={styles.tableData}>{asset.supply}</td>
-                    <td className={styles.tableData}>
-                        {asset.displayMarketCap}
+                        <div className={styles.tableDataContainer}>
+                            <Link
+                                href={`asset/${asset.id}`}
+                                className={styles.tableLink}
+                            >
+                                {asset.name} ({asset.symbol})
+                            </Link>
+                        </div>
                     </td>
                     <td className={styles.tableData}>
-                        {asset.displayVolume24Hr}
+                        <div className={styles.tableDataContainer}>
+                            <p>{asset.price}</p>
+                            <p>{asset.price}</p>
+                        </div>
+                    </td>
+                    <td className={styles.tableData}>
+                        <div className={styles.tableDataContainer}>
+                            <p>{asset.supply}</p>
+                        </div>
+                    </td>
+                    <td className={styles.tableData}>
+                        <div className={styles.tableDataContainer}>
+                            <p>{asset.displayMarketCap}</p>
+                        </div>
+                    </td>
+                    <td className={styles.tableData}>
+                        <div className={styles.tableDataContainer}>
+                            <p>{asset.displayVolume24Hr}</p>
+                        </div>
                     </td>
                     <td
                         className={`${styles.tableData} ${
@@ -38,7 +53,9 @@ export const TableBody = ({
                                 : styles.textGreen
                         }`}
                     >
-                        {asset.changePercent24Hr}%
+                        <div className={styles.tableDataContainer}>
+                            <p>{asset.changePercent24Hr}%</p>
+                        </div>
                     </td>
                 </tr>
             ))}
