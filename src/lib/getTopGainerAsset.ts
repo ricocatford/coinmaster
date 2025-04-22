@@ -12,7 +12,7 @@ export const getTopGainerAsset = (assets: Asset[]): AssetStatsResponse => {
     );
 
     return {
-        value: `+${formattedPercentage}%`,
+        value: `${formattedPercentage}%`,
         asset: topGainerAsset?.name,
         assetId: topGainerAsset?.id
     }
