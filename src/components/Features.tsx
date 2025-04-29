@@ -4,7 +4,7 @@ import { FeatureCard } from "./feature-card/FeatureCard";
 
 export const Features = (): React.JSX.Element => {
     return (
-        <section className={`container ${styles.container}`} id="features">
+        <section className="container" id="features">
             <h2 className={styles.heading}>Product Features</h2>
             <p className={styles.paragraph}>
                 CoinMaster offers a suite of tools to analyze and compare

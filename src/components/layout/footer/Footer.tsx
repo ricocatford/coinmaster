@@ -9,7 +9,7 @@ import { FooterLinks } from "./FooterLinks";
 export const Footer = (): React.JSX.Element => {
     return (
         <footer className={styles.footer}>
-            <div className={styles.footerContainer}>
+            <div className="container">
                 <FooterLinks links={footerLinks} />
                 <div className={styles.creditsContainer}>
                     <span className={styles.credits}>

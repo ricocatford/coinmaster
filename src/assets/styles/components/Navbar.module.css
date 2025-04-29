@@ -153,9 +153,7 @@
 /*------------------- MEDIA QUERIES -------------------*/
 
 @media screen and (max-width: 576px) {
-    .linksList {
-        width: 100%;
-    }
+    .linksList,
     .ctaLink {
         width: 100%;
     }
