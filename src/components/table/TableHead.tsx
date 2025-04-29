@@ -10,7 +10,12 @@ export const TableHead = ({
         <thead className={styles.tableHead}>
             <tr className={styles.tableRow}>
                 {headings.map((heading: TableHeadings) => (
-                    <th className={styles.tableHeading} key={heading.id}>
+                    <th
+                        className={`${styles.tableHeading} ${
+                            heading.isPriority ? styles.priorityDataDisplay : ""
+                        }`}
+                        key={heading.id}
+                    >
                         {heading.text}
                     </th>
                 ))}

@@ -75,3 +75,14 @@
 .textRed {
     color: var(--red);
 }
+
+@media screen and (max-width: 576px) {
+    .tableData,
+    .tableHeading {
+        display: none;
+    }
+
+    .priorityDataDisplay {
+        display: table-cell;
+    }
+}

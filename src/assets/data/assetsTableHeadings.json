@@ -1,15 +1,18 @@
 [
     {
         "id": 0,
-        "text": null
+        "text": null,
+        "isPriority": true
     },
     {
         "id": 2,
-        "text": "Name"
+        "text": "Name",
+        "isPriority": true
     },
     {
         "id": 3,
-        "text": "Price"
+        "text": "Price",
+        "isPriority": true
     },
     {
         "id": 4,
