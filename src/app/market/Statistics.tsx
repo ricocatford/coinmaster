@@ -1,8 +1,9 @@
-import { Card } from "@/components/card/Card";
-import styles from "@/assets/styles/components/Market.module.css";
+import { StatisticCard } from "@/components/cards/StatisticCard";
 import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import MarketStatistics from "@/types/marketStatistics";
+import styles from "@/assets/styles/components/Market.module.css";
+import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlaceholder";
 
 export const Statistics = ({
     assets,
@@ -16,7 +17,7 @@ export const Statistics = ({
         <div className={styles.statistics}>
             {statistics?.data &&
                 statistics.data.map((stat) => (
-                    <Card
+                    <StatisticCard
                         key={stat.id}
                         id={stat.id}
                         label={stat.label}

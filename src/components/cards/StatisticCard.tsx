@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Card.module.css";
+import styles from "@/assets/styles/components/Cards.module.css";
 import {
     faGlobe,
     faArrowTrendDown,
@@ -16,7 +16,7 @@ const iconMap: Record<string, IconDefinition> = {
     moneyBillTrendUp: faMoneyBillTrendUp,
 };
 
-export const Card = ({
+export const StatisticCard = ({
     id,
     label,
     info,
@@ -24,8 +24,15 @@ export const Card = ({
     icon,
     asset,
 }: MarketStat): React.JSX.Element => {
+    const changeStyle =
+        typeof value === "string" && !value.startsWith("$")
+            ? value.startsWith("-")
+                ? styles.textRed
+                : styles.textGreen
+            : "";
+
     return (
-        <div className={styles.card} id={id}>
+        <div className={styles.statisticCard} id={id}>
             <div>
                 <FontAwesomeIcon icon={iconMap[icon]} className={styles.icon} />
             </div>
@@ -35,11 +42,7 @@ export const Card = ({
                     <span> ({info})</span>
                 </h3>
                 {asset && <span className={styles.asset}>{asset}: </span>}
-                <span
-                    className={`${styles.value} ${
-                        value?.startsWith("+") && styles.textGreen
-                    } ${value?.startsWith("-") && styles.textRed}`}
-                >
+                <span className={`${styles.value} ${changeStyle}`}>
                     {value}
                 </span>
             </div>

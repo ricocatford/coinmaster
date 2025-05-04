@@ -1,8 +1,6 @@
 "use client";
 
-import styles from "@/assets/styles/components/Market.module.css";
-import { Assets } from "./Assets";
-import { Card } from "@/components/card/Card";
+import { AssetsTable } from "./AssetsTable";
 import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
 import { Statistics } from "./Statistics";
@@ -12,12 +10,12 @@ export default function Market(): React.JSX.Element {
         useFetchAllAssets();
 
     return (
-        <section className="container">
+        <section className="container full-height">
             <div className="container border-bottom">
-                <h2 className="heading">Market Statistics</h2>
+                <h1 className="heading">Market Statistics</h1>
             </div>
             <Statistics assets={assets} isLoading={isLoading} error={error} />
-            <Assets assets={assets} isLoading={isLoading} error={error} />
+            <AssetsTable assets={assets} isLoading={isLoading} error={error} />
         </section>
     );
 }

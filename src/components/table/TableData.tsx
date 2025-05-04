@@ -1,4 +1,3 @@
-// TableData.tsx
 import styles from "@/assets/styles/components/Table.module.css";
 import Link from "next/link";
 

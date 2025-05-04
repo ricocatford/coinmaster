@@ -1,19 +1,19 @@
-// TableBody.tsx
 import { TableData } from "./TableData";
-import { AddToTrackerButton } from "@/components/table/AddToTrackerButton";
+import { AddToTrackerButton } from "@/components/buttons/AddToTrackerButton";
 import styles from "@/assets/styles/components/Table.module.css";
 import Asset from "@/types/asset";
 
 const columnsToRender = [
     { key: "name", isLink: true, isPriority: true },
-    { key: "price", isPriority: true },
-    { key: "supply" },
-    { key: "displayMarketCap" },
-    { key: "displayVolume24Hr" },
-    { key: "changePercent24Hr", isChange: true },
+    { key: "priceShort", isPriority: true },
+    { key: "supplyShort" },
+    { key: "marketCapShort" },
+    { key: "volume24HrShort" },
+    { key: "changePercent24HrFormatted", isChange: true },
 ];
 
 export const TableBody = ({ assets }: { assets: Asset[] }) => {
+    console.log(assets);
     return (
         <tbody>
             {assets.map((asset) => (

@@ -6,7 +6,7 @@ import { ContentBottomPlaceholder } from "@/components/content-placeholder/Conte
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
 import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
 
-export const Assets = ({
+export const AssetsTable = ({
     assets,
     isLoading,
     error,

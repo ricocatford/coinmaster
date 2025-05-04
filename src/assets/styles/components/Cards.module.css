@@ -1,17 +1,16 @@
-.card {
+.statisticCard {
     display: flex;
     flex-direction: row;
     flex: 1 1 calc(25% - 1rem);
     gap: 1rem;
+    padding: 0.9rem;
     background: var(--black);
     box-shadow: 0 0.5rem 1.2rem var(--box-shadow);
-    padding: 0.9rem;
     border: 1px solid var(--subtle-black);
     border-radius: 0.75rem;
-    color: var(--light-grey);
 }
 
-.card div {
+.statisticCard div {
     align-self: center;
 }
 
@@ -43,13 +42,13 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .card {
+    .statisticCard {
         flex: 1 1 calc(50% - 1rem);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .card {
+    .statisticCard {
         flex: 1 1 100%;
     }
 }

@@ -1,6 +1,6 @@
 import styles from "@/assets/styles/components/Features.module.css";
 import features from "@/assets/data/features.json";
-import { FeatureCard } from "./feature-card/FeatureCard";
+import { FeatureCard } from "./cards/FeatureCard";
 
 export const Features = (): React.JSX.Element => {
     return (

@@ -59,12 +59,16 @@ a {
 /*------------------- COMMON -------------------*/
 
 .container {
-    margin: auto;
+    margin: 0 auto;
     max-width: var(--max-width);
     padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.full-height {
+    min-height: calc(100vh - 56px);
 }
 
 .heading {
@@ -86,12 +90,11 @@ a {
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
-    padding: 0.4rem 1.66rem;
-    letter-spacing: -0.1rem;
+    padding: 0.5rem 2rem;
+    letter-spacing: -0.05rem;
     border: none;
     font-family: var(--font-josefin);
-    font-size: 0.9rem;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     transition: all 0.5s ease-in-out;
 }
 

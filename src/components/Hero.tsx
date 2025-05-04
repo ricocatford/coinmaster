@@ -10,7 +10,7 @@ export const Hero = (): React.JSX.Element => {
 
     return (
         <>
-            <section className={`container ${styles.container}`}>
+            <section className={`container full-height ${styles.container}`}>
                 <h1 className={styles.heading}>
                     Track & Compare{" "}
                     <span className={styles.headingGradient}>
