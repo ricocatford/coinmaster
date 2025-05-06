@@ -6,6 +6,7 @@ export const AssetDetails = ({
     isLoading,
     error,
 }: FetchedAssetResponse): React.JSX.Element => {
+    console.log(asset);
     return (
         <div>
             {error && (
@@ -18,15 +19,35 @@ export const AssetDetails = ({
                 <>
                     <div>
                         <div>
-                            {asset.price} {asset.changePercent24Hr}
+                            {asset.priceFormatted} ({asset.priceShort}){" "}
+                            {asset.changePercent24HrFormatted}%
                         </div>
                         <hr />
-                        <div>{asset.displayMarketCap}</div>
+                        <div>
+                            {asset.marketCapFormatted} ({asset.marketCapShort})
+                        </div>
                     </div>
                     <div>
-                        <div>{asset.displayVolume24Hr}</div>
+                        <div>
+                            Supply: {asset.supplyFormatted} ({asset.supplyShort}
+                            )
+                        </div>
                         <hr />
-                        <div>VWAP24hr</div>
+                        <div>
+                            Max Supply: {asset.maxSupplyFormatted} (
+                            {asset.maxSupplyShort})
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            {asset.volume24HrFormatted} ({asset.volume24HrShort}
+                            )
+                        </div>
+                        <hr />
+                        <div>
+                            {asset.vwap24HrFormatted} ({asset.vwap24HrFormatted}
+                            )
+                        </div>
                     </div>
                 </>
             )}

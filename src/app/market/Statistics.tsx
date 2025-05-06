@@ -3,15 +3,13 @@ import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import MarketStatistics from "@/types/marketStatistics";
 import styles from "@/assets/styles/components/Market.module.css";
-import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlaceholder";
 
 export const Statistics = ({
     assets,
     isLoading,
     error,
 }: FetchedAssetsResponse): React.JSX.Element => {
-    const statistics: MarketStatistics | undefined =
-        useMarketStatistics(assets);
+    const statistics: MarketStatistics = useMarketStatistics(assets ?? []);
 
     return (
         <div className={styles.statistics}>
