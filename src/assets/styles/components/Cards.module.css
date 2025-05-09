@@ -62,4 +62,12 @@
     .detailCard {
         flex: 1 1 100%;
     }
+
+    .detailCard {
+        border-bottom: 1px solid var(--subtle-black);
+    }
+
+    .detailCard:last-of-type {
+        border: none;
+    }
 }
