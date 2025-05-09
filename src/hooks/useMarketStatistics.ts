@@ -3,16 +3,15 @@ import { getMostTradedAsset } from "@/lib/getMostTradedAsset";
 import { getTopGainerAsset } from "@/lib/getTopGainerAsset";
 import { getTopLoserAsset } from "@/lib/getTopLoserAsset";
 import Asset from "@/types/asset";
-import MarketStat from "@/types/marketStat";
-import MarketStatistics from "@/types/marketStatistics";
+import MarketStatistic from "@/types/marketStatistic";
 
-export const useMarketStatistics = (assets: Asset[]): MarketStatistics => {
+export const useMarketStatistics = (assets: Asset[]): MarketStatistic[] => {
     const totalMarketCap = calculateTotalMarketCap(assets);
     const mostTradedAsset = getMostTradedAsset(assets);
     const topGainerAsset = getTopGainerAsset(assets);
     const topLoserAsset = getTopLoserAsset(assets);
 
-    const marketCap: MarketStat = {
+    const marketCap: MarketStatistic = {
         id: "marketCap",
         label: "Market Cap",
         info: "Total",
@@ -20,35 +19,35 @@ export const useMarketStatistics = (assets: Asset[]): MarketStatistics => {
         icon: "globe"
     }
 
-    const mostTraded: MarketStat = {
+    const mostTraded: MarketStatistic = {
         id: "mostTraded",
         label: "Most Traded",
-        info: "24h",
+        info: "(24h)",
         value: mostTradedAsset.value,
         asset: mostTradedAsset.asset,
         assetId: mostTradedAsset.assetId,
         icon: "moneyBillTrendUp"
     }
 
-    const topGainer: MarketStat = {
+    const topGainer: MarketStatistic = {
         id: "topGainer",
         label: "Top Gainer",
-        info: "24h",
+        info: "(24h)",
         value: topGainerAsset.value,
         asset: topGainerAsset.asset,
         assetId: topGainerAsset.assetId,
         icon: "arrowTrendUp"
     }
 
-    const topLoser: MarketStat = {
+    const topLoser: MarketStatistic = {
         id: "topLoser",
         label: "Top Loser",
-        info: "24h",
+        info: "(24h)",
         value: topLoserAsset.value,
         asset: topLoserAsset.asset,
         assetId: topLoserAsset.assetId,
         icon: "arrowTrendDown"
     }
 
-    return { data: [marketCap, mostTraded, topGainer, topLoser] };
+    return [marketCap, mostTraded, topGainer, topLoser];
 };

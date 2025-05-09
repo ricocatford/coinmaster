@@ -1,16 +1,25 @@
-.statisticCard {
+.statisticCard,
+.detailCard {
     display: flex;
     flex-direction: row;
-    flex: 1 1 calc(25% - 1rem);
     gap: 1rem;
     padding: 0.9rem;
+}
+
+.statisticCard {
+    flex: 1 1 calc(25% - 1rem);
     background: var(--black);
     box-shadow: 0 0.5rem 1.2rem var(--box-shadow);
     border: 1px solid var(--subtle-black);
     border-radius: 0.75rem;
 }
 
-.statisticCard div {
+.detailCard {
+    flex: 1 1 calc(33.3% - 1rem);
+}
+
+.statisticCard,
+.detailCard div {
     align-self: center;
 }
 
@@ -42,13 +51,15 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .statisticCard {
+    .statisticCard,
+    .detailCard {
         flex: 1 1 calc(50% - 1rem);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .statisticCard {
+    .statisticCard,
+    .detailCard {
         flex: 1 1 100%;
     }
 }

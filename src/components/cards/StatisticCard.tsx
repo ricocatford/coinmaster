@@ -1,12 +1,12 @@
 import styles from "@/assets/styles/components/Cards.module.css";
+import MarketStatistic from "@/types/marketStatistic";
 import {
+    IconDefinition,
     faGlobe,
     faArrowTrendDown,
     faArrowTrendUp,
-    IconDefinition,
     faMoneyBillTrendUp,
 } from "@fortawesome/free-solid-svg-icons";
-import MarketStat from "@/types/marketStat";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const iconMap: Record<string, IconDefinition> = {
@@ -23,7 +23,7 @@ export const StatisticCard = ({
     value,
     icon,
     asset,
-}: MarketStat): React.JSX.Element => {
+}: MarketStatistic): React.JSX.Element => {
     const changeStyle =
         typeof value === "string" && !value.startsWith("$")
             ? value.startsWith("-")
@@ -39,7 +39,7 @@ export const StatisticCard = ({
             <div>
                 <h3 className={styles.label}>
                     {label}
-                    <span> ({info})</span>
+                    <span> {info}</span>
                 </h3>
                 {asset && <span className={styles.asset}>{asset}: </span>}
                 <span className={`${styles.value} ${changeStyle}`}>
