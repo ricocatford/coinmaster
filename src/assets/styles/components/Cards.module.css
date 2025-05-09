@@ -18,7 +18,7 @@
     flex: 1 1 calc(33.3% - 1rem);
 }
 
-.statisticCard,
+.statisticCard div,
 .detailCard div {
     align-self: center;
 }
