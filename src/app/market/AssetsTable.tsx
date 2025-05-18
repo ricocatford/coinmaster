@@ -14,9 +14,7 @@ export const AssetsTable = ({
     return (
         <div>
             <ContentTopPlaceholder>
-                <span className={styles.tableTopHeading}>
-                    Latest market prices
-                </span>
+                <h2 className={styles.tableTopHeading}>Latest market prices</h2>
                 <span className={styles.tableTopInfo}>
                     (Showing top 100 assets)
                 </span>

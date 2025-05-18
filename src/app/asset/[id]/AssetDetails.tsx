@@ -10,35 +10,47 @@ export const AssetDetails = ({
     isLoading,
     error,
 }: FetchedAssetResponse): React.JSX.Element => {
-    if (!asset) {
-        return (
-            <p className="paragraph">
-                Failed to load asset. Please try again in a few seconds.
-            </p>
-        );
-    }
     const details: AssetDetail[] = useAssetDetails(asset);
 
-    return (
-        <div className={styles.details}>
-            {error && (
+    if (isLoading) {
+        return (
+            <div className={styles.details}>
+                <LoadingSpinner />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={styles.details}>
                 <p className="paragraph">
                     Failed to fetch asset. Please try again in a few seconds.
                 </p>
-            )}
-            {isLoading && <LoadingSpinner />}
-            {details &&
-                details.map((detail) => (
-                    <DetailCard
-                        key={detail.id}
-                        id={detail.id}
-                        label={detail.label}
-                        info={detail.info}
-                        value={detail.value}
-                        valueShort={detail.valueShort}
-                        icon={detail.icon}
-                    />
-                ))}
+            </div>
+        );
+    }
+
+    if (!asset || !details || details.length === 0) {
+        return (
+            <div className={styles.details}>
+                <p className="paragraph">No asset details available.</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className={styles.details}>
+            {details.map((detail) => (
+                <DetailCard
+                    key={detail.id}
+                    id={detail.id}
+                    label={detail.label}
+                    info={detail.info}
+                    value={detail.value}
+                    valueShort={detail.valueShort}
+                    icon={detail.icon}
+                />
+            ))}
         </div>
     );
 };

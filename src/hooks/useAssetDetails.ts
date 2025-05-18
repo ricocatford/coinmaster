@@ -1,7 +1,9 @@
 import Asset from "@/types/asset";
 import AssetDetail from "@/types/assetDetail";
 
-export const useAssetDetails = (asset: Asset): AssetDetail[] => {
+export const useAssetDetails = (asset?: Asset): AssetDetail[] => {
+    if (!asset) return [];
+
     const price: AssetDetail = {
         id: "price",
         label: "Price",

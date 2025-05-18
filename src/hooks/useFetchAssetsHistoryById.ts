@@ -19,6 +19,7 @@ export const useFetchAssetsHistoryById = (assetIds: AssetId[]) => {
             const startTimestamp: number =
                 endTimestamp - 8.64 * (10 ** 7 * 180);
             setFnExecuted(true);
+            console.log("startTimestamp", startTimestamp, "endTimestamp", endTimestamp)
             setTimestamps({ startTimestamp, endTimestamp });
         }
     };

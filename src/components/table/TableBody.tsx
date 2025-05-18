@@ -13,7 +13,6 @@ const columnsToRender = [
 ];
 
 export const TableBody = ({ assets }: { assets: Asset[] }) => {
-    console.log(assets);
     return (
         <tbody>
             {assets.map((asset) => (

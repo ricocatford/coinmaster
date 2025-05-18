@@ -6,9 +6,15 @@ import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlac
 import styles from "@/assets/styles/components/Asset.module.css";
 import { AssetDetails } from "./AssetDetails";
 import FetchedAssetResponse from "@/types/fetchedAssetResponse";
-
+import LineChartX from "@/components/charts/LineChart";
+import { useFetchAssetHistoryById } from "@/hooks/useFetchAssetHistoryById";
+import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 export default function Asset({ params }: { params: { id: string } }) {
-    const { asset, error, isLoading }: FetchedAssetResponse = useFetchAssetById(params.id);
+    const { asset, error, isLoading }: FetchedAssetResponse = useFetchAssetById(
+        params.id
+    );
+
+    const { history } = useFetchAssetHistoryById(params.id);
 
     return (
         <section className="container full-height">
@@ -20,12 +26,18 @@ export default function Asset({ params }: { params: { id: string } }) {
             </div>
             <div>
                 <ContentPlaceholder>
+                    {isLoading && <LoadingSpinner />}
                     <AssetDetails
                         asset={asset}
                         isLoading={isLoading}
                         error={error}
                     />
-                    
+                </ContentPlaceholder>
+            </div>
+            <div>
+                <ContentPlaceholder>
+                    <h2 className="heading">Price history</h2>
+                    {history && <LineChartX data={history} />}
                 </ContentPlaceholder>
             </div>
         </section>

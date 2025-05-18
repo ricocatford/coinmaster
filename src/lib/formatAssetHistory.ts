@@ -1,11 +1,15 @@
-import { AssetId } from "@/types/assetId"
 import { FetchedAssetHistory } from "@/types/fetchedAssetHistory"
 import { formatDateTime } from "./formatDateTime"
+import { formatCurrency } from "./formatCurrency";
+import { formatCurrencyShort } from "./formatCurrencyShort";
 
-export const formatAssetHistory = (assetId: AssetId, assetHistory: FetchedAssetHistory[]) => (
-    assetHistory.map((element: FetchedAssetHistory) => ({
-        id: assetId,
-        price: parseFloat(parseFloat(element.priceUsd).toFixed(2)),
-        date: formatDateTime(element.date)
-    }))
-);
+export const formatAssetHistory = (assetHistory: FetchedAssetHistory[]) => {
+    const history = assetHistory.map((entry: FetchedAssetHistory) => ({
+        priceValue: Math.round(parseFloat(entry.priceUsd) * 100) / 100,
+        price: formatCurrency(entry.priceUsd),
+        priceShort: formatCurrencyShort(entry.priceUsd),
+        date: formatDateTime(entry.date)
+    }));
+
+    return history;
+};

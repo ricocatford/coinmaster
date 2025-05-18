@@ -5,7 +5,9 @@ import { getTopLoserAsset } from "@/lib/getTopLoserAsset";
 import Asset from "@/types/asset";
 import MarketStatistic from "@/types/marketStatistic";
 
-export const useMarketStatistics = (assets: Asset[]): MarketStatistic[] => {
+export const useMarketStatistics = (assets?: Asset[]): MarketStatistic[] => {
+    if (!assets) return [];
+
     const totalMarketCap = calculateTotalMarketCap(assets);
     const mostTradedAsset = getMostTradedAsset(assets);
     const topGainerAsset = getTopGainerAsset(assets);

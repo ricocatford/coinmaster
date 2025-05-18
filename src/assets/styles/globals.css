@@ -129,6 +129,12 @@ a {
     background-position: right center;
 }
 
+@media screen and (max-width: 576px) {
+    .heading {
+        font-size: 1.2rem;
+    }
+}
+
 /*------------------- ANIMATIONS -------------------*/
 
 @keyframes fadeIn {

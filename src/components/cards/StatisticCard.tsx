@@ -8,12 +8,23 @@ import {
     faMoneyBillTrendUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LoadingSpinner } from "../loading-spinner/LoadingSpinner";
 
 const iconMap: Record<string, IconDefinition> = {
     globe: faGlobe,
     arrowTrendUp: faArrowTrendUp,
     arrowTrendDown: faArrowTrendDown,
     moneyBillTrendUp: faMoneyBillTrendUp,
+};
+
+type StatisticCardProps = {
+    id: string;
+    label: string;
+    info: string;
+    value: string | null;
+    icon: string;
+    asset?: string;
+    isLoading: boolean;
 };
 
 export const StatisticCard = ({
@@ -23,7 +34,8 @@ export const StatisticCard = ({
     value,
     icon,
     asset,
-}: MarketStatistic): React.JSX.Element => {
+    isLoading,
+}: StatisticCardProps): React.JSX.Element => {
     const changeStyle =
         typeof value === "string" && !value.startsWith("$")
             ? value.startsWith("-")
@@ -33,19 +45,30 @@ export const StatisticCard = ({
 
     return (
         <div className={styles.statisticCard} id={id}>
-            <div>
-                <FontAwesomeIcon icon={iconMap[icon]} className={styles.icon} />
-            </div>
-            <div>
-                <h3 className={styles.label}>
-                    {label}
-                    <span> {info}</span>
-                </h3>
-                {asset && <span className={styles.asset}>{asset}: </span>}
-                <span className={`${styles.value} ${changeStyle}`}>
-                    {value}
-                </span>
-            </div>
+            {isLoading ? (
+                <LoadingSpinner />
+            ) : (
+                <>
+                    <div>
+                        <FontAwesomeIcon
+                            icon={iconMap[icon]}
+                            className={styles.icon}
+                        />
+                    </div>
+                    <div>
+                        <h3 className={styles.label}>
+                            {label}
+                            <span> {info}</span>
+                        </h3>
+                        {asset && (
+                            <span className={styles.asset}>{asset}: </span>
+                        )}
+                        <span className={`${styles.value} ${changeStyle}`}>
+                            {value}
+                        </span>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
