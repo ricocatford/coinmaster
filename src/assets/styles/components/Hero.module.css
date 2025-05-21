@@ -76,11 +76,7 @@
     background: linear-gradient(70deg, var(--black), var(--black));
     position: absolute;
     top: 10px;
-    display: flex;
-    justify-self: flex-start;
-    align-items: center;
     min-width: fit-content;
-    gap: 0.5rem;
     font-size: 0.85rem;
     border-radius: 1rem;
     border: 1px solid var(--grey);
@@ -95,10 +91,13 @@
 }
 
 .announcementContent {
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: visible;
     width: 100%;
     padding: 0.35rem 1.25rem;
+    gap: 0.5rem;
 }
 
 .gradientLineOne,

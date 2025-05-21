@@ -5,19 +5,14 @@ import Link from "next/link";
 import { GlobalStore } from "@/stores/GlobalStore";
 import { useGlobal } from "@/hooks/global-store/useGlobal";
 import { Announcement } from "./Announcement";
+import { LightRay } from "./LightRay";
 
 export const Hero = (): React.JSX.Element => {
     const { store }: { store: GlobalStore } = useGlobal();
 
     return (
         <>
-            <div className={styles.rayContainer}>
-                <div className={`${styles.lightRay} ${styles.rayOne}`}></div>
-                <div className={`${styles.lightRay} ${styles.rayTwo}`}></div>
-                <div className={`${styles.lightRay} ${styles.rayThree}`}></div>
-                <div className={`${styles.lightRay} ${styles.rayFour}`}></div>
-                <div className={`${styles.lightRay} ${styles.rayFive}`}></div>
-            </div>
+            <LightRay />
             <section className={`container full-height ${styles.container}`}>
                 <Announcement />
                 <h1 className={styles.heading}>
