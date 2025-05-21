@@ -6,6 +6,7 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
+import { CustomTooltip } from "./CustomTooltip";
 
 type DataPoint = {
     priceValue: number;
@@ -18,21 +19,21 @@ type Props = {
     data: DataPoint[];
 };
 
-export default function LineChartX({ data }: Props) {
+export const HistoryLineChart = ({ data }: Props) => {
     return (
         <ResponsiveContainer width="100%" height={400}>
             <LineChart data={data}>
                 <XAxis
                     dataKey="date"
                     stroke="#8884d8"
-                    tick={{ fill: "#8884d8", fontSize: 10 }}
+                    tick={{ fill: "#ccc", fontSize: 10 }}
                     tickLine={false}
                     axisLine={false}
                 />
                 <YAxis
                     domain={["dataMin", "dataMax"]}
                     stroke="#82ca9d"
-                    tick={{ fill: "#82ca9d", fontSize: 10 }}
+                    tick={{ fill: "#ccc", fontSize: 10 }}
                     tickLine={false}
                     axisLine={false}
                 />
@@ -41,21 +42,11 @@ export default function LineChartX({ data }: Props) {
                     dataKey="priceValue"
                     stroke="#fff"
                     strokeWidth={2}
-                    dot={{ r: 2 }}
-                    activeDot={{ r: 3 }}
+                    dot={{ r: 1 }}
+                    activeDot={{ r: 2 }}
                 />
-                <Tooltip
-                    cursor={false}
-                    contentStyle={{
-                        fontSize: 10,
-                        backgroundColor: "#404040",
-                        border: "#cccccc",
-                        borderRadius: "0.75rem",
-                    }}
-                    labelFormatter={() => ""}
-                    formatter={(price: number) => [`${price}`, "Price"]}
-                />
+                <Tooltip cursor={false} content={<CustomTooltip />} />
             </LineChart>
         </ResponsiveContainer>
     );
-}
+};

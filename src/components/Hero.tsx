@@ -4,6 +4,7 @@ import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
 import { GlobalStore } from "@/stores/GlobalStore";
 import { useGlobal } from "@/hooks/global-store/useGlobal";
+import Image from "next/image";
 
 export const Hero = (): React.JSX.Element => {
     const { store }: { store: GlobalStore } = useGlobal();
@@ -18,11 +19,19 @@ export const Hero = (): React.JSX.Element => {
                     </span>
                 </h1>
                 <p className={styles.paragraph}>
-                    Gain a comprehensive view of the crypto landscape. From
-                    detailed coin tables to insightful comparison charts,
+                    Gain a comprehensive view of the crypto landscape.
                     CoinMaster equips you with the tools to navigate the market
                     with confidence.
                 </p>
+                <div className={styles.imageContainer}>
+                    <Image
+                        src="/assets/images/showcase.png"
+                        alt="App Screenshot"
+                        layout="fill"
+                        objectFit="contain"
+                        priority
+                    />
+                </div>
                 <div className={styles.buttonsContainer}>
                     <Link
                         href="/market"

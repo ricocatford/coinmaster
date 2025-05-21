@@ -12,14 +12,6 @@ export const AssetDetails = ({
 }: FetchedAssetResponse): React.JSX.Element => {
     const details: AssetDetail[] = useAssetDetails(asset);
 
-    if (isLoading) {
-        return (
-            <div className={styles.details}>
-                <LoadingSpinner />
-            </div>
-        );
-    }
-
     if (error) {
         return (
             <div className={styles.details}>

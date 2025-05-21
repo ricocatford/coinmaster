@@ -93,7 +93,6 @@ a {
     padding: 0.5rem 2rem;
     letter-spacing: -0.05rem;
     border: none;
-    font-family: var(--font-josefin);
     border-radius: 1rem;
     transition: all 0.5s ease-in-out;
 }
