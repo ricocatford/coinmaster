@@ -4,34 +4,31 @@ import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
 import { GlobalStore } from "@/stores/GlobalStore";
 import { useGlobal } from "@/hooks/global-store/useGlobal";
-import Image from "next/image";
+import { Announcement } from "./Announcement";
 
 export const Hero = (): React.JSX.Element => {
     const { store }: { store: GlobalStore } = useGlobal();
 
     return (
         <>
+            <div className={styles.rayContainer}>
+                <div className={`${styles.lightRay} ${styles.rayOne}`}></div>
+                <div className={`${styles.lightRay} ${styles.rayTwo}`}></div>
+                <div className={`${styles.lightRay} ${styles.rayThree}`}></div>
+                <div className={`${styles.lightRay} ${styles.rayFour}`}></div>
+                <div className={`${styles.lightRay} ${styles.rayFive}`}></div>
+            </div>
             <section className={`container full-height ${styles.container}`}>
+                <Announcement />
                 <h1 className={styles.heading}>
-                    Track & Compare{" "}
-                    <span className={styles.headingGradient}>
-                        Cryptocurrencies
-                    </span>
+                    Explore and Track Crypto Assets.
                 </h1>
                 <p className={styles.paragraph}>
-                    Gain a comprehensive view of the crypto landscape.
-                    CoinMaster equips you with the tools to navigate the market
-                    with confidence.
+                    See the <span className={styles.highlight}>crypto</span>{" "}
+                    market clearly. CoinMaster gives you the{" "}
+                    <span className={styles.highlight}>tools</span> to navigate
+                    it with confidence.
                 </p>
-                <div className={styles.imageContainer}>
-                    <Image
-                        src="/assets/images/showcase.png"
-                        alt="App Screenshot"
-                        layout="fill"
-                        objectFit="contain"
-                        priority
-                    />
-                </div>
                 <div className={styles.buttonsContainer}>
                     <Link
                         href="/market"

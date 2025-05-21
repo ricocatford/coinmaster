@@ -11,7 +11,7 @@
     --light-grey: hsl(0, 0%, 80%);
     --grey: hsl(0, 0%, 25%);
     --dark-grey: hsl(0, 0%, 17%);
-    --background: hsl(0, 0%, 10%);
+    --background: hsl(0, 0%, 5%);
     --yellow: hsl(46, 100%, 50%);
     --orange: hsl(22, 100%, 50%);
     --light-blue: hsl(200, 61%, 64%);
@@ -88,12 +88,12 @@ a {
 
 .btn {
     cursor: pointer;
+    padding: 0.35rem 1.25rem;
+    font-size: 0.95rem;
     text-align: center;
-    text-transform: uppercase;
-    padding: 0.5rem 2rem;
     letter-spacing: -0.05rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.625rem;
     transition: all 0.5s ease-in-out;
 }
 

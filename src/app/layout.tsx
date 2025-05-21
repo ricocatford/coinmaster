@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Josefin_Sans } from "next/font/google";
+import { Inter, Josefin_Sans } from "next/font/google";
 import "@/assets/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -9,10 +9,10 @@ import { GlobalStoreProvider } from "@/providers/GlobalStoreProvider";
 
 config.autoAddCss = false;
 
-const roboto = Roboto({
+const inter = Inter({
     weight: ["400", "700"],
     subsets: ["latin"],
-    variable: "--font-roboto",
+    variable: "--font-inter",
 });
 
 const josefinSans = Josefin_Sans({
@@ -34,7 +34,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${roboto.variable} ${josefinSans.variable} font-roboto antialiased`}
+                className={`${inter.variable} ${josefinSans.variable} font-inter antialiased`}
             >
                 <GlobalStoreProvider>
                     <Navbar />

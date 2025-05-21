@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { NavToggleButton } from "./NavToggleButton";
 import { NavLinks } from "./NavLinks";
 
-export type NavigationLink = {
+type NavigationLink = {
     id: number;
     text: string;
     url: string;

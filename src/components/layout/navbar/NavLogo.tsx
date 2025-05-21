@@ -10,16 +10,7 @@ export const NavLogo = (): React.JSX.Element => {
                 className={styles.logo}
                 aria-label="Logo, go to Home page"
             >
-                <Image
-                    src="/assets/images/logo.png"
-                    height={32}
-                    width={32}
-                    alt="Logo"
-                />
-                <span className={styles.logoTitle}>
-                    Coin
-                    <span className={styles.logoTitleOrange}>Master</span>
-                </span>
+                <span className={styles.logoTitle}>CoinMaster</span>
             </Link>
         </div>
     );
