@@ -151,11 +151,11 @@
 }
 
 .heading {
+    max-width: 860px;
     font-weight: 400;
     font-size: 4rem;
-    text-transform: uppercase;
     letter-spacing: -0.1rem;
-    line-height: 5.5rem;
+    line-height: 4.5rem;
     animation: var(--fade-in) 0.75s;
 }
 
@@ -164,7 +164,7 @@
     color: var(--light-grey);
     font-size: 1.25rem;
     line-height: 1.625rem;
-    letter-spacing: 0.025rem;
+    letter-spacing: -0.025rem;
     animation: var(--slide-in-down) 0.75s;
     margin-bottom: 5rem;
 }

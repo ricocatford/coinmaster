@@ -15,11 +15,11 @@ type DataPoint = {
     date: string;
 };
 
-type Props = {
+type HistoryLineChartProps = {
     data: DataPoint[];
 };
 
-export const HistoryLineChart = ({ data }: Props) => {
+export const HistoryLineChart = ({ data }: HistoryLineChartProps) => {
     return (
         <ResponsiveContainer width="100%" height={400}>
             <LineChart data={data}>

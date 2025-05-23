@@ -14,9 +14,9 @@ export const GlobalStoreContext = createContext<GlobalStoreApi | undefined>(
     undefined
 );
 
-export interface GlobalStoreProviderProps {
+export type GlobalStoreProviderProps = {
     children: ReactNode;
-}
+};
 
 export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
     const storeRef = useRef<GlobalStoreApi>();

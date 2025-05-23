@@ -1,9 +1,9 @@
 import styles from "@/assets/styles/components/ContentPlaceholder.module.css";
 import { ReactNode } from "react";
 
-interface ContentMiddlePlaceholderProps {
+type ContentMiddlePlaceholderProps = {
     children: ReactNode;
-}
+};
 
 export const ContentMiddlePlaceholder = ({
     children,

@@ -7,9 +7,9 @@ import { AssetId } from "@/types/assetId";
 import { useGlobal } from "@/hooks/global-store/useGlobal";
 import styles from "@/assets/styles/components/Buttons.module.css";
 
-interface AddToTrackerButtonProps {
+type AddToTrackerButtonProps = {
     id: AssetId;
-}
+};
 
 export const AddToTrackerButton = ({
     id,
