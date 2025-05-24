@@ -15,7 +15,6 @@ export const NavLinks = ({
     links: NavigationLink[];
 }): React.JSX.Element => {
     const pathname = usePathname();
-    const isHome = pathname === "/";
 
     return (
         <div
@@ -34,7 +33,7 @@ export const NavLinks = ({
                     </Link>
                 ))}
             </ul>
-            {isHome && (
+            {pathname === "/" && (
                 <Link
                     href="/market"
                     className={`btn btn--primary ${styles.ctaLink}`}

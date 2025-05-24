@@ -3,12 +3,12 @@
         "id": 0,
         "image": "analytics.png",
         "heading": "Detailed Asset Analytics",
-        "paragraph": "Access comprehensive analytics for all major crypto assets, including real-time prices, market capitalization, trading volume, and historical data."
+        "paragraph": "Dive into rich, real-time analytics for top crypto assets — including price action, volume shifts, market cap fluctuations, and historical comparisons — all in one place."
     },
     {
         "id": 1,
         "image": "tracker.png",
         "heading": "Asset Tracker",
-        "paragraph": "Compare the performance of different cryptocurrencies side-by-side using advanced charting tools. Analyze trends, correlations, and potential investment opportunities."
+        "paragraph": "Keep a personalized list of your favorite cryptocurrencies for quick access to key data. Easily monitor prices, market changes, and performance at a glance."
     }
 ]

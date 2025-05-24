@@ -2,14 +2,10 @@
 
 import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
-import { GlobalStore } from "@/stores/GlobalStore";
-import { useGlobal } from "@/hooks/global-store/useGlobal";
 import { Announcement } from "./Announcement";
 import { LightRay } from "./LightRay";
 
 export const Hero = (): React.JSX.Element => {
-    const { store }: { store: GlobalStore } = useGlobal();
-
     return (
         <>
             <LightRay />
@@ -31,12 +27,8 @@ export const Hero = (): React.JSX.Element => {
                     >
                         Get started
                     </Link>
-                    <Link
-                        href="#"
-                        className="btn btn--secondary"
-                        onClick={() => store.resetTracker()}
-                    >
-                        Reset tracker
+                    <Link href="#features" className="btn btn--secondary">
+                        Learn more
                     </Link>
                 </div>
             </section>

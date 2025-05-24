@@ -3,9 +3,9 @@ import { Inter, Josefin_Sans } from "next/font/google";
 import "@/assets/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import { Navbar } from "@/components/layout/navbar/Navbar";
 import { Footer } from "@/components/layout/footer/Footer";
 import { GlobalStoreProvider } from "@/providers/GlobalStoreProvider";
+import { ShowNavbarOnHome } from "@/components/layout/navbar/ShowNavbarOnHome";
 
 config.autoAddCss = false;
 
@@ -37,7 +37,7 @@ export default function RootLayout({
                 className={`${inter.variable} ${josefinSans.variable} font-inter antialiased`}
             >
                 <GlobalStoreProvider>
-                    <Navbar />
+                    <ShowNavbarOnHome />
                     <main>{children}</main>
                     <Footer />
                 </GlobalStoreProvider>

@@ -10,7 +10,7 @@ export const Footer = (): React.JSX.Element => {
     return (
         <footer className={styles.footer}>
             <div className="container">
-                <FooterLinks links={footerLinks} />
+                {/* <FooterLinks links={footerLinks} /> */}
                 <div className={styles.creditsContainer}>
                     <span className={styles.credits}>
                         <FontAwesomeIcon icon={faBolt} /> Powered by{" "}
