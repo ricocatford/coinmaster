@@ -2,7 +2,6 @@
     background: var(--black);
     border-top: 1px solid var(--subtle-black);
     box-shadow: 0 0.5rem 2rem var(--box-shadow);
-    margin-top: 2rem;
 }
 
 .linksContainer {

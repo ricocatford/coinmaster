@@ -2,7 +2,7 @@
 
 import { AssetsTable } from "./AssetsTable";
 import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
-import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
+import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { Statistics } from "./Statistics";
 
 export default function Market(): React.JSX.Element {

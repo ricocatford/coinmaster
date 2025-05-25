@@ -1,6 +1,6 @@
 import { AssetId } from "@/types/assetId";
 
-export default interface Asset {
+export type Asset = {
     id: AssetId;
     name: string;
     symbol: string;

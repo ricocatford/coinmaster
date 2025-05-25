@@ -6,7 +6,8 @@ import { NavLinks } from "./NavLinks";
 
 export type NavigationLink = {
     id: number;
-    text: string;
+    icon?: string;
+    label: string;
     url: string;
 };
 

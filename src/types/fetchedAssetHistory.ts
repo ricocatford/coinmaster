@@ -1,4 +1,4 @@
-export interface FetchedAssetHistory {
+export type FetchedAssetHistory = {
     priceUsd: string;
     time: number;
     circulatingSupply: string;

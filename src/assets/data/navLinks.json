@@ -1,17 +1,17 @@
 [
     {
         "id": 0,
-        "text": "Explore",
+        "label": "Explore",
         "url": "/market"
     },
     {
         "id": 1,
-        "text": "Features",
+        "label": "Features",
         "url": "/#features"
     },
     {
         "id": 2,
-        "text": "About",
+        "label": "About",
         "url": "#"
     }
 ]

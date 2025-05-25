@@ -1,5 +1,4 @@
 import styles from "@/assets/styles/components/Cards.module.css";
-import MarketStatistic from "@/types/marketStatistic";
 import {
     IconDefinition,
     faGlobe,

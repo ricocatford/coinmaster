@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "icon": "house",
+        "label": "Home",
+        "url": "/"
+    },
+    {
+        "id": 1,
+        "icon": "chartLine",
+        "label": "Market",
+        "url": "/market"
+    },
+    {
+        "id": 2,
+        "icon": "eye",
+        "label": "Tracker",
+        "url": "#"
+    }
+]

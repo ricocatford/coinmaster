@@ -1,6 +1,6 @@
-import Asset from "./asset";
+import { Asset } from "./asset";
 
-export default interface FetchedAssetsResponse {
+export type FetchedAssetsResponse = {
     assets: Asset[] | undefined;
     isLoading: boolean;
     error: string;

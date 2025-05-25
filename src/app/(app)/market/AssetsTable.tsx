@@ -4,7 +4,7 @@ import { ContentTopPlaceholder } from "@/components/content-placeholder/ContentT
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ContentBottomPlaceholder } from "@/components/content-placeholder/ContentBottomPlaceholder";
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
-import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
+import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 
 export const AssetsTable = ({
     assets,

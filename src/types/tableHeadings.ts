@@ -1,4 +1,4 @@
-export default interface TableHeadings {
+export type TableHeadings = {
     id: number;
     text: string;
     isPriority?: boolean;

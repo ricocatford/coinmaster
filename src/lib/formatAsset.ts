@@ -1,4 +1,4 @@
-import Asset from "@/types/asset";
+import { Asset } from "@/types/asset";
 import { FetchedAsset } from "@/types/fetchedAsset";
 import { formatCurrencyShort } from "./formatCurrencyShort";
 import { formatNumberShort } from "./formatNumberShort";

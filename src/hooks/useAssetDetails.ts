@@ -1,5 +1,5 @@
-import Asset from "@/types/asset";
-import AssetDetail from "@/types/assetDetail";
+import { Asset } from "@/types/asset";
+import { AssetDetail } from "@/types/assetDetail";
 
 export const useAssetDetails = (asset?: Asset): AssetDetail[] => {
     if (!asset) return [];

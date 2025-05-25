@@ -1,4 +1,4 @@
-export default interface AssetDetail {
+export type AssetDetail = {
     id: string;
     label: string;
     info?: string;

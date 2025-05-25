@@ -1,6 +1,6 @@
 import { AssetId } from "./assetId";
 
-export interface FetchedAsset {
+export type FetchedAsset = {
     id: AssetId;
     symbol: string;
     name: string;

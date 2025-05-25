@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { formatAllAssets } from "@/lib/formatAllAssets";
-import Asset from "@/types/asset";
-import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
+import { Asset } from "@/types/asset";
+import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { fetcher } from "@/lib/fetcher";
 
 export const useFetchAllAssets = (): FetchedAssetsResponse => {

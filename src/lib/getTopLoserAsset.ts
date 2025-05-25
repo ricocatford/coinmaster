@@ -1,5 +1,5 @@
-import Asset from "@/types/asset";
-import AssetStatsResponse from "@/types/assetStatsResponse";
+import { Asset } from "@/types/asset";
+import { AssetStatsResponse } from "@/types/assetStatsResponse";
 import { formatPercentage } from "./formatPercentage";
 
 export const getTopLoserAsset = (assets: Asset[]): AssetStatsResponse => {

@@ -6,7 +6,7 @@ import { NavbarClient } from "./NavbarClient";
 export const Navbar = (): React.JSX.Element => {
     return (
         <header className={styles.header}>
-            <nav>
+            <nav aria-label="Main navigation">
                 <div className={styles.navContainer}>
                     <NavLogo />
                     <NavbarClient links={navLinks} />

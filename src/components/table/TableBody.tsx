@@ -1,7 +1,7 @@
 import { TableData } from "./TableData";
 import { AddToTrackerButton } from "@/components/buttons/AddToTrackerButton";
 import styles from "@/assets/styles/components/Table.module.css";
-import Asset from "@/types/asset";
+import { Asset } from "@/types/asset";
 
 const columnsToRender = [
     { key: "name", isLink: true, isPriority: true },

@@ -29,7 +29,7 @@ export const NavLinks = ({
                         key={link.id}
                         onClick={() => setIsToggled(false)}
                     >
-                        <li className={styles.link}>{link.text}</li>
+                        <li className={styles.link}>{link.label}</li>
                     </Link>
                 ))}
             </ul>

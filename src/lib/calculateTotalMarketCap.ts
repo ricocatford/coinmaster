@@ -1,4 +1,4 @@
-import Asset from "@/types/asset";
+import { Asset } from "@/types/asset";
 import { formatCurrency } from "./formatCurrency";
 
 export const calculateTotalMarketCap = (assets: Asset[]): string | null => {

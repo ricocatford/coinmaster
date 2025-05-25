@@ -1,7 +1,7 @@
 import { StatisticCard } from "@/components/cards/StatisticCard";
-import FetchedAssetsResponse from "@/types/fetchedAssetsResponse";
+import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
-import MarketStatistic from "@/types/marketStatistic";
+import { MarketStatistic } from "@/types/marketStatistic";
 import styles from "@/assets/styles/components/Market.module.css";
 
 export const Statistics = ({

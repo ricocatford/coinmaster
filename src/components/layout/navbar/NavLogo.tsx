@@ -7,10 +7,10 @@ export const NavLogo = (): React.JSX.Element => {
         <div className={styles.logoContainer}>
             <Link
                 href="/"
-                className={styles.logo}
+                className={styles.logoTitle}
                 aria-label="Logo, go to Home page"
             >
-                <span className={styles.logoTitle}>CoinMaster</span>
+                CoinMaster
             </Link>
         </div>
     );

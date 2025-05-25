@@ -1,5 +1,5 @@
 import styles from "@/assets/styles/components/Table.module.css";
-import TableHeadings from "@/types/tableHeadings";
+import { TableHeadings } from "@/types/tableHeadings";
 
 export const TableHead = ({
     headings,

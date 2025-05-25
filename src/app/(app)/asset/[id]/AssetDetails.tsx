@@ -1,8 +1,7 @@
 import { DetailCard } from "@/components/cards/DetailCard";
-import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { useAssetDetails } from "@/hooks/useAssetDetails";
-import AssetDetail from "@/types/assetDetail";
-import FetchedAssetResponse from "@/types/fetchedAssetResponse";
+import { AssetDetail } from "@/types/assetDetail";
+import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
 import styles from "@/assets/styles/components/Asset.module.css";
 
 export const AssetDetails = ({

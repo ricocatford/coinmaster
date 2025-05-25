@@ -1,7 +1,7 @@
 import { AssetId } from "./assetId";
 
 
-export default interface MarketStatistic {
+export type MarketStatistic = {
     id: string;
     label: string;
     info: string;

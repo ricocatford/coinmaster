@@ -6,7 +6,7 @@ import { useFetchAssetById } from "@/hooks/useFetchAssetById";
 import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlaceholder";
 import styles from "@/assets/styles/components/Asset.module.css";
 import { AssetDetails } from "./AssetDetails";
-import FetchedAssetResponse from "@/types/fetchedAssetResponse";
+import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
 import { HistoryLineChart } from "@/components/charts/HistoryLineChart";
 import { useFetchAssetHistoryById } from "@/hooks/useFetchAssetHistoryById";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";

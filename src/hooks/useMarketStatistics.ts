@@ -2,8 +2,8 @@ import { calculateTotalMarketCap } from "@/lib/calculateTotalMarketCap";
 import { getMostTradedAsset } from "@/lib/getMostTradedAsset";
 import { getTopGainerAsset } from "@/lib/getTopGainerAsset";
 import { getTopLoserAsset } from "@/lib/getTopLoserAsset";
-import Asset from "@/types/asset";
-import MarketStatistic from "@/types/marketStatistic";
+import { Asset } from "@/types/asset";
+import { MarketStatistic } from "@/types/marketStatistic";
 
 export const useMarketStatistics = (assets?: Asset[]): MarketStatistic[] => {
     if (!assets) return [];
