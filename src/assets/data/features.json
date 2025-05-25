@@ -2,13 +2,17 @@
     {
         "id": 0,
         "image": "analytics.png",
+        "icon": "chartLine",
         "heading": "Detailed Asset Analytics",
-        "paragraph": "Dive into rich, real-time analytics for top crypto assets — including price action, volume shifts, market cap fluctuations, and historical comparisons — all in one place."
+        "paragraph": "Dive into rich, real-time analytics for top crypto assets — including price action, volume shifts, market cap fluctuations, and historical comparisons — all in one place.",
+        "tags": ["Real-Time data", "Price trends", "Visual insights"]
     },
     {
         "id": 1,
         "image": "tracker.png",
+        "icon": "eye",
         "heading": "Asset Tracker",
-        "paragraph": "Keep a personalized list of your favorite cryptocurrencies for quick access to key data. Easily monitor prices, market changes, and performance at a glance."
+        "paragraph": "Keep a personalized list of your favorite cryptocurrencies for quick access to key data. Easily monitor prices, market changes, and performance at a glance.",
+        "tags": ["Quality of life", "Custom tracking"]
     }
 ]

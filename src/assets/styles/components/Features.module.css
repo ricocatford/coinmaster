@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 4rem;
+    gap: 6rem;
 }
 
 .card {
@@ -47,31 +47,47 @@
     justify-content: center;
     flex: 1 1 40%;
     padding: 3rem;
-    background: linear-gradient(210deg, var(--subtle-black), var(--dark-grey));
+    background: radial-gradient(
+        circle at top left,
+        var(--black),
+        var(--subtle-black)
+    );
     border-radius: 4rem;
 }
 
 .cardImage {
     border-radius: 2.25rem;
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        var(--black) 70%,
-        transparent 100%
-    );
-    mask-image: linear-gradient(to bottom, var(--black) 70%, transparent 100%);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
 }
 
 .descriptionContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex: 1 1 60%;
     text-align: left;
     gap: 0.75rem;
+}
+
+.cardIconContainer {
+    width: fit-content;
+    background: var(--black);
+    background: linear-gradient(
+        135deg,
+        var(--black) 0%,
+        var(--subtle-black) 50%,
+        var(--dark-grey) 100%
+    );
+    opacity: 0.5;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    align-self: center;
+    filter: drop-shadow(0 0 6px var(--light-grey))
+        drop-shadow(0 0 12px var(--light-grey));
+}
+
+.cardIcon {
+    font-size: 3rem;
+    color: var(--white);
 }
 
 .cardHeading {
@@ -81,4 +97,33 @@
 .cardParagraph {
     font-size: 1.05rem;
     color: var(--light-grey);
+}
+
+.cardTagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.cardTag {
+    border: 1px solid var(--grey);
+    color: var(--light-grey);
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+}
+
+@media screen and (max-width: 1040px) {
+    .card {
+        max-width: 100%;
+    }
+
+    .cardContainer {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .cardTagsList {
+        gap: 0.75rem;
+        font-size: 0.85rem;
+    }
 }
