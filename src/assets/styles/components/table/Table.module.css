@@ -23,7 +23,6 @@
 .data {
     padding: 0.3725rem 0.75rem;
     border-bottom: 1px solid var(--subtle-black);
-    color: var(--light-grey);
 }
 
 .link {
