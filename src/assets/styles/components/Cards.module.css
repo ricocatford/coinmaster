@@ -50,7 +50,7 @@
     color: var(--red);
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1440px) {
     .statisticCard,
     .detailCard {
         flex: 1 1 calc(50% - 1rem);

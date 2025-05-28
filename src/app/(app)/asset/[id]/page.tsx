@@ -26,8 +26,10 @@ export default function Asset({ params }: { params: { id: string } }) {
     );
 
     return (
-        <section className="container full-height">
-            <div className={`container border-bottom ${styles.titleContainer}`}>
+        <section className="container fullWidth">
+            <div
+                className={`container fullWidth borderBottom ${styles.titleContainer}`}
+            >
                 <ReturnButton />
                 <h1 className="heading">
                     {asset?.name} ({asset?.symbol})

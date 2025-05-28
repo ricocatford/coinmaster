@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Josefin_Sans } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import { Footer } from "@/components/layout/footer/Footer";
 import { GlobalStoreProvider } from "@/providers/GlobalStoreProvider";
 import "@/assets/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -35,10 +34,7 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} ${josefinSans.variable} font-inter antialiased`}
             >
-                <GlobalStoreProvider>
-                    {children}
-                    <Footer />
-                </GlobalStoreProvider>
+                <GlobalStoreProvider>{children}</GlobalStoreProvider>
             </body>
         </html>
     );

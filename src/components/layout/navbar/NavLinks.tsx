@@ -1,7 +1,5 @@
-"use client";
-
 import styles from "@/assets/styles/components/Navbar.module.css";
-import { NavigationLink } from "@/components/layout/navbar/NavbarClient";
+import { NavigationLink } from "@/types/navigationLink";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,13 +22,15 @@ export const NavLinks = ({
         >
             <ul className={styles.linksList}>
                 {links.map((link) => (
-                    <Link
-                        href={link.url}
-                        key={link.id}
-                        onClick={() => setIsToggled(false)}
-                    >
-                        <li className={styles.link}>{link.label}</li>
-                    </Link>
+                    <li className={styles.link}>
+                        <Link
+                            href={link.href}
+                            key={link.id}
+                            onClick={() => setIsToggled(false)}
+                        >
+                            {link.label}
+                        </Link>
+                    </li>
                 ))}
             </ul>
             {pathname === "/" && (

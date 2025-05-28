@@ -1,19 +1,14 @@
 import { NavLogo } from "../navbar/NavLogo";
+import sideNavLinks from "@/assets/data/sideNavLinks.json";
+import { ResponsiveNavbarClient } from "./ResponsiveNavbarClient";
 import styles from "@/assets/styles/components/ResponsiveNavbar.module.css";
 
 export const ResponsiveNavbar = (): React.JSX.Element => {
     return (
-        <nav aria-label="Main navigation" className={styles.navContainer}>
-            <header>
-                <NavLogo />
-            </header>
-            <div>
-                <ul>
-                    <li>Link 1</li>
-                    <li>Link 2</li>
-                    <li>Link 3</li>
-                </ul>
-            </div>
-        </nav>
+        <div className={styles.navShell}>
+            <nav aria-label="Main navigation" className={styles.navContainer}>
+                <ResponsiveNavbarClient links={sideNavLinks} />
+            </nav>
+        </div>
     );
 };

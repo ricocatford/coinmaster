@@ -3,18 +3,18 @@
         "id": 0,
         "icon": "house",
         "label": "Home",
-        "url": "/"
+        "href": "/"
     },
     {
         "id": 1,
         "icon": "chartLine",
         "label": "Market",
-        "url": "/market"
+        "href": "/market"
     },
     {
         "id": 2,
         "icon": "eye",
         "label": "Tracker",
-        "url": "#"
+        "href": "#"
     }
 ]

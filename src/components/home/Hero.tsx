@@ -9,7 +9,7 @@ export const Hero = (): React.JSX.Element => {
     return (
         <>
             <LightRay />
-            <section className={`container full-height ${styles.container}`}>
+            <section className={`container ${styles.container}`}>
                 <Announcement />
                 <h1 className={styles.heading}>
                     Explore and Track Crypto Assets.

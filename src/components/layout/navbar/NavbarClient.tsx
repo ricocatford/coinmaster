@@ -3,13 +3,7 @@
 import { useEffect, useState } from "react";
 import { NavToggleButton } from "./NavToggleButton";
 import { NavLinks } from "./NavLinks";
-
-export type NavigationLink = {
-    id: number;
-    icon?: string;
-    label: string;
-    url: string;
-};
+import { NavigationLink } from "@/types/navigationLink";
 
 export const NavbarClient = ({
     links,

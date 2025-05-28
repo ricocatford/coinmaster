@@ -2,16 +2,16 @@
     {
         "id": 0,
         "label": "Explore",
-        "url": "/market"
+        "href": "/market"
     },
     {
         "id": 1,
         "label": "Features",
-        "url": "/#features"
+        "href": "/#features"
     },
     {
         "id": 2,
         "label": "About",
-        "url": "#"
+        "href": "#"
     }
 ]

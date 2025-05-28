@@ -10,8 +10,8 @@ export default function Market(): React.JSX.Element {
         useFetchAllAssets();
 
     return (
-        <section className="container full-height">
-            <div className="container border-bottom">
+        <section className="container fullWidth">
+            <div className="container fullWidth bordeBottom">
                 <h1 className="heading">Market Statistics</h1>
             </div>
             <Statistics assets={assets} isLoading={isLoading} error={error} />

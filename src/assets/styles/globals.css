@@ -60,12 +60,13 @@ a {
 
 .appContainer {
     display: flex;
-    height: 100vh;
+    width: 100%;
 }
 
 .mainContent {
-    flex: 1;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
 }
 
 .container {
@@ -74,11 +75,12 @@ a {
     padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
+    flex: 1 1 0%;
     gap: 1rem;
 }
 
-.full-height {
-    min-height: calc(100vh - 56px);
+.fullWidth {
+    max-width: 100%;
 }
 
 .heading {
@@ -90,7 +92,7 @@ a {
     font-size: 0.8rem;
 }
 
-.border-bottom {
+.borderBottom {
     border-bottom: 1px solid var(--subtle-black);
 }
 
@@ -136,6 +138,18 @@ a {
 .btn--primary:hover,
 .btn--secondary:hover {
     background-position: right center;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .mainContent {
+        margin-left: 105px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mainContent {
+        padding-bottom: 80px;
+    }
 }
 
 @media screen and (max-width: 576px) {

@@ -46,7 +46,7 @@
     width: fit-content;
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-self: flex-start;
     flex: 1 1 40%;
     padding: 3rem;
     background: radial-gradient(
@@ -115,7 +115,7 @@
     text-transform: capitalize;
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1024px) {
     .card {
         max-width: 100%;
     }
@@ -123,6 +123,10 @@
     .cardContainer {
         flex-direction: column-reverse;
         gap: 2rem;
+    }
+
+    .imageContainer {
+        align-self: center;
     }
 
     .cardTagsList {
