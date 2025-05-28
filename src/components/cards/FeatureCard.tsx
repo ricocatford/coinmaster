@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Features.module.css";
+import styles from "@/assets/styles/components/cards/FeatureCard.module.css";
 import {
     faChartLine,
     faEye,

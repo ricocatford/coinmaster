@@ -3,7 +3,7 @@
 import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
 import { Announcement } from "./Announcement";
-import { LightRay } from "./LightRay";
+import { LightRay } from "../light-ray/LightRay";
 
 export const Hero = (): React.JSX.Element => {
     return (

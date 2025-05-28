@@ -1,6 +1,6 @@
 import { TableData } from "./TableData";
 import { AddToTrackerButton } from "@/components/buttons/AddToTrackerButton";
-import styles from "@/assets/styles/components/Table.module.css";
+import styles from "@/assets/styles/components/table/Table.module.css";
 import { Asset } from "@/types/asset";
 
 const columnsToRender = [
@@ -16,9 +16,9 @@ export const TableBody = ({ assets }: { assets: Asset[] }) => {
     return (
         <tbody>
             {assets.map((asset) => (
-                <tr key={asset.id} className={styles.tableRow}>
+                <tr key={asset.id} className={styles.row}>
                     <td
-                        className={`${styles.tableData} ${styles.priorityDataDisplay}`}
+                        className={`${styles.data} ${styles.priority}`}
                     >
                         <AddToTrackerButton id={asset.id} />
                     </td>

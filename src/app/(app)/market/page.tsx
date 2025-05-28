@@ -10,12 +10,24 @@ export default function Market(): React.JSX.Element {
         useFetchAllAssets();
 
     return (
-        <section className="container fullWidth">
-            <div className="container fullWidth bordeBottom">
-                <h1 className="heading">Market Statistics</h1>
-            </div>
-            <Statistics assets={assets} isLoading={isLoading} error={error} />
+        <>
+            <section
+                className="container fullWidth"
+                id="marketStatistics"
+                aria-labelledby="marketStatisticsHeading"
+            >
+                <div className="container fullWidth bordeBottom">
+                    <h1 className="heading" id="marketStatisticsHeading">
+                        Market Statistics
+                    </h1>
+                </div>
+                <Statistics
+                    assets={assets}
+                    isLoading={isLoading}
+                    error={error}
+                />
+            </section>
             <AssetsTable assets={assets} isLoading={isLoading} error={error} />
-        </section>
+        </>
     );
 }

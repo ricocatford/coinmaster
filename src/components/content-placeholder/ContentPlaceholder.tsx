@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/ContentPlaceholder.module.css";
+import styles from "@/assets/styles/components/content-placeholder/ContentPlaceholder.module.css";
 import { ReactNode } from "react";
 
 type ContentPlaceholderProps = {

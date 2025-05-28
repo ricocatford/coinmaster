@@ -4,13 +4,13 @@ import { useState } from "react";
 import { ReturnButton } from "@/components/buttons/ReturnButton";
 import { useFetchAssetById } from "@/hooks/useFetchAssetById";
 import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlaceholder";
-import styles from "@/assets/styles/components/Asset.module.css";
 import { AssetDetails } from "./AssetDetails";
 import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
 import { HistoryLineChart } from "@/components/charts/HistoryLineChart";
 import { useFetchAssetHistoryById } from "@/hooks/useFetchAssetHistoryById";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ChartButton } from "@/components/buttons/ChartButton";
+import styles from "@/assets/styles/components/AssetDetails.module.css";
 
 export default function Asset({ params }: { params: { id: string } }) {
     const [range, setRange] = useState<"1d" | "7d" | "1m">("1d");

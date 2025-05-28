@@ -1,3 +1,22 @@
+.container {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
+
+.heading {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.topInfo,
+.bottomInfo {
+    font-size: 0.78rem;
+    color: var(--light-grey);
+}
+
 .table {
     font-size: 0.8rem;
     width: 100%;
@@ -7,16 +26,6 @@
     box-shadow: 0 0.5rem 0.5rem var(--box-shadow);
     border-left: 1px solid var(--subtle-black);
     border-right: 1px solid var(--subtle-black);
-}
-
-.tableTopHeading {
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.tableTopInfo {
-    font-size: 0.78rem;
-    color: var(--light-grey);
 }
 
 .tableHead {

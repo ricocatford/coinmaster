@@ -1,7 +1,7 @@
 .container,
-.containerTop,
-.containerBottom,
-.containerMiddle {
+.top,
+.bottom,
+.middle {
     display: flex;
     flex-direction: column;
     background: var(--black);
@@ -14,19 +14,19 @@
     border-radius: 0.75rem;
 }
 
-.containerTop {
+.top {
     border-bottom: transparent;
     border-top-right-radius: 0.75rem;
     border-top-left-radius: 0.75rem;
 }
 
-.containerMiddle {
+.middle {
     border-bottom: transparent;
     border-top: transparent;
     box-shadow: 0 0.5rem 1.2rem transparent;
 }
 
-.containerBottom {
+.bottom {
     border-top: transparent;
     border-bottom-right-radius: 0.75rem;
     border-bottom-left-radius: 0.75rem;

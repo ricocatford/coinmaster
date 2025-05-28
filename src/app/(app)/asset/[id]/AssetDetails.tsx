@@ -2,7 +2,7 @@ import { DetailCard } from "@/components/cards/DetailCard";
 import { useAssetDetails } from "@/hooks/useAssetDetails";
 import { AssetDetail } from "@/types/assetDetail";
 import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
-import styles from "@/assets/styles/components/Asset.module.css";
+import styles from "@/assets/styles/components/AssetDetails.module.css";
 
 export const AssetDetails = ({
     asset,
@@ -13,7 +13,7 @@ export const AssetDetails = ({
 
     if (error) {
         return (
-            <div className={styles.details}>
+            <div className={styles.container}>
                 <p className="paragraph">
                     Failed to fetch asset. Please try again in a few seconds.
                 </p>
@@ -23,14 +23,14 @@ export const AssetDetails = ({
 
     if (!asset || !details || details.length === 0) {
         return (
-            <div className={styles.details}>
+            <div className={styles.container}>
                 <p className="paragraph">No asset details available.</p>
             </div>
         );
     }
 
     return (
-        <div className={styles.details}>
+        <div className={styles.container}>
             {details.map((detail) => (
                 <DetailCard
                     key={detail.id}

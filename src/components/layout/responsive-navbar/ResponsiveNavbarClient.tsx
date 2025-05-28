@@ -2,7 +2,7 @@
 
 import { NavigationLink } from "@/types/navigationLink";
 import { ResponsiveNavLinks } from "./ResponsiveNavLinks";
-import styles from "@/assets/styles/components/ResponsiveNavbar.module.css";
+import styles from "@/assets/styles/components/responsive-navbar/ResponsiveNavbar.module.css";
 
 export const ResponsiveNavbarClient = ({
     links,

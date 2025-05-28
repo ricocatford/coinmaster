@@ -2,14 +2,14 @@
     flex-direction: row;
 }
 
-.details {
+.container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 @media screen and (max-width: 768px) {
-    .details {
+    .container {
         gap: 0;
     }
 }

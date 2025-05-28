@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Table.module.css";
+import styles from "@/assets/styles/components/table/Table.module.css";
 import Link from "next/link";
 
 type TableDataProps = {
@@ -20,11 +20,11 @@ export const TableData = ({
 }: TableDataProps) => {
     const changeStyle =
         typeof value === "string" && value.startsWith("-")
-            ? styles.textRed
-            : styles.textGreen;
+            ? "negativeValue"
+            : "positiveValue";
 
     const content = isLink ? (
-        <Link href={linkHref || "#"} className={styles.tableLink}>
+        <Link href={linkHref || "#"} className={styles.link}>
             {value}
         </Link>
     ) : (
@@ -33,11 +33,11 @@ export const TableData = ({
 
     return (
         <td
-            className={`${styles.tableData} ${isChange ? changeStyle : ""} ${
-                isPriority ? styles.priorityDataDisplay : ""
+            className={`${styles.data} ${isChange ? changeStyle : ""} ${
+                isPriority ? styles.priority : ""
             }`}
         >
-            <div className={styles.tableDataContainer}>{content}</div>
+            <div className={styles.dataContainer}>{content}</div>
         </td>
     );
 };

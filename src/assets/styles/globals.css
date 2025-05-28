@@ -80,7 +80,7 @@ a {
 }
 
 .fullWidth {
-    max-width: 100%;
+    width: 100%;
 }
 
 .heading {
@@ -94,6 +94,14 @@ a {
 
 .borderBottom {
     border-bottom: 1px solid var(--subtle-black);
+}
+
+.positiveValue {
+    color: var(--light-green);
+}
+
+.negativeValue {
+    color: var(--red);
 }
 
 /*------------------- BUTTONS -------------------*/

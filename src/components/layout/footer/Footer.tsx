@@ -1,14 +1,14 @@
-import styles from "@/assets/styles/components/Footer.module.css";
 import footerLinks from "@/assets/data/footerLinks.json";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { FooterLinks } from "./FooterLinks";
+import styles from "@/assets/styles/components/footer/Footer.module.css";
 
 export const Footer = (): React.JSX.Element => {
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.container}>
             <div className="container">
                 {/* <FooterLinks links={footerLinks} /> */}
                 <div className={styles.creditsContainer}>

@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Cards.module.css";
+import styles from "@/assets/styles/components/cards/StatisticCard.module.css";
 import {
     IconDefinition,
     faGlobe,
@@ -38,36 +38,47 @@ export const StatisticCard = ({
     const changeStyle =
         typeof value === "string" && !value.startsWith("$")
             ? value.startsWith("-")
-                ? styles.textRed
-                : styles.textGreen
+                ? "negativeValue"
+                : "positiveValue"
             : "";
 
     return (
-        <div className={styles.statisticCard} id={id}>
+        <article
+            className={styles.card}
+            id={id}
+            role="group"
+            aria-labelledby={`${id}-label`}
+            aria-describedby={`${id}-value ${asset ? `${id}-asset` : ""}`}
+        >
             {isLoading ? (
                 <LoadingSpinner />
             ) : (
                 <>
-                    <div>
+                    <div className={styles.iconContainer}>
                         <FontAwesomeIcon
                             icon={iconMap[icon]}
                             className={styles.icon}
                         />
                     </div>
-                    <div>
-                        <h3 className={styles.label}>
+                    <dl>
+                        <dt className={styles.label} id={`${id}-label`}>
                             {label}
                             <span> {info}</span>
-                        </h3>
+                        </dt>
                         {asset && (
-                            <span className={styles.asset}>{asset}: </span>
+                            <dd className={styles.asset} id={`${id}-asset`}>
+                                {asset}
+                            </dd>
                         )}
-                        <span className={`${styles.value} ${changeStyle}`}>
+                        <dd
+                            className={`${styles.value} ${changeStyle}`}
+                            id={`${id}-value`}
+                        >
                             {value}
-                        </span>
-                    </div>
+                        </dd>
+                    </dl>
                 </>
             )}
-        </div>
+        </article>
     );
 };

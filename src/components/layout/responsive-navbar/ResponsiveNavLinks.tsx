@@ -7,8 +7,8 @@ import {
     faHouse,
     faEye,
 } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/assets/styles/components/ResponsiveNavbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "@/assets/styles/components/responsive-navbar/ResponsiveNavbar.module.css";
 
 const iconMap: Record<string, IconDefinition> = {
     house: faHouse,
@@ -20,7 +20,7 @@ export const ResponsiveNavLinks = ({ links }: { links: NavigationLink[] }) => {
     const pathname = usePathname();
 
     return (
-        <ul className={styles.linksList}>
+        <ul className={styles.list}>
             {links.map((link) => {
                 const isActive = pathname === link.href;
 

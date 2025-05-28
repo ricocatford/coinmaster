@@ -1,10 +1,10 @@
-.navShell {
+.shell {
     position: relative;
     height: 100%;
     width: 240px;
 }
 
-.navContainer {
+.container {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.linksList {
+.list {
     display: flex;
     flex-direction: column;
 }
@@ -44,8 +44,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .navShell,
-    .navContainer {
+    .shell,
+    .container {
         width: fit-content;
     }
 
@@ -59,7 +59,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .navContainer {
+    .container {
         top: auto;
         bottom: 0;
         left: 0;
@@ -72,7 +72,7 @@
         z-index: 1000;
     }
 
-    .linksList {
+    .list {
         flex-direction: row;
         width: 100%;
         justify-content: space-around;

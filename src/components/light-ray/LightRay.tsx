@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Hero.module.css";
+import styles from "@/assets/styles/components/light-ray/LightRay.module.css";
 
 export const LightRay = (): React.JSX.Element => {
     return (

@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 calc(25% - 1rem);
+    gap: 1rem;
+    padding: 0.9rem;
+    background: var(--black);
+    border: 1px solid var(--subtle-black);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.2rem var(--box-shadow);
+}
+
+.iconContainer {
+    align-self: center;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--light-grey);
+}
+
+.asset,
+.value {
+    display: inline-block;
+}
+
+.asset {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.value {
+    font-size: 1.1rem;
+}
+
+/*------------------- MEDIA QUERIES -------------------*/
+
+@media screen and (max-width: 1440px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}

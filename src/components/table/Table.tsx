@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Table.module.css";
+import styles from "@/assets/styles/components/table/Table.module.css";
 import headings from "@/assets/data/assetsTableHeadings.json";
 import { TableHead } from "./TableHead";
 import { TableHeadings } from "@/types/tableHeadings";

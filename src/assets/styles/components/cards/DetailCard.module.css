@@ -1,0 +1,54 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 calc(33.3% - 1rem);
+    gap: 1rem;
+    padding: 0.9rem;
+}
+
+.iconContainer {
+    align-self: center;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--light-grey);
+}
+
+.value {
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+.valueShort {
+    margin-left: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--light-grey);
+}
+
+/*------------------- MEDIA QUERIES -------------------*/
+
+@media screen and (max-width: 1440px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .card {
+        border-bottom: 1px solid var(--subtle-black);
+    }
+
+    .card:last-of-type {
+        border: none;
+    }
+}

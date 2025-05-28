@@ -1,7 +1,7 @@
-import styles from "@/assets/styles/components/Navbar.module.css";
 import { NavigationLink } from "@/types/navigationLink";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from "@/assets/styles/components/navbar/Navbar.module.css";
 
 export const NavLinks = ({
     isToggled,
@@ -17,10 +17,10 @@ export const NavLinks = ({
     return (
         <div
             className={
-                !isToggled ? styles.linksContainer : styles.linksContainerActive
+                !isToggled ? styles.listContainer : styles.listContainerActive
             }
         >
-            <ul className={styles.linksList}>
+            <ul className={styles.list}>
                 {links.map((link) => (
                     <li className={styles.link}>
                         <Link

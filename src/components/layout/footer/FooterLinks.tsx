@@ -1,6 +1,6 @@
-import styles from "@/assets/styles/components/Footer.module.css";
-import { NavigationLink } from "../navbar/NavbarClient";
 import Link from "next/link";
+import { NavigationLink } from "@/types/navigationLink";
+import styles from "@/assets/styles/components/footer/Footer.module.css";
 
 export const FooterLinks = ({
     links,
@@ -8,11 +8,11 @@ export const FooterLinks = ({
     links: NavigationLink[];
 }): React.JSX.Element => {
     return (
-        <div className={styles.linksContainer}>
-            <ul className={styles.linksList}>
+        <div className={styles.listContainer}>
+            <ul className={styles.list}>
                 {links.map((link) => (
-                    <Link href={link.url} key={link.id}>
-                        <li className={styles.link}>{link.text}</li>
+                    <Link href={link.href} key={link.id}>
+                        <li className={styles.link}>{link.label}</li>
                     </Link>
                 ))}
             </ul>

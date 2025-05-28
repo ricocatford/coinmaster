@@ -1,5 +1,5 @@
-import styles from "@/assets/styles/components/Navbar.module.css";
 import Link from "next/link";
+import styles from "@/assets/styles/components/navbar/Navbar.module.css";
 
 export const NavLogo = (): React.JSX.Element => {
     return (

@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/ContentPlaceholder.module.css";
+import styles from "@/assets/styles/components/content-placeholder/ContentPlaceholder.module.css";
 import { ReactNode } from "react";
 
 type ContentMiddlePlaceholderProps = {
@@ -8,5 +8,5 @@ type ContentMiddlePlaceholderProps = {
 export const ContentMiddlePlaceholder = ({
     children,
 }: ContentMiddlePlaceholderProps): React.JSX.Element => {
-    return <div className={styles.containerMiddle}>{children}</div>;
+    return <div className={styles.middle}>{children}</div>;
 };

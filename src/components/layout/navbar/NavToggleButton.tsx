@@ -1,8 +1,6 @@
-"use client";
-
-import styles from "@/assets/styles/components/Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import styles from "@/assets/styles/components/navbar/Navbar.module.css";
 
 export const NavToggleButton = ({
     isToggled,

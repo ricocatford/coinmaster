@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "@/assets/styles/components/Buttons.module.css";
+import styles from "@/assets/styles/components/buttons/ChartButton.module.css";
 
 type ChartButtonProps = {
     labels: string[];
@@ -15,15 +15,13 @@ export const ChartButton = ({ labels, onChange }: ChartButtonProps) => {
     };
 
     return (
-        <div className={styles.chartBtnContainer}>
+        <div className={styles.container}>
             {labels.map((label) => (
                 <button
                     key={label}
-                    className={
-                        isActive === label
-                            ? styles.chartBtnActive
-                            : styles.chartBtn
-                    }
+                    className={`${styles.button}
+                        ${isActive === label ? styles.active : ""}
+                    `}
                     onClick={() => handleClick(label)}
                 >
                     {label}

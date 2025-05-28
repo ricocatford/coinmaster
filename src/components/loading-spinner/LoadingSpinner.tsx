@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/LoadingSpinner.module.css";
+import styles from "@/assets/styles/components/loading-spinner/LoadingSpinner.module.css";
 
 export const LoadingSpinner = (): React.JSX.Element => {
     return (

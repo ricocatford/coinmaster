@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/ContentPlaceholder.module.css";
+import styles from "@/assets/styles/components/content-placeholder/ContentPlaceholder.module.css";
 import { ReactNode } from "react";
 
 type ContentTopPlaceholderProps = {
@@ -8,5 +8,5 @@ type ContentTopPlaceholderProps = {
 export const ContentTopPlaceholder = ({
     children,
 }: ContentTopPlaceholderProps): React.JSX.Element => {
-    return <div className={styles.containerTop}>{children}</div>;
+    return <div className={styles.top}>{children}</div>;
 };

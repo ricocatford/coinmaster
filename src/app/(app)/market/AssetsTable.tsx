@@ -1,4 +1,4 @@
-import styles from "@/assets/styles/components/Table.module.css";
+import styles from "@/assets/styles/components/AssetsTable.module.css";
 import { Table } from "@/components/table/Table";
 import { ContentTopPlaceholder } from "@/components/content-placeholder/ContentTopPlaceholder";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
@@ -12,12 +12,17 @@ export const AssetsTable = ({
     error,
 }: FetchedAssetsResponse): React.JSX.Element => {
     return (
-        <div>
+        <section
+            className={styles.container}
+            id="latestMarketPrices"
+            role="region"
+            aria-labelledby="latestMarketPricesHeading"
+        >
             <ContentTopPlaceholder>
-                <h2 className={styles.tableTopHeading}>Latest market prices</h2>
-                <span className={styles.tableTopInfo}>
-                    (Showing top 100 assets)
-                </span>
+                <h2 className={styles.heading} id="latestMarketPricesHeading">
+                    Latest market prices
+                </h2>
+                <span className={styles.topInfo}>(Showing top 100 assets)</span>
             </ContentTopPlaceholder>
             {error && (
                 <p className="paragraph">
@@ -31,13 +36,8 @@ export const AssetsTable = ({
             )}
             {assets && <Table assets={assets} />}
             <ContentBottomPlaceholder>
-                <span className={styles.tableTopHeading}>
-                    Latest market prices
-                </span>
-                <span className={styles.tableTopInfo}>
-                    (Showing top 100 assets)
-                </span>
+                <span className={styles.bottomInfo}>End of List</span>
             </ContentBottomPlaceholder>
-        </div>
+        </section>
     );
 };
