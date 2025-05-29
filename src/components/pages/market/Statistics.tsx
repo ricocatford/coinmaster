@@ -2,7 +2,7 @@ import { StatisticCard } from "@/components/cards/StatisticCard";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import { MarketStatistic } from "@/types/marketStatistic";
-import styles from "@/assets/styles/components/Statistics.module.css";
+import styles from "@/assets/styles/components/pages/market/Statistics.module.css";
 
 export const Statistics = ({
     assets,

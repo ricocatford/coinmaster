@@ -1,9 +1,9 @@
 "use client";
 
-import styles from "@/assets/styles/components/Hero.module.css";
 import Link from "next/link";
 import { Announcement } from "./Announcement";
-import { LightRay } from "../light-ray/LightRay";
+import { LightRay } from "@/components/light-ray/LightRay";
+import styles from "@/assets/styles/components/pages/home/Hero.module.css";
 
 export const Hero = (): React.JSX.Element => {
     return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import styles from "@/assets/styles/components/Hero.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import styles from "@/assets/styles/components/pages/home/Hero.module.css";
 
 export const Announcement = (): React.JSX.Element => {
     return (

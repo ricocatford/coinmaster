@@ -2,7 +2,7 @@ import { DetailCard } from "@/components/cards/DetailCard";
 import { useAssetDetails } from "@/hooks/useAssetDetails";
 import { AssetDetail } from "@/types/assetDetail";
 import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
-import styles from "@/assets/styles/components/AssetDetails.module.css";
+import styles from "@/assets/styles/components/pages/asset/AssetDetails.module.css";
 
 export const AssetDetails = ({
     asset,

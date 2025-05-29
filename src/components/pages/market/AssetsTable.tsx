@@ -1,10 +1,10 @@
-import styles from "@/assets/styles/components/AssetsTable.module.css";
 import { Table } from "@/components/table/Table";
 import { ContentTopPlaceholder } from "@/components/content-placeholder/ContentTopPlaceholder";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ContentBottomPlaceholder } from "@/components/content-placeholder/ContentBottomPlaceholder";
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
+import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
 
 export const AssetsTable = ({
     assets,
