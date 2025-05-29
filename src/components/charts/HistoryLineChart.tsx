@@ -25,17 +25,17 @@ export const HistoryLineChart = ({ data }: HistoryLineChartProps) => {
             <LineChart data={data}>
                 <XAxis
                     dataKey="date"
-                    stroke="#8884d8"
+                    stroke="#ccc"
                     tick={{ fill: "#ccc", fontSize: 10 }}
-                    tickLine={false}
-                    axisLine={false}
+                    tickLine={true}
+                    axisLine={true}
                 />
                 <YAxis
                     domain={["dataMin", "dataMax"]}
-                    stroke="#82ca9d"
+                    stroke="#ccc"
                     tick={{ fill: "#ccc", fontSize: 10 }}
-                    tickLine={false}
-                    axisLine={false}
+                    tickLine={true}
+                    axisLine={true}
                 />
                 <Line
                     type="monotone"

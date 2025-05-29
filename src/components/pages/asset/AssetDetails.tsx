@@ -52,7 +52,8 @@ export const AssetDetails = ({
             >
                 <ReturnButton />
                 <h1 className="heading" id="assetDetailsHeading">
-                    {asset?.name} {asset?.symbol}
+                    {asset?.name}{" "}
+                    <span className={styles.symbol}>{asset?.symbol}</span>
                 </h1>
             </div>
             <div>
