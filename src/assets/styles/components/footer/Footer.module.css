@@ -50,6 +50,8 @@
     color: var(--light-blue);
 }
 
+/*------------------- MEDIA QUERIES -------------------*/
+
 @media screen and (max-width: 576px) {
     .linksList {
         flex-direction: column;

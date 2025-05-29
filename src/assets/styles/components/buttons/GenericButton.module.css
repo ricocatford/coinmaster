@@ -1,0 +1,36 @@
+.button {
+    cursor: pointer;
+    padding: 0.35rem 1.25rem;
+    font-size: 0.95rem;
+    text-align: center;
+    letter-spacing: -0.025rem;
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.buttonPrimary {
+    background-image: linear-gradient(
+        to right,
+        var(--purple) 0%,
+        var(--violet) 51%,
+        var(--purple) 100%
+    );
+    background-size: 200% auto;
+    color: var(--white);
+}
+
+.buttonSecondary {
+    background-image: linear-gradient(
+        to right,
+        var(--white) 0%,
+        var(--light-grey) 50%,
+        var(--white) 100%
+    );
+    background-size: 200% auto;
+    color: var(--black);
+}
+
+.button:hover {
+    background-position: right center;
+}

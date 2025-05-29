@@ -1,0 +1,65 @@
+.announcement {
+    background: linear-gradient(70deg, var(--black), var(--black));
+    position: absolute;
+    top: 0;
+    min-width: fit-content;
+    font-size: 0.85rem;
+    border-radius: 1rem;
+    border: 1px solid var(--grey);
+    color: var(--light-grey);
+    transition: all ease-in-out 0.5s;
+    filter: opacity(75%);
+}
+
+.announcement:hover {
+    border: 1px solid var(--dark-grey);
+    filter: opacity(100%);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    padding: 0.35rem 1.25rem;
+    gap: 0.5rem;
+}
+
+.gradientLineOne,
+.gradientLineTwo {
+    position: absolute;
+    top: -1px;
+    height: 1px;
+    opacity: 0;
+    transition: opacity ease-in-out 0.5s;
+}
+
+.gradientLineOne {
+    left: 2.5rem;
+    width: calc(100% - 5rem);
+    background-image: linear-gradient(
+        to right,
+        rgba(174, 83, 255, 0),
+        rgba(174, 83, 255, 0.8),
+        rgba(174, 83, 255, 0)
+    );
+}
+
+.gradientLineTwo {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    background-image: linear-gradient(
+        to right,
+        rgba(174, 83, 255, 0),
+        rgba(174, 83, 255, 0.5),
+        rgba(174, 83, 255, 0)
+    );
+    mix-blend-mode: overlay;
+}
+
+.announcement:hover .gradientLineOne,
+.announcement:hover .gradientLineTwo {
+    opacity: 1;
+}

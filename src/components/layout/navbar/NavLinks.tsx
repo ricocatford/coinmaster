@@ -2,6 +2,7 @@ import { NavigationLink } from "@/types/navigationLink";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "@/assets/styles/components/navbar/Navbar.module.css";
+import buttonStyles from "@/assets/styles/components/buttons/GenericButton.module.css";
 
 export const NavLinks = ({
     isToggled,
@@ -36,7 +37,7 @@ export const NavLinks = ({
             {pathname === "/" && (
                 <Link
                     href="/market"
-                    className={`btn btn--primary ${styles.ctaLink}`}
+                    className={`${buttonStyles.button} ${buttonStyles.buttonPrimary} ${styles.ctaLink}`}
                     onClick={() => setIsToggled(false)}
                 >
                     Get started

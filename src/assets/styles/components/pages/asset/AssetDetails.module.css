@@ -12,6 +12,8 @@
     color: var(--light-grey);
 }
 
+/*------------------- MEDIA QUERIES -------------------*/
+
 @media screen and (max-width: 768px) {
     .container {
         gap: 0;

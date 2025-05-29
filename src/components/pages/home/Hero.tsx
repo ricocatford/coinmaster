@@ -4,30 +4,43 @@ import Link from "next/link";
 import { Announcement } from "./Announcement";
 import { LightRay } from "@/components/light-ray/LightRay";
 import styles from "@/assets/styles/components/pages/home/Hero.module.css";
+import buttonStyles from "@/assets/styles/components/buttons/GenericButton.module.css";
 
 export const Hero = (): React.JSX.Element => {
     return (
         <>
             <LightRay />
-            <section className={`container ${styles.container}`}>
-                <Announcement />
-                <h1 className={styles.heading}>
+            <section
+                className={`container ${styles.container}`}
+                aria-labelledby="heroHeading"
+            >
+                <Announcement href="#">
+                    <span>
+                        Introducir our
+                        <span className={styles.highlight}> Tracker</span>{" "}
+                        feature!
+                    </span>
+                </Announcement>
+                <h1 className={styles.heading} id="heroHeading">
                     Explore and Track Crypto Assets.
                 </h1>
                 <p className={styles.paragraph}>
-                    See the <span className={styles.highlight}>crypto</span>{" "}
-                    market clearly. CoinMaster gives you the{" "}
-                    <span className={styles.highlight}>tools</span> to navigate
+                    See the<span className={styles.highlight}> crypto </span>
+                    market clearly. CoinMaster gives you the
+                    <span className={styles.highlight}> tools </span>to navigate
                     it with confidence.
                 </p>
                 <div className={styles.buttonsContainer}>
                     <Link
                         href="/market"
-                        className={`btn btn--primary ${styles.ctaButton}`}
+                        className={`${buttonStyles.button} ${buttonStyles.buttonPrimary}`}
                     >
                         Get started
                     </Link>
-                    <Link href="#features" className="btn btn--secondary">
+                    <Link
+                        href="#features"
+                        className={`${buttonStyles.button} ${buttonStyles.buttonSecondary}`}
+                    >
                         Learn more
                     </Link>
                 </div>

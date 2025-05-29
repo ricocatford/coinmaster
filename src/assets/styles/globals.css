@@ -17,7 +17,7 @@
     --light-blue: hsl(200, 61%, 64%);
     --turquoise: hsl(166, 100%, 50%);
     --violet: hsl(281, 100%, 50%);
-    --purple: hsl(256, 100%, 50%);
+    --purple: hsl(266, 57%, 25%);
     --dark-purple: hsl(266, 17%, 8%);
     --light-green: hsl(147, 100%, 50%);
     --red: hsl(354, 70%, 54%);
@@ -107,49 +107,7 @@ a {
     color: var(--red);
 }
 
-/*------------------- BUTTONS -------------------*/
-
-.btn {
-    cursor: pointer;
-    padding: 0.35rem 1.25rem;
-    font-size: 0.95rem;
-    text-align: center;
-    letter-spacing: -0.05rem;
-    border: none;
-    border-radius: 1rem;
-    transition: all 0.5s ease-in-out;
-}
-
-.btn--big {
-    padding: 0.5rem 2rem;
-}
-
-.btn--primary {
-    background-image: linear-gradient(
-        to right,
-        var(--violet) 0%,
-        var(--purple) 51%,
-        var(--violet) 100%
-    );
-    background-size: 200% auto;
-    color: var(--white);
-}
-
-.btn--secondary {
-    background-image: linear-gradient(
-        to right,
-        var(--white) 0%,
-        var(--light-grey) 50%,
-        var(--white) 100%
-    );
-    background-size: 200% auto;
-    color: var(--black);
-}
-
-.btn--primary:hover,
-.btn--secondary:hover {
-    background-position: right center;
-}
+/*------------------- MEDIA QUERIES -------------------*/
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .mainContent {
