@@ -15,7 +15,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
 
         const data = await res.json();
         return NextResponse.json(data);
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Failed to fetch asset' }, { status: 500 });
     }
 }
