@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import "dotenv/config"
+import { NextResponse } from "next/server";
+import "dotenv/config";
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
     const { id } = params;
@@ -9,13 +9,13 @@ export async function GET(request: Request, { params }: { params: { id: string }
         const res = await fetch(`https://rest.coincap.io/v3/assets/${id}`, {
             headers: {
                 Authorization: `Bearer ${API_KEY}`,
-                Accept: 'application/json',
+                Accept: "application/json",
             },
         });
 
         const data = await res.json();
         return NextResponse.json(data);
     } catch {
-        return NextResponse.json({ error: 'Failed to fetch asset' }, { status: 500 });
+        return NextResponse.json({ error: "Failed to fetch asset" }, { status: 500 });
     }
 }
