@@ -57,7 +57,9 @@ export const FeatureCard = ({
                     <p className={styles.cardParagraph}>{paragraph}</p>
                     <ul className={styles.cardTagsList}>
                         {tags.map((tag) => (
-                            <li className={styles.cardTag}>{tag}</li>
+                            <li className={styles.cardTag} key={tag}>
+                                {tag}
+                            </li>
                         ))}
                     </ul>
                 </div>

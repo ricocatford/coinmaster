@@ -2,7 +2,6 @@ import styles from "@/assets/styles/components/table/Table.module.css";
 import Link from "next/link";
 
 type TableDataProps = {
-    label: string;
     value: string | number;
     isPriority?: boolean;
     isLink?: boolean;
@@ -11,7 +10,6 @@ type TableDataProps = {
 };
 
 export const TableData = ({
-    label,
     value,
     isPriority,
     isLink,

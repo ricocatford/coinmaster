@@ -23,10 +23,9 @@ export const NavLinks = ({
         >
             <ul className={styles.list}>
                 {links.map((link) => (
-                    <li className={styles.link}>
+                    <li className={styles.link} key={link.id}>
                         <Link
                             href={link.href}
-                            key={link.id}
                             onClick={() => setIsToggled(false)}
                         >
                             {link.label}

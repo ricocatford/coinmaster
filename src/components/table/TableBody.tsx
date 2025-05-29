@@ -17,9 +17,7 @@ export const TableBody = ({ assets }: { assets: Asset[] }) => {
         <tbody>
             {assets.map((asset) => (
                 <tr key={asset.id} className={styles.row}>
-                    <td
-                        className={`${styles.data} ${styles.priority}`}
-                    >
+                    <td className={`${styles.data} ${styles.priority}`}>
                         <AddToTrackerButton id={asset.id} />
                     </td>
 
@@ -32,7 +30,6 @@ export const TableBody = ({ assets }: { assets: Asset[] }) => {
                         return (
                             <TableData
                                 key={col.key}
-                                label={col.key}
                                 value={value}
                                 isPriority={col.isPriority}
                                 isLink={col.isLink}

@@ -1,6 +1,15 @@
-export const CustomTooltip = ({ active, payload }: any) => {
+import { TooltipProps } from "recharts";
+import {
+    NameType,
+    ValueType,
+} from "recharts/types/component/DefaultTooltipContent";
+
+export const CustomTooltip = ({
+    active,
+    payload,
+}: TooltipProps<ValueType, NameType>) => {
     if (active && payload && payload.length) {
-        const point = payload[0].payload;
+        const point = payload[0].payload as { date: string; price: number };
         return (
             <div
                 style={{
