@@ -2,6 +2,9 @@ import { DetailCard } from "@/components/cards/DetailCard";
 import { useAssetDetails } from "@/hooks/useAssetDetails";
 import { AssetDetail } from "@/types/assetDetail";
 import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
+import { ReturnButton } from "@/components/buttons/ReturnButton";
+import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlaceholder";
+import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import styles from "@/assets/styles/components/pages/asset/AssetDetails.module.css";
 
 export const AssetDetails = ({
@@ -11,37 +14,52 @@ export const AssetDetails = ({
 }: FetchedAssetResponse): React.JSX.Element => {
     const details: AssetDetail[] = useAssetDetails(asset);
 
-    if (error) {
-        return (
-            <div className={styles.container}>
-                <p className="paragraph">
-                    Failed to fetch asset. Please try again in a few seconds.
-                </p>
-            </div>
-        );
-    }
+    let content;
 
-    if (!asset || !details || details.length === 0) {
-        return (
-            <div className={styles.container}>
-                <p className="paragraph">No asset details available.</p>
-            </div>
+    if (error) {
+        content = (
+            <p className="paragraph">
+                Failed to fetch asset. Please try again in a few seconds.
+            </p>
         );
+    } else if (!asset || !details || details.length === 0) {
+        content = <p className="paragraph">No asset details available.</p>;
+    } else if (isLoading) {
+        content = <LoadingSpinner />;
+    } else {
+        content = details.map((detail) => (
+            <DetailCard
+                key={detail.id}
+                id={detail.id}
+                label={detail.label}
+                info={detail.info}
+                value={detail.value}
+                valueShort={detail.valueShort}
+                icon={detail.icon}
+            />
+        ));
     }
 
     return (
-        <div className={styles.container}>
-            {details.map((detail) => (
-                <DetailCard
-                    key={detail.id}
-                    id={detail.id}
-                    label={detail.label}
-                    info={detail.info}
-                    value={detail.value}
-                    valueShort={detail.valueShort}
-                    icon={detail.icon}
-                />
-            ))}
-        </div>
+        <section
+            className="container fullWidth"
+            id="assetDetails"
+            role="region"
+            aria-labelledby="assetDetailsHeading"
+        >
+            <div
+                className={`container fullWidth borderBottom ${styles.titleContainer}`}
+            >
+                <ReturnButton />
+                <h1 className="heading" id="assetDetailsHeading">
+                    {asset?.name} {asset?.symbol}
+                </h1>
+            </div>
+            <div>
+                <ContentPlaceholder>
+                    <div className={styles.container}>{content}</div>
+                </ContentPlaceholder>
+            </div>
+        </section>
     );
 };

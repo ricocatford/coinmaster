@@ -11,6 +11,32 @@ export const AssetsTable = ({
     isLoading,
     error,
 }: FetchedAssetsResponse): React.JSX.Element => {
+    let content;
+
+    if (error) {
+        content = (
+            <ContentMiddlePlaceholder>
+                <p className="paragraph">
+                    Failed to fetch assets. Please try again in a few seconds.
+                </p>
+            </ContentMiddlePlaceholder>
+        );
+    } else if (!assets || assets.length === 0) {
+        content = (
+            <ContentMiddlePlaceholder>
+                <p className="paragraph">No assets available.</p>
+            </ContentMiddlePlaceholder>
+        );
+    } else if (isLoading) {
+        content = (
+            <ContentMiddlePlaceholder>
+                <LoadingSpinner />
+            </ContentMiddlePlaceholder>
+        );
+    } else {
+        content = assets && <Table assets={assets} />;
+    }
+
     return (
         <section
             className={styles.container}
@@ -24,17 +50,7 @@ export const AssetsTable = ({
                 </h2>
                 <span className={styles.topInfo}>(Showing top 100 assets)</span>
             </ContentTopPlaceholder>
-            {error && (
-                <p className="paragraph">
-                    Failed to fetch assets. Please try again in a few seconds.
-                </p>
-            )}
-            {isLoading && (
-                <ContentMiddlePlaceholder>
-                    <LoadingSpinner />
-                </ContentMiddlePlaceholder>
-            )}
-            {assets && <Table assets={assets} />}
+            {content}
             <ContentBottomPlaceholder>
                 <span className={styles.bottomInfo}>End of List</span>
             </ContentBottomPlaceholder>

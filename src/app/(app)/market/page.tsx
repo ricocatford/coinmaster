@@ -11,22 +11,7 @@ export default function Market(): React.JSX.Element {
 
     return (
         <>
-            <section
-                className="container fullWidth"
-                id="marketStatistics"
-                aria-labelledby="marketStatisticsHeading"
-            >
-                <div className="container fullWidth bordeBottom">
-                    <h1 className="heading" id="marketStatisticsHeading">
-                        Market Statistics
-                    </h1>
-                </div>
-                <Statistics
-                    assets={assets}
-                    isLoading={isLoading}
-                    error={error}
-                />
-            </section>
+            <Statistics assets={assets} isLoading={isLoading} error={error} />
             <AssetsTable assets={assets} isLoading={isLoading} error={error} />
         </>
     );

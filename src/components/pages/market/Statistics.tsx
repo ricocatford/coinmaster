@@ -2,6 +2,7 @@ import { StatisticCard } from "@/components/cards/StatisticCard";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import { MarketStatistic } from "@/types/marketStatistic";
+import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import styles from "@/assets/styles/components/pages/market/Statistics.module.css";
 
 export const Statistics = ({
@@ -11,38 +12,45 @@ export const Statistics = ({
 }: FetchedAssetsResponse): React.JSX.Element => {
     const statistics: MarketStatistic[] = useMarketStatistics(assets);
 
-    if (error) {
-        return (
-            <div className={styles.container}>
-                <p className="paragraph">
-                    Failed to fetch assets. Please try again in a few seconds.
-                </p>
-            </div>
-        );
-    }
+    let content;
 
-    if (!isLoading && (!statistics || statistics.length === 0)) {
-        return (
-            <div className={styles.container}>
-                <p className="paragraph">No statistics available.</p>
-            </div>
+    if (error) {
+        content = (
+            <p className="paragraph">
+                Failed to fetch assets. Please try again in a few seconds.
+            </p>
         );
+    } else if (!isLoading && (!statistics || statistics.length === 0)) {
+        content = <p className="paragraph">No statistics available.</p>;
+    } else if (isLoading) {
+        content = <LoadingSpinner />;
+    } else {
+        content = statistics.map((stat) => (
+            <StatisticCard
+                key={stat.id}
+                id={stat.id}
+                label={stat.label}
+                info={stat.info}
+                value={stat.value}
+                asset={stat.asset}
+                icon={stat.icon}
+                isLoading={isLoading}
+            />
+        ));
     }
 
     return (
-        <div className={styles.container}>
-            {statistics.map((stat) => (
-                <StatisticCard
-                    key={stat.id}
-                    id={stat.id}
-                    label={stat.label}
-                    info={stat.info}
-                    value={stat.value}
-                    asset={stat.asset}
-                    icon={stat.icon}
-                    isLoading={isLoading}
-                />
-            ))}
-        </div>
+        <section
+            className="container fullWidth"
+            id="marketStatistics"
+            aria-labelledby="marketStatisticsHeading"
+        >
+            <div className="container fullWidth borderBottom">
+                <h1 className="heading" id="marketStatisticsHeading">
+                    Market Statistics
+                </h1>
+            </div>
+            <div className={styles.container}>{content}</div>
+        </section>
     );
 };
