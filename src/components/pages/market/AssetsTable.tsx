@@ -4,6 +4,7 @@ import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ContentBottomPlaceholder } from "@/components/content-placeholder/ContentBottomPlaceholder";
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
+import { ReactNode } from "react";
 import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
 
 export const AssetsTable = ({
@@ -11,7 +12,7 @@ export const AssetsTable = ({
     isLoading,
     error,
 }: FetchedAssetsResponse): React.JSX.Element => {
-    let content;
+    let content: ReactNode;
 
     if (error) {
         content = (
@@ -21,16 +22,16 @@ export const AssetsTable = ({
                 </p>
             </ContentMiddlePlaceholder>
         );
-    } else if (!assets || assets.length === 0) {
-        content = (
-            <ContentMiddlePlaceholder>
-                <p className="paragraph">No assets available.</p>
-            </ContentMiddlePlaceholder>
-        );
     } else if (isLoading) {
         content = (
             <ContentMiddlePlaceholder>
                 <LoadingSpinner />
+            </ContentMiddlePlaceholder>
+        );
+    } else if (!assets || assets.length === 0) {
+        content = (
+            <ContentMiddlePlaceholder>
+                <p className="paragraph">No assets available.</p>
             </ContentMiddlePlaceholder>
         );
     } else {

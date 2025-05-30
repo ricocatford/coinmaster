@@ -6,7 +6,7 @@ import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlac
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { useFetchAssetHistoryById } from "@/hooks/useFetchAssetHistoryById";
 import { AssetId } from "@/types/assetId";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 export const AssetPriceHistory = ({ assetId }: { assetId: AssetId }) => {
     const [range, setRange] = useState<"1d" | "7d" | "1m">("1d");
@@ -17,7 +17,7 @@ export const AssetPriceHistory = ({ assetId }: { assetId: AssetId }) => {
         range
     );
 
-    let content;
+    let content: ReactNode;
 
     if (error) {
         content = (
@@ -28,6 +28,10 @@ export const AssetPriceHistory = ({ assetId }: { assetId: AssetId }) => {
         );
     } else if (isLoading) {
         content = <LoadingSpinner />;
+    } else if (!history || Object.keys(history).length === 0) {
+        content = (
+            <p className="paragraph">No asset price history available.</p>
+        );
     } else {
         content = history && <HistoryLineChart data={history} />;
     }

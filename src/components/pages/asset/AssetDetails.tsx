@@ -5,6 +5,7 @@ import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
 import { ReturnButton } from "@/components/buttons/ReturnButton";
 import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlaceholder";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
+import { ReactNode } from "react";
 import styles from "@/assets/styles/components/pages/asset/AssetDetails.module.css";
 
 export const AssetDetails = ({
@@ -14,7 +15,7 @@ export const AssetDetails = ({
 }: FetchedAssetResponse): React.JSX.Element => {
     const details: AssetDetail[] = useAssetDetails(asset);
 
-    let content;
+    let content: ReactNode;
 
     if (error) {
         content = (
@@ -22,10 +23,10 @@ export const AssetDetails = ({
                 Failed to fetch asset. Please try again in a few seconds.
             </p>
         );
-    } else if (!asset || !details || details.length === 0) {
-        content = <p className="paragraph">No asset details available.</p>;
     } else if (isLoading) {
         content = <LoadingSpinner />;
+    } else if (!asset || !details || details.length === 0) {
+        content = <p className="paragraph">No asset details available.</p>;
     } else {
         content = details.map((detail) => (
             <DetailCard

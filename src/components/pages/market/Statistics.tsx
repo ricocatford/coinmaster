@@ -3,6 +3,7 @@ import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import { MarketStatistic } from "@/types/marketStatistic";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
+import { ReactNode } from "react";
 import styles from "@/assets/styles/components/pages/market/Statistics.module.css";
 
 export const Statistics = ({
@@ -12,7 +13,7 @@ export const Statistics = ({
 }: FetchedAssetsResponse): React.JSX.Element => {
     const statistics: MarketStatistic[] = useMarketStatistics(assets);
 
-    let content;
+    let content: ReactNode;
 
     if (error) {
         content = (
@@ -20,10 +21,10 @@ export const Statistics = ({
                 Failed to fetch assets. Please try again in a few seconds.
             </p>
         );
-    } else if (!isLoading && (!statistics || statistics.length === 0)) {
-        content = <p className="paragraph">No statistics available.</p>;
     } else if (isLoading) {
         content = <LoadingSpinner />;
+    } else if (!isLoading && (!statistics || statistics.length === 0)) {
+        content = <p className="paragraph">No statistics available.</p>;
     } else {
         content = statistics.map((stat) => (
             <StatisticCard
