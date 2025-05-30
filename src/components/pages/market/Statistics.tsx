@@ -2,7 +2,6 @@ import { StatisticCard } from "@/components/cards/StatisticCard";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import { MarketStatistic } from "@/types/marketStatistic";
-import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ReactNode } from "react";
 import styles from "@/assets/styles/components/pages/market/Statistics.module.css";
 
