@@ -7,7 +7,7 @@ import {
     faMoneyBillTrendUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { LoadingSpinner } from "../loading-spinner/LoadingSpinner";
+import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 
 const iconMap: Record<string, IconDefinition> = {
     globe: faGlobe,
