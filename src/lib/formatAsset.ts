@@ -7,7 +7,7 @@ import { formatPercentage } from "./formatPercentage";
 import { formatCurrency } from "./formatCurrency";
 
 export const formatAsset = (asset: FetchedAsset): Asset => {
-    return {
+    const formatted: Asset = {
         id: asset.id,
         name: asset.name,
         symbol: asset.symbol,
@@ -32,4 +32,16 @@ export const formatAsset = (asset: FetchedAsset): Asset => {
         changePercent24Hr: asset.changePercent24Hr,
         changePercent24HrFormatted: formatPercentage(asset.changePercent24Hr),
     };
+
+    for (const [key, value] of Object.entries(formatted)) {
+        if (value === null) {
+            if (key in formatted) formatted[key as keyof Asset] = "N/A";
+            const formattedKey = `${key}Formatted`;
+            const shortKey = `${key}Short`;
+            if (formattedKey in formatted) formatted[formattedKey as keyof Asset] = "N/A";
+            if (shortKey in formatted) formatted[shortKey as keyof Asset] = "N/A";
+        }
+    }
+
+    return formatted;
 };
