@@ -12,7 +12,7 @@
         var(--black),
         var(--background)
     );
-    transition: all ease-in-out 0.75s;
+    transition: all ease-in-out 1.75s;
 }
 
 .container:hover {
@@ -145,5 +145,11 @@
 @media screen and (max-width: 768px) {
     .container {
         flex: 0 0 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        flex: 0 0 100%;
     }
 }

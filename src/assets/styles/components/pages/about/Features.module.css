@@ -1,15 +1,14 @@
 .container {
-    display: none;
+    display: flex;
     flex-direction: column;
     animation: var(--slide-in-down) 0.75s;
-}
-
-.active {
-    display: flex;
+    flex: 1 1 33%;
 }
 
 .heading {
-    display: none;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .paragraph {
@@ -17,6 +16,16 @@
 }
 
 .list {
-    list-style: circle;
-    margin-left: 2rem;
+    list-style: none;
+}
+
+.listItem::before {
+    content: "";
+    display: inline-block;
+    background: url("/assets/svg/arrowRight.svg") no-repeat center;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    vertical-align: -0.1rem;
 }

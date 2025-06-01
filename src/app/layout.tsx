@@ -11,12 +11,14 @@ config.autoAddCss = false;
 const inter = Inter({
     weight: ["400", "700"],
     subsets: ["latin"],
+    display: "swap",
     variable: "--font-inter",
 });
 
 const josefinSans = Josefin_Sans({
     weight: ["400", "700"],
     subsets: ["latin"],
+    display: "swap",
     variable: "--font-josefin",
 });
 
