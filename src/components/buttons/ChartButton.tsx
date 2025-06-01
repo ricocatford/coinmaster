@@ -7,7 +7,7 @@ type ChartButtonProps = {
 };
 
 export const ChartButton = ({ labels, onChange }: ChartButtonProps) => {
-    const [isActive, setIsActive] = useState(labels[0]);
+    const [isActive, setIsActive] = useState<string>(labels[0]);
 
     const handleClick = (label: string) => {
         setIsActive(label);

@@ -12,6 +12,6 @@
     {
         "id": 2,
         "label": "About",
-        "href": "#"
+        "href": "/about"
     }
 ]

@@ -5,7 +5,7 @@ import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { fetcher } from "@/lib/fetcher";
 
 export const useFetchAllAssets = (): FetchedAssetsResponse => {
-    const url = `/api/assets`;
+    const url = "/api/assets";
 
     const { data, error, isValidating } = useSWR(url, fetcher, {
         refreshInterval: 3600000,

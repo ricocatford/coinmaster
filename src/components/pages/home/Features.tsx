@@ -9,7 +9,7 @@ export const Features = (): React.JSX.Element => {
             <p className={styles.paragraph}>
                 Everything you need to understand the crypto market—fast.
             </p>
-            <div className={styles.features}>
+            <div className={styles.cardsContainer}>
                 {features.map((feature) => (
                     <FeatureCard {...feature} key={feature.id} />
                 ))}

@@ -1,0 +1,22 @@
+.container {
+    display: none;
+    flex-direction: column;
+    animation: var(--slide-in-down) 0.75s;
+}
+
+.active {
+    display: flex;
+}
+
+.heading {
+    display: none;
+}
+
+.paragraph {
+    font-size: 1.05rem;
+}
+
+.list {
+    list-style: circle;
+    margin-left: 2rem;
+}

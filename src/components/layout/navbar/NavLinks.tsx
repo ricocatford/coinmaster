@@ -1,6 +1,5 @@
 import { NavigationLink } from "@/types/navigationLink";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import styles from "@/assets/styles/components/navbar/Navbar.module.css";
 import buttonStyles from "@/assets/styles/components/buttons/GenericButton.module.css";
 
@@ -13,8 +12,6 @@ export const NavLinks = ({
     setIsToggled: (toggle: boolean) => void;
     links: NavigationLink[];
 }): React.JSX.Element => {
-    const pathname = usePathname();
-
     return (
         <div
             className={
@@ -33,15 +30,13 @@ export const NavLinks = ({
                     </li>
                 ))}
             </ul>
-            {pathname === "/" && (
-                <Link
-                    href="/market"
-                    className={`${buttonStyles.button} ${buttonStyles.buttonPrimary} ${styles.ctaLink}`}
-                    onClick={() => setIsToggled(false)}
-                >
-                    Get started
-                </Link>
-            )}
+            <Link
+                href="/market"
+                className={`${buttonStyles.button} ${buttonStyles.buttonPrimary} ${styles.ctaLink}`}
+                onClick={() => setIsToggled(false)}
+            >
+                Get started
+            </Link>
         </div>
     );
 };

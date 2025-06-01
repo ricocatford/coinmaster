@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/footer/Footer";
-import { ShowNavbarOnHome } from "@/components/layout/navbar/ShowNavbarOnHome";
+import { ShowNavbar } from "@/components/layout/navbar/ShowNavbar";
+import { LightRay } from "@/components/light-ray/LightRay";
 
 export default function PublicLayout({
     children,
@@ -8,7 +9,8 @@ export default function PublicLayout({
 }): React.JSX.Element {
     return (
         <>
-            <ShowNavbarOnHome />
+            <ShowNavbar />
+            <LightRay />
             <main>{children}</main>
             <Footer />
         </>

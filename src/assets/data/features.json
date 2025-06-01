@@ -1,18 +1,23 @@
 [
     {
         "id": 0,
-        "image": "analytics.png",
-        "icon": "chartLine",
+        "icon": "magnifyingGlassChart",
         "heading": "Detailed Asset Analytics",
-        "paragraph": "Dive into rich, real-time analytics for top crypto assets — including price action, volume shifts, market cap fluctuations, and historical comparisons — all in one place.",
+        "paragraph": "Explore comprehensive, real-time analytics for top cryptocurrencies — including price trends, volume spikes, market cap movements, and historical performance — all in one powerful dashboard.",
         "tags": ["Real-Time data", "Price trends", "Visual insights"]
     },
     {
         "id": 1,
-        "image": "tracker.png",
         "icon": "eye",
-        "heading": "Asset Tracker",
-        "paragraph": "Keep a personalized list of your favorite cryptocurrencies for quick access to key data. Easily monitor prices, market changes, and performance at a glance.",
-        "tags": ["Quality of life", "Custom tracking"]
+        "heading": "Watchlist and Tracking",
+        "paragraph": "Create a custom watchlist to track your favorite coins. Instantly view real-time prices, market activity, and performance changes — personalized for what matters to you.",
+        "tags": ["Custom Tracking", "Market Monitoring", "Personal Watchlist"]
+    },
+    {
+        "id": 2,
+        "icon": "chartLine",
+        "heading": "Price History Visualization",
+        "paragraph": "Visualize how assets perform over time with interactive historical charts. Analyze trends, compare performance, and gain deeper insight into long-term market behavior.",
+        "tags": ["Historical Data", "Interactive Charts", "Insightful Trends"]
     }
 ]

@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    min-height: calc(100vh - 44px);
+    min-height: calc(100vh - 56px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
 
 .heading {
     max-width: 860px;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 4rem;
     letter-spacing: -0.1rem;
     line-height: 4.5rem;

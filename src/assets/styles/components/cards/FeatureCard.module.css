@@ -1,111 +1,149 @@
-.card {
-    max-width: 80%;
+.container {
     display: flex;
     flex-direction: column;
+    flex: 1 1 calc(33% - 5rem);
     gap: 1rem;
-}
-
-.cardContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
-}
-
-.cardContainerReverse {
-    flex-direction: row-reverse;
-}
-
-.imageContainer {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
-    flex: 1 1 40%;
-    padding: 3rem;
+    position: relative;
+    padding: 4rem 2rem;
+    border: 1px solid var(--subtle-black);
+    border-radius: 1.5rem;
     background: radial-gradient(
         circle at top left,
         var(--black),
-        var(--subtle-black)
+        var(--background)
     );
-    border-radius: 4rem;
+    transition: all ease-in-out 0.75s;
 }
 
-.cardImage {
-    border-radius: 2.25rem;
+.container:hover {
+    filter: drop-shadow(0 0 3px var(--purple))
+        drop-shadow(0 0 9px var(--purple));
 }
 
-.descriptionContainer {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 60%;
-    text-align: left;
-    gap: 0.75rem;
+.container:first-of-type:hover {
+    filter: drop-shadow(0 0 3px var(--turquoise))
+        drop-shadow(0 0 9px var(--turquoise));
 }
 
-.cardIconContainer {
-    width: fit-content;
-    background: var(--black);
-    background: linear-gradient(
-        135deg,
-        var(--black) 0%,
-        var(--subtle-black) 50%,
-        var(--dark-grey) 100%
-    );
-    opacity: 0.5;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    align-self: center;
-    filter: drop-shadow(0 0 6px var(--light-grey))
-        drop-shadow(0 0 12px var(--light-grey));
+.container:last-of-type:hover {
+    filter: drop-shadow(0 0 3px var(--orange))
+        drop-shadow(0 0 9px var(--orange));
 }
 
-.cardIcon {
-    font-size: 3rem;
-    color: var(--white);
+.icon {
+    font-size: 4rem;
+    color: var(--dark-grey);
 }
 
-.cardHeading {
+.heading {
     font-size: 1.75rem;
 }
 
-.cardParagraph {
+.paragraph {
     font-size: 1.05rem;
+    text-align: left;
     color: var(--light-grey);
 }
 
-.cardTagsList {
+.list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.25rem;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-.cardTag {
-    border: 1px solid var(--grey);
-    color: var(--light-grey);
-    border-radius: 1rem;
+.tag {
     padding: 0.25rem 0.75rem;
-    text-transform: capitalize;
+    border-radius: 1rem;
+    border: 1px solid var(--dark-grey);
+    color: var(--light-grey);
+}
+
+.gradientLineOne,
+.gradientLineTwo {
+    position: absolute;
+    top: -1px;
+    height: 1px;
+}
+
+.gradientLineOne {
+    left: 2.5rem;
+    width: calc(100% - 5rem);
+    background-image: linear-gradient(
+        to right,
+        rgba(174, 83, 255, 0),
+        rgba(174, 83, 255, 0.8),
+        rgba(174, 83, 255, 0)
+    );
+}
+
+.gradientLineTwo {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    background-image: linear-gradient(
+        to right,
+        rgba(174, 83, 255, 0),
+        rgba(174, 83, 255, 0.5),
+        rgba(174, 83, 255, 0)
+    );
+    mix-blend-mode: overlay;
+}
+
+.container:first-child .gradientLineOne {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 255, 195, 0),
+        rgba(0, 255, 195, 0.8),
+        rgba(0, 255, 195, 0)
+    );
+}
+
+.container:first-child .gradientLineTwo {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 255, 195, 0),
+        rgba(0, 255, 195, 0.5),
+        rgba(0, 255, 195, 0)
+    );
+}
+
+.container:last-child .gradientLineOne {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 94, 0, 0),
+        rgba(255, 94, 0, 0.8),
+        rgba(255, 94, 0, 0)
+    );
+}
+
+.container:last-child .gradientLineTwo {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 94, 0, 0),
+        rgba(255, 94, 0, 0.5),
+        rgba(255, 94, 0, 0)
+    );
 }
 
 /*------------------- MEDIA QUERIES -------------------*/
 
+@media screen and (max-width: 1280px) {
+    .container {
+        padding: 4rem 1rem;
+    }
+}
+
 @media screen and (max-width: 1024px) {
-    .card {
-        max-width: 100%;
+    .container {
+        flex: 0 0 calc(50% - 2rem);
+        padding: 4rem 2rem;
     }
+}
 
-    .cardContainer {
-        flex-direction: column-reverse;
-        gap: 2rem;
-    }
-
-    .imageContainer {
-        align-self: center;
-    }
-
-    .cardTagsList {
-        gap: 0.75rem;
-        font-size: 0.85rem;
+@media screen and (max-width: 768px) {
+    .container {
+        flex: 0 0 80%;
     }
 }
