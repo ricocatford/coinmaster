@@ -3,7 +3,13 @@
         "id": 0,
         "heading": "Features",
         "paragraph": "CoinMaster is designed to provide a clear, user-friendly view of the crypto market by combining essential data with an intuitive interface. CoinMaster's features make it easy to explore, analyze, and stay updated on the performance of top digital assets.",
-        "list": ["Real-Time data", "Price trends", "Visual insights"]
+        "list": [
+            "Real-Time data on top 100 cryptocurrencies",
+            "Detailed asset pages with key metrics",
+            "Interactive price history charts",
+            "Clean, responsive UI/UX ",
+            "Fast performance using Next.js Server-Side Rendering"
+        ]
     },
     {
         "id": 1,

@@ -41,14 +41,14 @@
     gap: 2rem;
 }
 
-.link {
+.label {
     padding: 0.5rem 0;
     transition: all ease-in-out 0.5s;
     font-size: 0.85rem;
 }
 
-.link:hover,
-.link:focus {
+.label:hover,
+.label:focus {
     color: var(--turquoise);
 }
 
@@ -131,6 +131,11 @@
     .list {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .link {
+        display: block;
+        width: 100%;
     }
 
     .ctaLink {
