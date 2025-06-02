@@ -12,7 +12,7 @@
         var(--black),
         var(--background)
     );
-    transition: all ease-in-out 1.75s;
+    transition: all ease-in-out 1s;
 }
 
 .container:hover {
@@ -30,13 +30,19 @@
         drop-shadow(0 0 9px var(--orange));
 }
 
+.container:hover .icon {
+    opacity: 1;
+}
+
 .icon {
     font-size: 4rem;
-    color: var(--dark-grey);
+    color: var(--grey);
+    opacity: 0.2;
+    transition: all ease-in-out 1s;
 }
 
 .heading {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 .paragraph {
@@ -58,6 +64,7 @@
     border-radius: 1rem;
     border: 1px solid var(--dark-grey);
     color: var(--light-grey);
+    text-transform: capitalize;
 }
 
 .gradientLineOne,
@@ -138,7 +145,7 @@
 @media screen and (max-width: 1024px) {
     .container {
         flex: 0 0 calc(50% - 2rem);
-        padding: 4rem 2rem;
+        padding: 4rem 1.5rem;
     }
 }
 
@@ -151,5 +158,6 @@
 @media screen and (max-width: 576px) {
     .container {
         flex: 0 0 100%;
+        padding: 3rem 1rem;
     }
 }

@@ -1,6 +1,6 @@
 .rayContainer {
     transition: opacity 0.25s linear;
-    position: static;
+    position: fixed;
     inset: 0;
     pointer-events: none;
     user-select: none;

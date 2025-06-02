@@ -15,7 +15,19 @@
     font-size: 4rem;
     letter-spacing: -0.1rem;
     line-height: 4.5rem;
-    animation: var(--fade-in) 0.75s;
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    background: linear-gradient(
+        to right,
+        var(--white) 20%,
+        var(--grey) 50%,
+        var(--white) 80%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: var(--shimmer) 12s linear infinite, var(--fade-in) 0.75s;
 }
 
 .paragraph {
@@ -41,10 +53,6 @@
 /*------------------- MEDIA QUERIES -------------------*/
 
 @media screen and (max-width: 768px) {
-    .container {
-        min-height: calc(100vh - 56px);
-    }
-
     .heading {
         font-size: 3rem;
         line-height: 3.25rem;
@@ -59,9 +67,5 @@
     .buttonsContainer {
         width: 100%;
         flex-direction: column;
-    }
-
-    .headingGradient {
-        letter-spacing: -0.1rem;
     }
 }

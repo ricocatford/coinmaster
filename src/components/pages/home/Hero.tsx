@@ -14,7 +14,7 @@ export const Hero = (): React.JSX.Element => {
         >
             <Announcement href="#">
                 <span>
-                    Introducir our
+                    Introducing our
                     <span className={styles.highlight}> Tracker</span> feature!
                 </span>
             </Announcement>
