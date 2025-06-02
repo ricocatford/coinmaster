@@ -1,0 +1,47 @@
+[
+    {
+        "id": 0,
+        "heading": "Features",
+        "paragraph": "CoinMaster is designed to provide a clear, user-friendly view of the crypto market by combining essential data with an intuitive interface. CoinMaster's features make it easy to explore, analyze, and stay updated on the performance of top digital assets.",
+        "list": ["Real-Time data", "Price trends", "Visual insights"]
+    },
+    {
+        "id": 1,
+        "heading": "Technologies",
+        "paragraph": "Built with a modern web stack focused on speed, scalability, and maintainability. Leveraging powerful tools like Next.js and TypeScript, the app delivers a seamless user experience while handling real-time data with efficiency and precision.",
+        "list": [
+            "Next.js",
+            "TypeScript",
+            "Zustand",
+            "Custom CSS + Tailwind",
+            "Recharts",
+            "Coincap OpenAPI"
+        ]
+    },
+    {
+        "id": 2,
+        "heading": "Developer",
+        "paragraph": "Built by Ricardo Albarenque, a full-stack developer based in Spain. With strong experience in UI/UX, TypeScript, React, and Node.js, Ricardo focuses on building high-performance web applications with clean architecture, modern design patterns, and a strong emphasis on accessibility and user experience.",
+        "list": ["GitHub", "LinkedIn"]
+    },
+    {
+        "id": 3,
+        "heading": "Why I built CoinMaster",
+        "paragraph": "As a developer passionate about data visualization and web performance, I wanted to create a platform that merges financial insight with intuitive design. CoinMaster is my attempt to bring clarity to the often chaotic world of cryptocurrency.",
+        "list": ["GitHub", "LinkedIn"]
+    },
+    {
+        "id": 4,
+        "heading": "What's next?",
+        "paragraph": "CoinMaster is continuously evolving, with new features and improvements planned to enhance the overall experience.",
+        "list": [
+            "Assets table pagination for smoother navigation through large data sets",
+            "A tailored dashboard for easy tracking and quick access to selected assets"
+        ]
+    },
+    {
+        "id": 4,
+        "heading": "Feedback & Contact",
+        "paragraph": "CoinMaster is an open source project — your contributions and ideas are always welcome! If you have suggestions or want to report issues, feel free to open an issue on GitHub. You can also reach out via email or social media to share your feedback or collaborate."
+    }
+]

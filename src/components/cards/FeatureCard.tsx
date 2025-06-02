@@ -1,4 +1,3 @@
-import styles from "@/assets/styles/components/cards/FeatureCard.module.css";
 import {
     faChartLine,
     faEye,
@@ -6,6 +5,7 @@ import {
     IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "@/assets/styles/components/cards/FeatureCard.module.css";
 
 type FeatureCardProps = {
     id: number;

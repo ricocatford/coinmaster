@@ -1,4 +1,3 @@
-import styles from "@/assets/styles/components/cards/DetailCard.module.css";
 import { AssetDetail } from "@/types/assetDetail";
 import {
     IconDefinition,
@@ -10,6 +9,7 @@ import {
     faMoneyBill,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "@/assets/styles/components/cards/DetailCard.module.css";
 
 const iconMap: Record<string, IconDefinition> = {
     moneyBill: faMoneyBill,

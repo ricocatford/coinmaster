@@ -1,4 +1,3 @@
-import styles from "@/assets/styles/components/cards/StatisticCard.module.css";
 import {
     IconDefinition,
     faGlobe,
@@ -8,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
+import styles from "@/assets/styles/components/cards/StatisticCard.module.css";
 
 const iconMap: Record<string, IconDefinition> = {
     globe: faGlobe,

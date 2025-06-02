@@ -12,9 +12,9 @@ export const Main = (): React.JSX.Element => {
                 What is Coinmaster?
             </h1>
             <p className={styles.paragraph}>
-                Coinmaster is a modern cryptocurrency analytics platform that
+                CoinMaster is a modern cryptocurrency analytics platform that
                 allows users to explore market data. Built for both casual users
-                and crypto enthusiasts, Coinmaster presents clean, responsive
+                and crypto enthusiasts, CoinMaster presents clean, responsive
                 charts and essential metrics to help users stay informed.
             </p>
         </section>

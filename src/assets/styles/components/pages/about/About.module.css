@@ -6,7 +6,9 @@
 
 .infoContainer {
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem 2rem;
     margin: 2rem auto;
     max-width: var(--max-width);
 }
