@@ -39,6 +39,7 @@
     font-size: 1.25rem;
     line-height: 1.625rem;
     letter-spacing: -0.025rem;
+    text-align: center;
     animation: var(--fade-in) 0.75s;
     z-index: 1;
 }
@@ -47,7 +48,7 @@
 
 @media screen and (max-width: 1024px) {
     .container {
-        width: 100%;
+        min-height: 50vh;
     }
 }
 
@@ -57,11 +58,17 @@
     }
 
     .heading {
-        font-size: 2.5rem;
-        line-height: 3rem;
+        font-size: 3.25rem;
+        line-height: 3.5rem;
     }
 
     .paragraph {
-        font-size: 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        min-height: calc(100vh - 56px);
     }
 }
