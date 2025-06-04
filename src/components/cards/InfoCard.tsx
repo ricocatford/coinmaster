@@ -40,7 +40,11 @@ export const InfoCard = ({
                 <ul className={styles.list}>
                     {link.map((item) => (
                         <li className={styles.listItem} key={item.label}>
-                            <Link href={item.href} target="_blank">
+                            <Link
+                                href={item.href}
+                                target="_blank"
+                                className={styles.link}
+                            >
                                 {item.label}
                                 <FontAwesomeIcon
                                     icon={faUpRightFromSquare}
