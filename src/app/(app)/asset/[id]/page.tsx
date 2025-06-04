@@ -4,6 +4,7 @@ import { useFetchAssetById } from "@/hooks/useFetchAssetById";
 import { AssetDetails } from "@/components/pages/asset/AssetDetails";
 import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
 import { AssetPriceHistory } from "@/components/pages/asset/AssetPriceHistory";
+import { AssetActions } from "@/components/pages/asset/AssetActions";
 
 export default function Asset({
     params,
@@ -18,6 +19,7 @@ export default function Asset({
         <>
             <AssetDetails asset={asset} isLoading={isLoading} error={error} />
             <AssetPriceHistory assetId={params.id} />
+            <AssetActions assetId={params.id} variant="bottom" />
         </>
     );
 }

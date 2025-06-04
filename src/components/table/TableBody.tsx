@@ -1,5 +1,5 @@
 import { TableData } from "./TableData";
-import { AddToTrackerButton } from "@/components/buttons/AddToTrackerButton";
+import { TrackerButton } from "@/components/buttons/TrackerButton";
 import styles from "@/assets/styles/components/table/Table.module.css";
 import { Asset } from "@/types/asset";
 
@@ -18,7 +18,7 @@ export const TableBody = ({ assets }: { assets: Asset[] }) => {
             {assets.map((asset) => (
                 <tr key={asset.id} className={styles.row}>
                     <td className={`${styles.data} ${styles.priority}`}>
-                        <AddToTrackerButton id={asset.id} />
+                        <TrackerButton assetId={asset.id} />
                     </td>
 
                     {columnsToRender.map((col) => {

@@ -7,6 +7,7 @@ import { ContentPlaceholder } from "@/components/content-placeholder/ContentPlac
 import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ReactNode } from "react";
 import styles from "@/assets/styles/components/pages/asset/AssetDetails.module.css";
+import { AssetActions } from "./AssetActions";
 
 export const AssetDetails = ({
     asset,
@@ -25,7 +26,7 @@ export const AssetDetails = ({
         );
     } else if (isLoading) {
         content = (
-            <div className={styles.logoContainer}>
+            <div className={styles.loadingContainer}>
                 <LoadingSpinner />
             </div>
         );
@@ -53,13 +54,16 @@ export const AssetDetails = ({
             aria-labelledby="assetDetailsHeading"
         >
             <div
-                className={`container fullWidth borderBottom ${styles.titleContainer}`}
+                className={`container fullWidth borderBottom ${styles.topContainer}`}
             >
-                <ReturnButton />
-                <h1 className="heading" id="assetDetailsHeading">
-                    {asset?.name}{" "}
-                    <span className={styles.symbol}>{asset?.symbol}</span>
-                </h1>
+                <div className={styles.titleContainer}>
+                    <ReturnButton />
+                    <h1 className="heading" id="assetDetailsHeading">
+                        {asset?.name}
+                        <span className={styles.symbol}> {asset?.symbol}</span>
+                    </h1>
+                </div>
+                {asset && <AssetActions assetId={asset.id} variant="top" />}
             </div>
             <div>
                 <ContentPlaceholder>

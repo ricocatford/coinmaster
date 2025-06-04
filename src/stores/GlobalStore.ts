@@ -8,7 +8,6 @@ export type GlobalState = {
 
 export type GlobalActions = {
     handleAsset: (assetId: AssetId) => void;
-    resetTracker: () => void;
 };
 
 export type GlobalStore = GlobalState & GlobalActions;
@@ -26,18 +25,25 @@ export const createGlobalStore = (initState: GlobalState = defaultInitState) => 
         persist(
             (set) => ({
                 ...initState,
-                handleAsset: (assetId: AssetId) => set((state) => {
-                    const existingAssetId: number = state.tracker.findIndex((existingAsset) => existingAsset === assetId);
-                    if (existingAssetId === -1) {
-                        return { tracker: [...state.tracker, assetId] }
-                    }
+                handleAsset: (assetId: AssetId) => {
+                    let wasAdded: boolean = false;
 
-                    const updatedTracker = state.tracker.filter((asset) => asset != assetId);
-                    return { tracker: updatedTracker }
-                }),
-                resetTracker: () => set(() => {
-                    return { tracker: [] }
-                })
+                    set((state) => {
+                        const exists = state.tracker.includes(assetId);
+                        if (exists) {
+                            return {
+                                tracker: state.tracker.filter((a) => a !== assetId),
+                            };
+                        } else {
+                            wasAdded = true;
+                            return {
+                                tracker: [...state.tracker, assetId],
+                            };
+                        }
+                    });
+
+                    return wasAdded;
+                }
             }),
             {
                 name: "global-storage",

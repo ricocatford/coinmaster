@@ -9,7 +9,7 @@
     transition: all 0.5s ease-in-out;
 }
 
-.buttonPrimary {
+.primary {
     background-image: linear-gradient(
         to right,
         var(--purple) 0%,
@@ -20,7 +20,7 @@
     color: var(--white);
 }
 
-.buttonSecondary {
+.secondary {
     background-image: linear-gradient(
         to right,
         var(--white) 0%,

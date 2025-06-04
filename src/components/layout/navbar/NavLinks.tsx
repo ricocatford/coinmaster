@@ -33,7 +33,7 @@ export const NavLinks = ({
             </ul>
             <Link
                 href="/market"
-                className={`${buttonStyles.button} ${buttonStyles.buttonPrimary} ${styles.ctaLink}`}
+                className={`${buttonStyles.button} ${buttonStyles.primary} ${styles.ctaLink}`}
                 onClick={() => setIsToggled(false)}
             >
                 Get started

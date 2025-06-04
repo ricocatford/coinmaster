@@ -29,13 +29,13 @@ export const Hero = (): React.JSX.Element => {
             <div className={styles.buttonsContainer}>
                 <Link
                     href="/market"
-                    className={`${buttonStyles.button} ${buttonStyles.buttonPrimary}`}
+                    className={`${buttonStyles.button} ${buttonStyles.primary}`}
                 >
                     Get started
                 </Link>
                 <Link
                     href="#features"
-                    className={`${buttonStyles.button} ${buttonStyles.buttonSecondary}`}
+                    className={`${buttonStyles.button} ${buttonStyles.secondary}`}
                 >
                     Learn more
                 </Link>

@@ -1,5 +1,14 @@
-.titleContainer {
+.topContainer {
+    display: flex;
+    justify-content: space-between;
     flex-direction: row;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .container {
@@ -12,7 +21,7 @@
     color: var(--light-grey);
 }
 
-.logoContainer {
+.loadingContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,13 +36,13 @@
         gap: 0;
     }
 
-    .logoContainer {
+    .loadingContainer {
         min-height: 255px;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .logoContainer {
+    .loadingContainer {
         min-height: 451px;
     }
 }
