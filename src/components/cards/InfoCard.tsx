@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "@/assets/styles/components/cards/InfoCard.module.css";
 
 type InfoCardProps = {
@@ -5,6 +8,12 @@ type InfoCardProps = {
     heading: string;
     paragraph?: string;
     list?: string[];
+    link?: Link[];
+};
+
+type Link = {
+    label: string;
+    href: string;
 };
 
 export const InfoCard = ({
@@ -12,6 +21,7 @@ export const InfoCard = ({
     heading,
     paragraph,
     list,
+    link,
 }: InfoCardProps): React.JSX.Element => {
     return (
         <section className={styles.container} key={id}>
@@ -22,6 +32,21 @@ export const InfoCard = ({
                     {list.map((item) => (
                         <li className={styles.listItem} key={item}>
                             {item}
+                        </li>
+                    ))}
+                </ul>
+            )}
+            {link && (
+                <ul className={styles.list}>
+                    {link.map((item) => (
+                        <li className={styles.listItem} key={item.label}>
+                            <Link href={item.href} target="_blank">
+                                {item.label}
+                                <FontAwesomeIcon
+                                    icon={faUpRightFromSquare}
+                                    className={styles.icon}
+                                />
+                            </Link>
                         </li>
                     ))}
                 </ul>

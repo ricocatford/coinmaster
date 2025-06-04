@@ -24,7 +24,11 @@ export const AssetDetails = ({
             </p>
         );
     } else if (isLoading) {
-        content = <LoadingSpinner />;
+        content = (
+            <div className={styles.logoContainer}>
+                <LoadingSpinner />
+            </div>
+        );
     } else if (!asset || !details || details.length === 0) {
         content = <p className="paragraph">No asset details available.</p>;
     } else {

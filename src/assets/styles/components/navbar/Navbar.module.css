@@ -41,14 +41,14 @@
     gap: 2rem;
 }
 
-.label {
+.link {
     padding: 0.5rem 0;
     transition: all ease-in-out 0.5s;
     font-size: 0.85rem;
 }
 
-.label:hover,
-.label:focus {
+.link:hover,
+.link:focus {
     color: var(--turquoise);
 }
 
@@ -133,7 +133,7 @@
         gap: 1rem;
     }
 
-    .link {
+    .label {
         display: block;
         width: 100%;
     }

@@ -7,6 +7,7 @@ import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { useFetchAssetHistoryById } from "@/hooks/useFetchAssetHistoryById";
 import { AssetId } from "@/types/assetId";
 import { ReactNode, useState } from "react";
+import styles from "@/assets/styles/components/pages/asset/AssetPriceHistory.module.css";
 
 export const AssetPriceHistory = ({ assetId }: { assetId: AssetId }) => {
     const [range, setRange] = useState<"1d" | "7d" | "1m">("1d");
@@ -27,7 +28,11 @@ export const AssetPriceHistory = ({ assetId }: { assetId: AssetId }) => {
             </p>
         );
     } else if (isLoading) {
-        content = <LoadingSpinner />;
+        content = (
+            <div className={styles.logoContainer}>
+                <LoadingSpinner />
+            </div>
+        );
     } else if (!history || Object.keys(history).length === 0) {
         content = (
             <p className="paragraph">No asset price history available.</p>

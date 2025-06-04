@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Announcement } from "./Announcement";
 import styles from "@/assets/styles/components/pages/home/Hero.module.css";

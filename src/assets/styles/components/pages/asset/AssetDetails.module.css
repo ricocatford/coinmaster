@@ -12,10 +12,28 @@
     color: var(--light-grey);
 }
 
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 165px;
+}
+
 /*------------------- MEDIA QUERIES -------------------*/
 
 @media screen and (max-width: 768px) {
     .container {
         gap: 0;
+    }
+
+    .logoContainer {
+        min-height: 255px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logoContainer {
+        min-height: 451px;
     }
 }

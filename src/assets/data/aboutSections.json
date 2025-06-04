@@ -2,9 +2,9 @@
     {
         "id": 0,
         "heading": "Features",
-        "paragraph": "CoinMaster is designed to provide a clear, user-friendly view of the crypto market by combining essential data with an intuitive interface. CoinMaster's features make it easy to explore, analyze, and stay updated on the performance of top digital assets.",
+        "paragraph": "Designed to provide a clear, user-friendly view of the crypto market by combining essential data with an intuitive interface. CoinMaster's features make it easy to explore, analyze, and stay updated on the performance of top digital assets.",
         "list": [
-            "Real-Time data on top 100 cryptocurrencies",
+            "Real-Time data on top 100 assets",
             "Detailed asset pages with key metrics",
             "Interactive price history charts",
             "Clean, responsive UI/UX ",
@@ -28,13 +28,18 @@
         "id": 2,
         "heading": "Developer",
         "paragraph": "Built by Ricardo Albarenque, a full-stack developer based in Spain. With strong experience in UI/UX, TypeScript, React, and Node.js, Ricardo focuses on building high-performance web applications with clean architecture, modern design patterns, and a strong emphasis on accessibility and user experience.",
-        "list": ["GitHub", "LinkedIn"]
+        "link": [
+            { "label": "GitHub", "href": "https://github.com/ricocatford" },
+            {
+                "label": "LinkedIn",
+                "href": "https://linkedin.com/in/ricardo-albarenque"
+            }
+        ]
     },
     {
         "id": 3,
-        "heading": "Why I built CoinMaster",
-        "paragraph": "As a developer passionate about data visualization and web performance, I wanted to create a platform that merges financial insight with intuitive design. CoinMaster is my attempt to bring clarity to the often chaotic world of cryptocurrency.",
-        "list": ["GitHub", "LinkedIn"]
+        "heading": "Why I built it",
+        "paragraph": "As a developer passionate about data visualization and web performance, I wanted to create a platform that merges financial insight with intuitive design. CoinMaster is my attempt to bring clarity to the often chaotic world of cryptocurrency."
     },
     {
         "id": 4,

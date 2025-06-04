@@ -9,7 +9,7 @@ export const Main = (): React.JSX.Element => {
             aria-labelledby="whatIsCoinmasterHeading"
         >
             <h1 className={styles.heading} id="whatIsCoinmasterHeading">
-                What is Coinmaster?
+                What is CoinMaster?
             </h1>
             <p className={styles.paragraph}>
                 CoinMaster is a modern cryptocurrency analytics platform that

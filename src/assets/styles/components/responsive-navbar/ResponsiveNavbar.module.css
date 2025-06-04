@@ -84,5 +84,6 @@
     .link {
         flex-direction: column;
         justify-content: center;
+        min-width: 73px;
     }
 }
