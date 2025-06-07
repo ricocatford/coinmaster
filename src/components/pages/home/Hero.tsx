@@ -10,7 +10,7 @@ export const Hero = (): React.JSX.Element => {
             id="hero"
             aria-labelledby="heroHeading"
         >
-            <Announcement href="/market">
+            <Announcement href="/tracker">
                 <span>
                     Introducing our
                     <span className={styles.highlight}> Tracker</span> feature!
