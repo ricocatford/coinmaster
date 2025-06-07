@@ -6,7 +6,7 @@ import { FetchedAssetResponse } from "@/types/fetchedAssetResponse";
 import { AssetPriceHistory } from "@/components/pages/asset/AssetPriceHistory";
 import { AssetActions } from "@/components/pages/asset/AssetActions";
 
-export default function Asset({
+export default function AssetPage({
     params,
 }: {
     params: { id: string };
@@ -14,7 +14,7 @@ export default function Asset({
     const { asset, error, isLoading }: FetchedAssetResponse = useFetchAssetById(
         params.id
     );
-
+    
     return (
         <>
             <AssetDetails asset={asset} isLoading={isLoading} error={error} />

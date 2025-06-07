@@ -5,7 +5,7 @@ import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { Statistics } from "@/components/pages/market/Statistics";
 
-export default function Market(): React.JSX.Element {
+export default function MarketPage(): React.JSX.Element {
     const { assets, error, isLoading }: FetchedAssetsResponse =
         useFetchAllAssets();
 

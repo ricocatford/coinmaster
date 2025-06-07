@@ -3,13 +3,5 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 491px;
-}
-
-/*------------------- MEDIA QUERIES -------------------*/
-
-@media screen and (max-width: 576px) {
-    .logoContainer {
-        min-height: 496px;
-    }
+    min-height: 400px;
 }
