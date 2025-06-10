@@ -1,11 +1,11 @@
 import styles from "@/assets/styles/components/table/Table.module.css";
 import { TableHeadings } from "@/types/tableHeadings";
 
-export const TableHead = ({
-    headings,
-}: {
+type TableHeadProps = {
     headings: TableHeadings[];
-}): React.JSX.Element => {
+};
+
+export const TableHead = ({ headings }: TableHeadProps): React.JSX.Element => {
     return (
         <thead className={styles.head}>
             <tr>

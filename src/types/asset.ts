@@ -2,6 +2,7 @@ import { AssetId } from "@/types/assetId";
 
 export type Asset = {
     id: AssetId;
+    rank: string;
     name: string;
     symbol: string;
     price: string;

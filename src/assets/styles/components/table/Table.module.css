@@ -1,6 +1,7 @@
 .table {
     font-size: 0.8rem;
     width: 100%;
+    table-layout: auto;
     background: var(--black);
     border-collapse: collapse;
     border-spacing: 0;
@@ -23,6 +24,11 @@
 .data {
     padding: 0.3725rem 0.75rem;
     border-bottom: 1px solid var(--subtle-black);
+}
+
+.fit {
+    white-space: nowrap;
+    width: 1px;
 }
 
 .link {

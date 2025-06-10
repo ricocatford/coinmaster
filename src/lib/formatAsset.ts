@@ -9,6 +9,7 @@ import { formatCurrency } from "./formatCurrency";
 export const formatAsset = (asset: FetchedAsset): Asset => {
     const formatted: Asset = {
         id: asset.id,
+        rank: asset.rank,
         name: asset.name,
         symbol: asset.symbol,
         price: asset.priceUsd,

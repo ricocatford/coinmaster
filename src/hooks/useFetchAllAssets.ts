@@ -15,8 +15,12 @@ export const useFetchAllAssets = (): FetchedAssetsResponse => {
     const isLoading = !data && isValidating;
 
     if (data) {
-        const assets: Asset[] = formatAllAssets(data.data);
-        return { assets, error, isLoading };
+        if (data.data) {
+            const assets: Asset[] = formatAllAssets(data.data);
+            return { assets, error, isLoading };
+        } else {
+            return { assets: [], error, isLoading };
+        }
     }
 
     return { assets: [], error, isLoading };

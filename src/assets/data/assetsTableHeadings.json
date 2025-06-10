@@ -5,6 +5,11 @@
         "isPriority": true
     },
     {
+        "id": 1,
+        "text": "#",
+        "isPriority": true
+    },
+    {
         "id": 2,
         "text": "Name",
         "isPriority": true

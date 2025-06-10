@@ -2,6 +2,7 @@ import { AssetId } from "./assetId";
 
 export type FetchedAsset = {
     id: AssetId;
+    rank: string;
     symbol: string;
     name: string;
     priceUsd: string;

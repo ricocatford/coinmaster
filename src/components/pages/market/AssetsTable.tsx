@@ -35,7 +35,7 @@ export const AssetsTable = ({
             </ContentMiddlePlaceholder>
         );
     } else {
-        content = assets && <Table assets={assets} />;
+        content = assets && <Table assets={assets} variant="market" />;
     }
 
     return (
@@ -47,7 +47,7 @@ export const AssetsTable = ({
         >
             <ContentTopPlaceholder>
                 <h2 className={styles.heading} id="latestMarketPricesHeading">
-                    Latest market prices
+                    Latest Market Prices
                 </h2>
                 <span className={styles.topInfo}>(Showing top 100 assets)</span>
             </ContentTopPlaceholder>
