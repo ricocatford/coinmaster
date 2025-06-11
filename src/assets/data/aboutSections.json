@@ -7,6 +7,7 @@
             "Real-Time data on top 100 assets",
             "Detailed asset pages with key metrics",
             "Interactive price history charts",
+            "Custom tracking to follow selected assets",
             "Clean, responsive UI/UX ",
             "Fast performance using Next.js Server-Side Rendering"
         ]
@@ -46,8 +47,7 @@
         "heading": "What's next?",
         "paragraph": "CoinMaster is continuously evolving, with new features and improvements planned to enhance the overall experience.",
         "list": [
-            "Assets table pagination for smoother navigation through large data sets",
-            "A tailored dashboard for easy tracking and quick access to selected assets"
+            "Assets table pagination for smoother navigation through large data sets"
         ]
     },
     {
