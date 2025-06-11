@@ -1,9 +1,9 @@
 import { TableData } from "./TableData";
 import { TrackerButton } from "@/components/buttons/TrackerButton";
 import { Asset } from "@/types/asset";
-import styles from "@/assets/styles/components/table/Table.module.css";
 import { AssetId } from "@/types/assetId";
 import { TrackedAssetRow } from "./TrackedAssetRow";
+import styles from "@/assets/styles/components/table/Table.module.css";
 
 type ColumnConfig<T> = {
     key: keyof T;

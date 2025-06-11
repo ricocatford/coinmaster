@@ -1,16 +1,24 @@
 // components/pages/tracker/TrackedAssetRow.tsx
-import React from "react";
 import { useFetchAssetById } from "@/hooks/useFetchAssetById";
 import { TableData } from "@/components/table/TableData";
 import { TrackerButton } from "@/components/buttons/TrackerButton";
 import { AssetId } from "@/types/assetId";
+import { Asset } from "@/types/asset";
 import styles from "@/assets/styles/components/table/Table.module.css";
 
 type TrackedAssetRowProps = {
     assetId: AssetId;
 };
 
-const columnsToRender = [
+type ColumnConfig<T> = {
+    key: keyof T;
+    isPriority?: boolean;
+    isFit?: boolean;
+    isLink?: boolean;
+    isChange?: boolean;
+};
+
+const columnsToRender: ColumnConfig<Asset>[] = [
     { key: "rank", isPriority: true, isFit: true },
     { key: "name", isLink: true, isPriority: true },
     { key: "priceShort", isPriority: true },
@@ -57,7 +65,7 @@ export const TrackedAssetRow = ({
             </td>
 
             {columnsToRender.map((col) => {
-                const value = (asset as any)[col.key];
+                const value = asset[col.key];
                 const linkHref = col.isLink ? `asset/${asset.id}` : undefined;
 
                 return (
