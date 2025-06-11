@@ -5,7 +5,15 @@ import styles from "@/assets/styles/components/table/Table.module.css";
 import { AssetId } from "@/types/assetId";
 import { TrackedAssetRow } from "./TrackedAssetRow";
 
-const columnsToRender = [
+type ColumnConfig<T> = {
+    key: keyof T;
+    isPriority?: boolean;
+    isFit?: boolean;
+    isLink?: boolean;
+    isChange?: boolean;
+};
+
+const columnsToRender: ColumnConfig<Asset>[] = [
     { key: "rank", isPriority: true, isFit: true },
     { key: "name", isLink: true, isPriority: true },
     { key: "priceShort", isPriority: true },
@@ -33,14 +41,14 @@ export const TableBody = ({ assets, variant }: TableBodyProps) => {
                         </td>
 
                         {columnsToRender.map((col) => {
-                            const value = (asset as any)[col.key];
+                            const value = asset[col.key];
                             const linkHref = col.isLink
                                 ? `asset/${asset.id}`
                                 : undefined;
 
                             return (
                                 <TableData
-                                    key={col.key}
+                                    key={col.key as string}
                                     value={value}
                                     isFit={col.isFit}
                                     isPriority={col.isPriority}
