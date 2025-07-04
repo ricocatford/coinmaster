@@ -4,14 +4,17 @@ import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ContentBottomPlaceholder } from "@/components/content-placeholder/ContentBottomPlaceholder";
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import { Limit, useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
 
-export const AssetsTable = ({
-    assets,
-    isLoading,
-    error,
-}: FetchedAssetsResponse): React.JSX.Element => {
+export const AssetsTable = (): React.JSX.Element => {
+    const [limit, setLimit] = useState<Limit>(10);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+
+    const { assets, error, isLoading }: FetchedAssetsResponse =
+        useFetchAllAssets(limit, currentPage);
+
     let content: ReactNode;
 
     if (error) {
@@ -46,6 +49,7 @@ export const AssetsTable = ({
             aria-labelledby="latestMarketPricesHeading"
         >
             <ContentTopPlaceholder>
+                <div></div>
                 <h2 className={styles.heading} id="latestMarketPricesHeading">
                     Latest Market Prices
                 </h2>

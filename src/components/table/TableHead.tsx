@@ -1,5 +1,5 @@
-import styles from "@/assets/styles/components/table/Table.module.css";
 import { TableHeadings } from "@/types/tableHeadings";
+import styles from "@/assets/styles/components/table/Table.module.css";
 
 type TableHeadProps = {
     headings: TableHeadings[];
