@@ -7,6 +7,7 @@ import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { ReactNode, useState } from "react";
 import { Limit, useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
+import { TablePagination } from "@/components/table/TablePagination";
 
 export const AssetsTable = (): React.JSX.Element => {
     const [limit, setLimit] = useState<Limit>(10);
@@ -14,6 +15,23 @@ export const AssetsTable = (): React.JSX.Element => {
 
     const { assets, error, isLoading }: FetchedAssetsResponse =
         useFetchAllAssets(limit, currentPage);
+
+    const handleLimitChange = (newLimit: Limit) => {
+        setLimit(newLimit);
+    };
+
+    const handlePageChange = (direction: "up" | "down") => {
+        switch (direction) {
+            case "down":
+                setCurrentPage((prev) => prev - 1);
+                break;
+            case "up":
+                setCurrentPage((prev) => prev + 1);
+                break;
+            default:
+                break;
+        }
+    };
 
     let content: ReactNode;
 
@@ -49,11 +67,25 @@ export const AssetsTable = (): React.JSX.Element => {
             aria-labelledby="latestMarketPricesHeading"
         >
             <ContentTopPlaceholder>
-                <div></div>
-                <h2 className={styles.heading} id="latestMarketPricesHeading">
-                    Latest Market Prices
-                </h2>
-                <span className={styles.topInfo}>(Showing top 100 assets)</span>
+                <div className={styles.topContainer}>
+                    <div className={styles.headingContainer}>
+                        <h2
+                            className={styles.heading}
+                            id="latestMarketPricesHeading"
+                        >
+                            Latest Market Prices
+                        </h2>
+                        <span className={styles.topInfo}>
+                            Showing {limit.toString()} assets per page.
+                        </span>
+                    </div>
+                    <TablePagination
+                        limit={limit}
+                        currentPage={currentPage}
+                        onLimitChange={handleLimitChange}
+                        onPageChange={handlePageChange}
+                    />
+                </div>
             </ContentTopPlaceholder>
             {content}
             <ContentBottomPlaceholder>

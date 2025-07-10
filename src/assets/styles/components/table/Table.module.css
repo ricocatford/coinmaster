@@ -1,3 +1,45 @@
+.paginationContainer {
+    display: flex;
+    gap: 3rem;
+}
+
+.limitContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.limitText {
+    font-size: 0.78rem;
+    color: var(--light-grey);
+}
+
+.limitSelect {
+    padding: 0.16rem 0.25rem;
+    border: 1px solid var(--subtle-black);
+    border-radius: 0.5rem;
+    background-color: var(--background);
+    font-size: 0.78rem;
+}
+
+.pageContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pageTextContainer {
+    display: flex;
+    padding: 0.16rem 0.75rem;
+    border: 1px solid var(--subtle-black);
+    border-radius: 0.5rem;
+}
+
+.pageText {
+    font-size: 0.78rem;
+    justify-self: center;
+}
+
 .table {
     font-size: 0.8rem;
     width: 100%;

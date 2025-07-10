@@ -13,9 +13,6 @@ export const useFetchAllAssets = (
     limit: Limit,
     currentPage?: number
 ): FetchedAssetsResponse => {
-
-    console.log("useFetchAllAssets called with:", { limit, currentPage });
-
     const url = useMemo(() => {
         const baseUrl = "/api/assets";
         const params = new URLSearchParams();
