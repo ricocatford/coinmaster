@@ -25,7 +25,7 @@ const josefinSans = Josefin_Sans({
 export const metadata: Metadata = {
     title: "CoinMaster",
     description:
-        "Coinmaster is your ultimate crypto analytics platform — track the top 100 digital assets, monitor real-time market data, and stay ahead with powerful insights.",
+        "Coinmaster is your ultimate crypto analytics platform — monitor real-time market data, and stay ahead with powerful insights.",
     keywords: [
         "Coinmaster",
         "crypto analytics",
