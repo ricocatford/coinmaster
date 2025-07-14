@@ -4,34 +4,19 @@ import { LoadingSpinner } from "@/components/loading-spinner/LoadingSpinner";
 import { ContentBottomPlaceholder } from "@/components/content-placeholder/ContentBottomPlaceholder";
 import { ContentMiddlePlaceholder } from "@/components/content-placeholder/ContentMiddlePlaceholder";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
-import { ReactNode, useState } from "react";
-import { Limit, useFetchAllAssets } from "@/hooks/useFetchAllAssets";
-import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
+import { ReactNode } from "react";
+import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import { TablePagination } from "@/components/table/TablePagination";
+import { useGlobal } from "@/hooks/global-store/useGlobal";
+import { GlobalStore, Limit } from "@/stores/GlobalStore";
+import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
 
 export const AssetsTable = (): React.JSX.Element => {
-    const [limit, setLimit] = useState<Limit>(10);
-    const [currentPage, setCurrentPage] = useState<number>(1);
-
+    const { store }: { store: GlobalStore } = useGlobal();
+    const limit: Limit = store?.pagination.limit;
+    
     const { assets, error, isLoading }: FetchedAssetsResponse =
-        useFetchAllAssets(limit, currentPage);
-
-    const handleLimitChange = (newLimit: Limit) => {
-        setLimit(newLimit);
-    };
-
-    const handlePageChange = (direction: "up" | "down") => {
-        switch (direction) {
-            case "down":
-                setCurrentPage((prev) => prev - 1);
-                break;
-            case "up":
-                setCurrentPage((prev) => prev + 1);
-                break;
-            default:
-                break;
-        }
-    };
+        useFetchAllAssets();
 
     let content: ReactNode;
 
@@ -79,12 +64,7 @@ export const AssetsTable = (): React.JSX.Element => {
                             Showing {limit.toString()} assets per page.
                         </span>
                     </div>
-                    <TablePagination
-                        limit={limit}
-                        currentPage={currentPage}
-                        onLimitChange={handleLimitChange}
-                        onPageChange={handlePageChange}
-                    />
+                    <TablePagination />
                 </div>
             </ContentTopPlaceholder>
             {content}

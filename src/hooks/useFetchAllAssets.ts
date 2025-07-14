@@ -4,15 +4,16 @@ import { Asset } from "@/types/asset";
 import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { fetcher } from "@/lib/fetcher";
 import { useMemo } from "react";
-
-export type Limit = 10 | 25 | 50 | 100;
+import { GlobalStore, Limit } from "@/stores/GlobalStore";
+import { useGlobal } from "./global-store/useGlobal";
 
 const calculateOffset = ({ limit, currentPage }: { limit: Limit, currentPage: number }) => (currentPage - 1) * limit;
 
-export const useFetchAllAssets = (
-    limit: Limit,
-    currentPage?: number
-): FetchedAssetsResponse => {
+export const useFetchAllAssets = (): FetchedAssetsResponse => {
+    const { store }: { store: GlobalStore } = useGlobal();
+    const limit: Limit = store?.pagination.limit;
+    const currentPage: number = store?.pagination.currentPage;
+
     const url = useMemo(() => {
         const baseUrl = "/api/assets";
         const params = new URLSearchParams();

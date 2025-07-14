@@ -1,30 +1,19 @@
-import { Limit } from "@/hooks/useFetchAllAssets";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GlobalStore, Limit } from "@/stores/GlobalStore";
+import { useGlobal } from "@/hooks/global-store/useGlobal";
 import styles from "@/assets/styles/components/table/Table.module.css";
 
-type TablePaginationProps = {
-    limit: Limit;
-    currentPage: number;
-    onLimitChange: (newLimit: Limit) => void;
-    onPageChange: (direction: "up" | "down") => void;
-};
+export const TablePagination = () => {
+    const { store }: { store: GlobalStore } = useGlobal();
+    const limit: Limit = store?.pagination.limit;
+    const currentPage: number = store?.pagination.currentPage;
 
-export const TablePagination = ({
-    limit,
-    currentPage,
-    onLimitChange,
-    onPageChange,
-}: TablePaginationProps) => {
     const limits: Limit[] = [10, 25, 50, 100];
 
     const handleLimitChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newLimit = parseInt(event.target.value, 10) as Limit;
-        onLimitChange(newLimit);
-    };
-
-    const handlePageChange = (direction: "up" | "down") => {
-        onPageChange(direction);
+        store.setLimit(newLimit);
     };
 
     const isDownButtonDisabled = currentPage === 1;
@@ -48,7 +37,7 @@ export const TablePagination = ({
             </div>
             <div className={styles.pageContainer}>
                 <button
-                    onClick={() => handlePageChange("down")}
+                    onClick={() => store.decrementPage()}
                     disabled={isDownButtonDisabled}
                 >
                     <FontAwesomeIcon icon={faAngleLeft} />
@@ -56,7 +45,7 @@ export const TablePagination = ({
                 <div className={styles.pageTextContainer}>
                     <span className={styles.pageText}>Page {currentPage}</span>
                 </div>
-                <button onClick={() => handlePageChange("up")}>
+                <button onClick={() => store.incrementPage()}>
                     <FontAwesomeIcon icon={faAngleRight} />
                 </button>
             </div>
