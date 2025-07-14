@@ -4,7 +4,7 @@
         "heading": "Features",
         "paragraph": "Designed to provide a clear, user-friendly view of the crypto market by combining essential data with an intuitive interface. CoinMaster's features make it easy to explore, analyze, and stay updated on the performance of top digital assets.",
         "list": [
-            "Real-Time data on top 100 assets",
+            "Real-Time data for all existing assets",
             "Detailed asset pages with key metrics",
             "Interactive price history charts",
             "Custom tracking to follow selected assets",
@@ -45,10 +45,7 @@
     {
         "id": 4,
         "heading": "What's next?",
-        "paragraph": "CoinMaster is continuously evolving, with new features and improvements planned to enhance the overall experience.",
-        "list": [
-            "Assets table pagination for smoother navigation through large data sets"
-        ]
+        "paragraph": "CoinMaster is continuously evolving, with new features and improvements planned to enhance the overall experience."
     },
     {
         "id": 4,
