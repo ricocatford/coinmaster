@@ -5,6 +5,7 @@ import { TrackerButton } from "@/components/buttons/TrackerButton";
 import { AssetId } from "@/types/assetId";
 import { Asset } from "@/types/asset";
 import styles from "@/assets/styles/components/table/Table.module.css";
+import { LoadingSpinner } from "../loading-spinner/LoadingSpinner";
 
 type TrackedAssetRowProps = {
     assetId: AssetId;
@@ -36,7 +37,9 @@ export const TrackedAssetRow = ({
     if (isLoading) {
         return (
             <tr className={styles.row}>
-                <td className={styles.data}>Loading asset {assetId}...</td>
+                <td className={styles.data}>
+                    <LoadingSpinner />
+                </td>
             </tr>
         );
     }

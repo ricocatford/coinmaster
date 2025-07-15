@@ -1,4 +1,8 @@
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+    faAnglesLeft,
+    faAngleLeft,
+    faAngleRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GlobalStore, Limit } from "@/stores/GlobalStore";
 import { useGlobal } from "@/hooks/global-store/useGlobal";
@@ -16,7 +20,7 @@ export const TablePagination = () => {
         store.setLimit(newLimit);
     };
 
-    const isDownButtonDisabled = currentPage === 1;
+    const isButtonDisabled = currentPage === 1;
 
     return (
         <div className={styles.paginationContainer}>
@@ -37,15 +41,26 @@ export const TablePagination = () => {
             </div>
             <div className={styles.pageContainer}>
                 <button
+                    onClick={() => store.setInitialPage()}
+                    disabled={isButtonDisabled}
+                    className={styles.pageButton}
+                >
+                    <FontAwesomeIcon icon={faAnglesLeft} />
+                </button>
+                <button
                     onClick={() => store.decrementPage()}
-                    disabled={isDownButtonDisabled}
+                    disabled={isButtonDisabled}
+                    className={styles.pageButton}
                 >
                     <FontAwesomeIcon icon={faAngleLeft} />
                 </button>
                 <div className={styles.pageTextContainer}>
                     <span className={styles.pageText}>Page {currentPage}</span>
                 </div>
-                <button onClick={() => store.incrementPage()}>
+                <button
+                    onClick={() => store.incrementPage()}
+                    className={styles.pageButton}
+                >
                     <FontAwesomeIcon icon={faAngleRight} />
                 </button>
             </div>
