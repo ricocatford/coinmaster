@@ -3,12 +3,12 @@ import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { useMarketStatistics } from "@/hooks/useMarketStatistics";
 import { MarketStatistic } from "@/types/marketStatistic";
 import { ReactNode } from "react";
-import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
+import { useFetchTopAssets } from "@/hooks/useFetchTopAssets";
 import styles from "@/assets/styles/components/pages/market/Statistics.module.css";
 
 export const Statistics = (): React.JSX.Element => {
     const { assets, error, isLoading }: FetchedAssetsResponse =
-        useFetchAllAssets(100);
+        useFetchTopAssets();
 
     const statistics: MarketStatistic[] = useMarketStatistics(assets);
 
