@@ -102,6 +102,9 @@
 }
 
 @media screen and (max-width: 576px) {
+    .paginationContainer {
+        justify-content: space-between;
+    }
     .data,
     .heading {
         display: none;

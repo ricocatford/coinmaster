@@ -22,3 +22,9 @@
     font-size: 0.78rem;
     color: var(--light-grey);
 }
+
+@media screen and (max-width: 576px) {
+    .topContainer {
+        flex-direction: column;
+    }
+}

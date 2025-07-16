@@ -14,7 +14,7 @@ import styles from "@/assets/styles/components/pages/market/AssetsTable.module.c
 export const AssetsTable = (): React.JSX.Element => {
     const { store }: { store: GlobalStore } = useGlobal();
     const limit: Limit = store?.pagination.limit;
-    
+
     const { assets, error, isLoading }: FetchedAssetsResponse =
         useFetchAllAssets();
 
@@ -60,9 +60,6 @@ export const AssetsTable = (): React.JSX.Element => {
                         >
                             Latest Market Prices
                         </h2>
-                        <span className={styles.topInfo}>
-                            Showing {limit.toString()} assets per page.
-                        </span>
                     </div>
                     <TablePagination />
                 </div>
