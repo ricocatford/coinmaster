@@ -130,7 +130,7 @@
 
     .list {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .label {
@@ -148,6 +148,10 @@
 }
 
 @media screen and (max-width: 576px) {
+    .link {
+        display: block;
+    }
+
     .list,
     .ctaLink {
         width: 100%;
