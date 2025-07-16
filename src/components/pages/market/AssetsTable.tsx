@@ -7,14 +7,9 @@ import { FetchedAssetsResponse } from "@/types/fetchedAssetsResponse";
 import { ReactNode } from "react";
 import { useFetchAllAssets } from "@/hooks/useFetchAllAssets";
 import { TablePagination } from "@/components/table/TablePagination";
-import { useGlobal } from "@/hooks/global-store/useGlobal";
-import { GlobalStore, Limit } from "@/stores/GlobalStore";
 import styles from "@/assets/styles/components/pages/market/AssetsTable.module.css";
 
 export const AssetsTable = (): React.JSX.Element => {
-    const { store }: { store: GlobalStore } = useGlobal();
-    const limit: Limit = store?.pagination.limit;
-
     const { assets, error, isLoading }: FetchedAssetsResponse =
         useFetchAllAssets();
 
